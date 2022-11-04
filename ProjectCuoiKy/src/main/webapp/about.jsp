@@ -31,10 +31,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb__text">
-                        <h4>About Us</h4>
+                        <h4>Về chúng tôi</h4>
                         <div class="breadcrumb__links">
-                            <a href="./index.jsp">Home</a>
-                            <span>About Us</span>
+                            <a href="./index.jsp">Trang chủ</a>
+                            <span>Về chúng tôi</span>
                         </div>
                     </div>
                 </div>
@@ -55,23 +55,29 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="about__item">
-                        <h4>Who We Are ?</h4>
-                        <p>Contextual advertising programs sometimes have strict policies that need to be adhered too.
-                            Let?s take Google as an example.</p>
+                        <h4>Chúng tôi là ai ?</h4>
+                        <p>Male Fashion là một thương hiệu thời trang Việt Nam dành cho nam giới. </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="about__item">
-                        <h4>Who We Do ?</h4>
-                        <p>In this digital generation where information can be easily obtained within seconds, business
-                            cards still have retained their importance.</p>
+                        <h4>Chúng tôi có những gì ?</h4>
+                        <p>Không chỉ với áo thun, Male Fashion có tất cả các mặc hàng thời trang cần thiết. 
+                            Chỉ cần lượn nhẹ một vòng bạn sẽ trang bị đủ từ đầu đến chân, từ trong ra ngoài,
+                            cho đến phụ kiện đi kèm phù hợp với mọi nhu cầu: tiệc tùng, lễ hội, du lịch,
+                            đến trường hoặc đi làm..v.v..
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="about__item">
-                        <h4>Why Choose Us</h4>
-                        <p>A two or three storey house is the ideal way to maximise the piece of earth on which our home
-                            sits, but for older or infirm people.</p>
+                        <h4>Tại sao nên chọn chúng tôi?</h4>
+                        <p>
+                            Nếu bạn đang tìm kiếm một thương hiệu thời trang dành cho nam giới, thì
+                            đáng để chọn nhà cung cấp của bạn một cách cẩn thận.
+                            Với thương hiệu quần áo của tôi, tất cả mọi thứ về sản phẩm, 
+                            chất lượng, dịch vụ và hỗ trợ tốt nhất có thể - được đảm bảo!
+                        </p>
                     </div>
                 </div>
             </div>
@@ -86,8 +92,7 @@
                 <div class="col-lg-6 p-0">
                     <div class="testimonial__text">
                         <span class="icon_quotations"></span>
-                        <p>?Going out after work? Take your butane curling iron with you to the office, heat it up,
-                            style your hair before you leave the office and you won?t have to make a trip back home.?
+                        <p>Dù đi chơi hay đi làm, sản phẩm từ Male Fashion luôn là lựa chọn hàng đầu của tôi !!!
                         </p>
                         <div class="testimonial__author">
                             <div class="testimonial__author__pic">
@@ -95,7 +100,7 @@
                             </div>
                             <div class="testimonial__author__text">
                                 <h5>Augusta Schultz</h5>
-                                <p>Fashion Design</p>
+                                <p>Nhà thiết kết thời trang</p>
                             </div>
                         </div>
                     </div>
@@ -117,7 +122,7 @@
                         <div class="counter__item__number">
                             <h2 class="cn_num">102</h2>
                         </div>
-                        <span>Our <br />Clients</span>
+                        <span>Khách hàng<br /></span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -125,7 +130,7 @@
                         <div class="counter__item__number">
                             <h2 class="cn_num">30</h2>
                         </div>
-                        <span>Total <br />Categories</span>
+                        <span>Loại sản phẩm</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -133,7 +138,7 @@
                         <div class="counter__item__number">
                             <h2 class="cn_num">102</h2>
                         </div>
-                        <span>In <br />Country</span>
+                        <span>Quốc gia</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
@@ -142,7 +147,7 @@
                             <h2 class="cn_num">98</h2>
                             <strong>%</strong>
                         </div>
-                        <span>Happy <br />Customer</span>
+                        <span>Khách hàng yêu thích</span>
                     </div>
                 </div>
             </div>
@@ -156,8 +161,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <span>Our Team</span>
-                        <h2>Meet Our Team</h2>
+                        <span>ĐỘI NGŨ CỦA CHÚNG TÔI</span>
+                        <h2>Gặp đội của chúng tôi</h2>
                     </div>
                 </div>
             </div>
@@ -166,28 +171,28 @@
                     <div class="team__item">
                         <img src="img/about/team-1.jpg" alt="">
                         <h4>John Smith</h4>
-                        <span>Fashion Design</span>
+                        <span>Nhà thiết kết thời trang</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="team__item">
                         <img src="img/about/team-2.jpg" alt="">
                         <h4>Christine Wise</h4>
-                        <span>C.E.O</span>
+                        <span>Giám đốc điều hành</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="team__item">
                         <img src="img/about/team-3.jpg" alt="">
                         <h4>Sean Robbins</h4>
-                        <span>Manager</span>
+                        <span>Quản lý</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="team__item">
                         <img src="img/about/team-4.jpg" alt="">
                         <h4>Lucy Myers</h4>
-                        <span>Delivery</span>
+                        <span>Người vận chuyển</span>
                     </div>
                 </div>
             </div>
@@ -201,8 +206,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <span>Partner</span>
-                        <h2>Happy Clients</h2>
+                        <span>Nhà đồng hành</span>
+                        <h2>Những khách hàng yêu thích</h2>
                     </div>
                 </div>
             </div>
