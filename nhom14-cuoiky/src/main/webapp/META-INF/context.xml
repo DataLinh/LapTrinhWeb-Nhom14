@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/cuoiky-nhom14">
+  <Resource auth="Container" driverClassName="org.postgresql.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="Postgres" password="dc870030de1f7eb6793fd268267a0574fefe984cd780611c9be01f5205488154" type="javax.sql.DataSource" url="jdbc:postgresql://ec2-54-172-175-251.compute-1.amazonaws.com:5432/d2m3tr0fdio4ln" username="qyhkbjjgawbdqh"/>
+</Context>
