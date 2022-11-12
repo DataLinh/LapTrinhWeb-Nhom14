@@ -30,22 +30,22 @@ public class Test {
             Galery g = session.get(Galery.class, 2);
             System.out.println(g.getDescription());
 
-            Feedback f = session.get(Feedback.class, 2);
+           Feedback f = session.get(Feedback.class, 2);
             System.out.println(f.getFirstName());
 
             Order o = session.get(Order.class, 2);
-            System.out.println(o.getAddress());
+           System.out.println(o.getAddress());
 
-            OrderDetails od = session.get(OrderDetails.class, 2);
-            System.out.println(od.getProduct());
+ //           OrderDetails od = session.get(OrderDetails.class, 2);
+   //         System.out.println(od.getProduct());
 
-//            Product p = new Product();
-//            p.setTitle("Ok");            
-//            Category c = session.get(Category.class, 2);
-//            Discount d = session.get(Discount.class, 2);
-//            p.setCategory(c);
-//            p.setDiscount(d);
-//            session.save(p);
+    //        Product p = new Product();
+    //        p.setTitle("Ok");            
+      //      Category c = session.get(Category.class, 2);
+      //      Discount d = session.get(Discount.class, 2);
+      //     p.setCategory(c);
+       //    p.setDiscount(d);
+            session.save(p);
             session.close();
         }
     }

@@ -14,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -26,7 +27,7 @@ import javax.persistence.Temporal;
 public class Product implements Serializable {
     @Id    
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "product_id")
     private int id;
     private String title;
     private int price;
@@ -45,6 +46,8 @@ public class Product implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "discount_id")
     private Discount discount;
+    @OneToOne(mappedBy ="product")
+    private Galery galery;
 
     /**
      * @return the id
@@ -184,6 +187,20 @@ public class Product implements Serializable {
      */
     public void setDiscount(Discount discount) {
         this.discount = discount;
+    }
+
+    /**
+     * @return the galery
+     */
+    public Galery getGalery() {
+        return galery;
+    }
+
+    /**
+     * @param galery the galery to set
+     */
+    public void setGalery(Galery galery) {
+        this.galery = galery;
     }
 
 }

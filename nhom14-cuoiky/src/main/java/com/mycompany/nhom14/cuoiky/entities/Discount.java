@@ -6,11 +6,15 @@ package com.mycompany.nhom14.cuoiky.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -23,6 +27,7 @@ import javax.persistence.Temporal;
 public class Discount implements Serializable {    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "discount_id")
     private int id;
     private String name;
     private byte type;
@@ -32,6 +37,8 @@ public class Discount implements Serializable {
     @Column(name = "expiration_date")
     @Temporal(javax.persistence.TemporalType.DATE)    
     private Date expirationDate;
+    @OneToMany(fetch = FetchType.LAZY,mappedBy="discount", cascade=CascadeType.ALL)
+    private List<Product> products;
 
     /**
      * @return the id
@@ -101,6 +108,20 @@ public class Discount implements Serializable {
      */
     public void setExpirationDate(Date expirationDate) {
         this.expirationDate = expirationDate;
+    }
+
+    /**
+     * @return the products
+     */
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    /**
+     * @param products the products to set
+     */
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
     
 }

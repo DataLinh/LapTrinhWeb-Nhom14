@@ -6,6 +6,8 @@ package com.mycompany.nhom14.cuoiky.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,6 +16,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -26,6 +30,7 @@ import javax.persistence.Temporal;
 public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "order_id")
     private int id;
     
     @Column(name = "full_name")
@@ -45,6 +50,9 @@ public class Order implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+    
+    @OneToOne(mappedBy ="orders")
+    private OrderDetails orderDetails;
 
     /**
      * @return the id
@@ -185,5 +193,23 @@ public class Order implements Serializable {
     public void setUser(User user) {
         this.user = user;
     }
+
+    /**
+     * @return the orderDetails
+     */
+    public OrderDetails getOrderDetails() {
+        return orderDetails;
+    }
+
+    /**
+     * @param orderDetails the orderDetails to set
+     */
+    public void setOrderDetails(OrderDetails orderDetails) {
+        this.orderDetails = orderDetails;
+    }
+
+    
+
+   
 
 }
