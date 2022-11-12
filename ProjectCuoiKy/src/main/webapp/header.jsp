@@ -113,7 +113,7 @@
                                         <li><a href="./shop-details.jsp">Thông tin cửa hàng</a></li>
                                         <li><a href="./shopping-cart.jsp">Giỏ hàng</a></li>
                                         <li><a href="./checkout.jsp">Thanh toán</a></li>
-                                        <li><a href="./blog.jsp">Thông tin blog</a></li>
+                                        <li><a href="./blog-details.jsp">Thông tin blog</a></li>
                                     </ul>
                                 </li>
                                 <!--   <li class="active"><a href="./blog.jsp">Blog</a></li>  --> 
