@@ -5,12 +5,17 @@
 package com.mycompany.nhom14.cuoiky.entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -21,8 +26,11 @@ import javax.persistence.Temporal;
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
+
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private int id;
     private String fullName;
     private String email;
@@ -30,13 +38,15 @@ public class User implements Serializable {
     private String phoneNumber;
     private String address;
     private String password;
-    private byte role;
+    private boolean role;
     @Column(name = "create_at")
     @Temporal(javax.persistence.TemporalType.DATE)  
     private Date createdAt;
     @Column(name = "update_at")
     @Temporal(javax.persistence.TemporalType.DATE)  
     private Date updateAt;
+    @OneToMany(fetch = FetchType.LAZY,mappedBy="users", cascade=CascadeType.ALL)
+    private List<Order> orders;
 
     /**
      * @return the id
@@ -125,14 +135,14 @@ public class User implements Serializable {
     /**
      * @return the role
      */
-    public byte getRole() {
+    public boolean isRole() {
         return role;
     }
 
     /**
      * @param role the role to set
      */
-    public void setRole(byte role) {
+    public void setRole(boolean role) {
         this.role = role;
     }
 
@@ -163,5 +173,20 @@ public class User implements Serializable {
     public void setUpdateAt(Date updateAt) {
         this.updateAt = updateAt;
     }
+
+    /**
+     * @return the orders
+     */
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    /**
+     * @param orders the orders to set
+     */
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
     
 }

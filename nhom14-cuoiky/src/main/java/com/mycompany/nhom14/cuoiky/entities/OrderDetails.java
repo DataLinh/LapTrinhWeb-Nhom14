@@ -5,6 +5,8 @@
 package com.mycompany.nhom14.cuoiky.entities;
 
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -31,12 +34,11 @@ public class OrderDetails implements Serializable {
     private int quantity;
     @Column(name = "total_money")
     private int totalMoney;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id")
-    private Order order;
-    @OneToOne (fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id")
-    private Product product;
+    private Order orders;
+    @OneToMany(fetch = FetchType.LAZY,mappedBy="orders_details", cascade=CascadeType.ALL)
+    private List<Product> products;
 
     /**
      * @return the id
@@ -95,31 +97,34 @@ public class OrderDetails implements Serializable {
     }
 
     /**
-     * @return the order
+     * @return the orders
      */
-    public Order getOrder() {
-        return order;
+    public Order getOrders() {
+        return orders;
     }
 
     /**
-     * @param order the order to set
+     * @param orders the orders to set
      */
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrders(Order orders) {
+        this.orders = orders;
     }
 
     /**
-     * @return the product
+     * @return the products
      */
-    public Product getProduct() {
-        return product;
+    public List<Product> getProducts() {
+        return products;
     }
 
     /**
-     * @param product the product to set
+     * @param products the products to set
      */
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
+    
+
+    
 }
