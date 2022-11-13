@@ -33,11 +33,11 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
-                    <h4>Check Out</h4>
+                    <h4>Điền thông tin</h4>
                     <div class="breadcrumb__links">
-                        <a href="./index.jsp">Home</a>
-                        <a href="./shop.jsp">Shop</a>
-                        <span>Check Out</span>
+                        <a href="./index.jsp">Trang chủ</a>
+                        <a href="./shop.jsp">Cửa hàng</a>
+                        <span>Điền thông tin</span>
                     </div>
                 </div>
             </div>
@@ -53,38 +53,37 @@
             <form action="#">
                 <div class="row">
                     <div class="col-lg-8 col-md-6">
-                        <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have a coupon? <a href="#">Click
-                                here</a> to enter your code</h6>
-                        <h6 class="checkout__title">Billing Details</h6>
+                        <h6 class="coupon__code"><span class="icon_tag_alt"></span> Đã có mã giảm giá?  <a href="#"> Vui lòng nhấn vào đây</a></h6>
+                        <h6 class="checkout__title">Chi tiết đơn hàng</h6>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="checkout__input">
-                                    <p>Fist Name<span>*</span></p>
+                                    <p>Tên <span>*</span></p>
                                     <input type="text">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
-                                    <p>Last Name<span>*</span></p>
+                                    <p>Họ<span>*</span></p>
                                     <input type="text">
                                 </div>
                             </div>
                         </div>
                         <div class="checkout__input">
-                            <p>Country<span>*</span></p>
+                            <p>Quốc gia<span>*</span></p>
                             <input type="text">
                         </div>
                         <div class="checkout__input">
-                            <p>Address<span>*</span></p>
-                            <input type="text" placeholder="Street Address" class="checkout__input__add">
-                            <input type="text" placeholder="Apartment, suite, unite ect (optinal)">
+                            <p>Địa chỉ<span>*</span></p>
+                            <input type="text" placeholder="1 Võ Văn Ngân, Phường Linh Chiểu, TP Thủ Đức, TP HCM" class="checkout__input__add">
+                            <input type="text" placeholder="Đại học sư phạm kỹ thuật TP HCM">
                         </div>
                         <div class="checkout__input">
-                            <p>Town/City<span>*</span></p>
+                            <p>Thành phố<span>*</span></p>
                             <input type="text">
                         </div>
                         <div class="checkout__input">
-                            <p>Country/State<span>*</span></p>
+                            <p>Quận / Huyện<span>*</span></p>
                             <input type="text">
                         </div>
                         <div class="checkout__input">
@@ -94,7 +93,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="checkout__input">
-                                    <p>Phone<span>*</span></p>
+                                    <p>Số điện thoại<span>*</span></p>
                                     <input type="text">
                                 </div>
                             </div>
@@ -107,34 +106,32 @@
                         </div>
                         <div class="checkout__input__checkbox">
                             <label for="acc">
-                                Create an account?
+                                Tạo tài khoản?
                                 <input type="checkbox" id="acc">
                                 <span class="checkmark"></span>
                             </label>
-                            <p>Create an account by entering the information below. If you are a returning customer
-                                please login at the top of the page</p>
-                        </div>
+                            <p>Tạo tài khoản bằng cách nhập thông tin bên dưới. Nếu bạn là khách hàng cũ, vui lòng đăng nhập trên đầu trang</p></div>
                         <div class="checkout__input">
-                            <p>Account Password<span>*</span></p>
+                            <p>Mật khẩu<span>*</span></p>
                             <input type="text">
                         </div>
                         <div class="checkout__input__checkbox">
                             <label for="diff-acc">
-                                Note about your order, e.g, special noe for delivery
+                                Ghi chú cho bên vận chuyển, đóng gói
                                 <input type="checkbox" id="diff-acc">
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class="checkout__input">
-                            <p>Order notes<span>*</span></p>
+                            <p>Ghi chú<span>*</span></p>
                             <input type="text"
-                                   placeholder="Notes about your order, e.g. special notes for delivery.">
+                                   placeholder="Ghi chú cho bên vận chuyển.">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
                         <div class="checkout__order">
-                            <h4 class="order__title">Your order</h4>
-                            <div class="checkout__order__products">Product <span>Total</span></div>
+                            <h4 class="order__title">Đơn hàng của bạn</h4>
+                            <div class="checkout__order__products">Mặt hàng <span>Tổng</span></div>
                             <ul class="checkout__total__products">
                                 <li>01. Vanilla salted caramel <span>$ 300.0</span></li>
                                 <li>02. German chocolate <span>$ 170.0</span></li>
@@ -142,21 +139,19 @@
                                 <li>04. Cluten free mini dozen <span>$ 110.0</span></li>
                             </ul>
                             <ul class="checkout__total__all">
-                                <li>Subtotal <span>$750.99</span></li>
-                                <li>Total <span>$750.99</span></li>
+                                <li>Tổng tiền tạm tính <span>$750.99</span></li>
+                                <li>Tổng tiền <span>$750.99</span></li>
                             </ul>
                             <div class="checkout__input__checkbox">
                                 <label for="acc-or">
-                                    Create an account?
+                                    Tạo tài khoản?
                                     <input type="checkbox" id="acc-or">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua.</p>
                             <div class="checkout__input__checkbox">
                                 <label for="payment">
-                                    Check Payment
+                                    Chọn phương thức thanh toán
                                     <input type="checkbox" id="payment">
                                     <span class="checkmark"></span>
                                 </label>
@@ -168,7 +163,7 @@
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <button type="submit" class="site-btn">PLACE ORDER</button>
+                            <button type="submit" class="site-btn">ĐẶT HÀNG</button>
                         </div>
                     </div>
                 </div>

@@ -10,11 +10,11 @@
                 <div class="row">
                     <div class="col-xl-5 col-lg-7 col-md-8">
                         <div class="hero__text">
-                            <h6>Summer Collection</h6>
-                            <h2>Fall - Winter Collections 2030</h2>
-                            <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                commitment to exceptional quality.</p>
-                            <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                            <h6>Bộ sưu tập mùa hè</h6>
+                            <h2>Những bộ sưu tập mùa thu - đông 2030</h2>
+                            <p>Thương hiệu đắt tiền. Được làm một cách cẩn thận, chuyên nghiệp
+                            đề có được chất lượng ngoài mong đợi</p>
+                            <a href="#" class="primary-btn">Mua sắm ngay <span class="arrow_right"></span></a>
                             <div class="hero__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -31,11 +31,11 @@
                 <div class="row">
                     <div class="col-xl-5 col-lg-7 col-md-8">
                         <div class="hero__text">
-                            <h6>Summer Collection</h6>
-                            <h2>Fall - Winter Collections 2030</h2>
-                            <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                commitment to exceptional quality.</p>
-                            <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                            <h6>Bộ sưu tập mùa hè</h6>
+                            <h2>Những bộ sưu tập mùa thu - đông 2030</h2>
+                            <p>Thương hiệu đắt tiền. Được làm một cách cẩn thận, chuyên nghiệp
+                            đề có được chất lượng ngoài mong đợi</p>
+                            <a href="#" class="primary-btn">Mua sắm ngay <span class="arrow_right"></span></a>
                             <div class="hero__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -61,8 +61,8 @@
                         <img src="img/banner/banner-1.jpg" alt="">
                     </div>
                     <div class="banner__item__text">
-                        <h2>Clothing Collections 2030</h2>
-                        <a href="#">Shop now</a>
+                        <h2>Bộ sưu tập quần áo 2030</h2>
+                        <a href="#">Mua sắm ngay</a>
                     </div>
                 </div>
             </div>
@@ -72,8 +72,8 @@
                         <img src="img/banner/banner-2.jpg" alt="">
                     </div>
                     <div class="banner__item__text">
-                        <h2>Accessories</h2>
-                        <a href="#">Shop now</a>
+                        <h2>Trang sức</h2>
+                        <a href="#">Mua sắm ngay</a>
                     </div>
                 </div>
             </div>
@@ -83,8 +83,8 @@
                         <img src="img/banner/banner-3.jpg" alt="">
                     </div>
                     <div class="banner__item__text">
-                        <h2>Shoes Spring 2030</h2>
-                        <a href="#">Shop now</a>
+                        <h2>Đôi giày cho xuân 2030</h2>
+                        <a href="#">Mua sắm ngay</a>
                     </div>
                 </div>
             </div>
@@ -99,9 +99,9 @@
         <div class="row">
             <div class="col-lg-12">
                 <ul class="filter__controls">
-                    <li class="active" data-filter="*">Best Sellers</li>
-                    <li data-filter=".new-arrivals">New Arrivals</li>
-                    <li data-filter=".hot-sales">Hot Sales</li>
+                    <li class="active" data-filter="*">Bán chạy nhất</li>
+                    <li data-filter=".new-arrivals">Mới ra mắt</li>
+                    <li data-filter=".hot-sales">Giảm giá sâu</li>
                 </ul>
             </div>
         </div>
@@ -109,16 +109,16 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                 <div class="product__item">
                     <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
-                        <span class="label">New</span>
+                        <span class="label">Mới</span>
                         <ul class="product__hover">
                             <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>So sánh</span></a></li>
                             <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                         </ul>
                     </div>
                     <div class="product__item__text">
                         <h6>Piqué Biker Jacket</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <a href="#" class="add-cart">+ Thêm vào giỏ hàng</a>
                         <div class="rating">
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
@@ -146,13 +146,13 @@
                     <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
                         <ul class="product__hover">
                             <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>So sánh</span></a></li>
                             <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                         </ul>
                     </div>
                     <div class="product__item__text">
                         <h6>Piqué Biker Jacket</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <a href="#" class="add-cart">+ Thêm vào giỏ hàng</a>
                         <div class="rating">
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
@@ -178,16 +178,16 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                 <div class="product__item sale">
                     <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
-                        <span class="label">Sale</span>
+                        <span class="label">Giảm giá</span>
                         <ul class="product__hover">
                             <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>So sánh</span></a></li>
                             <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                         </ul>
                     </div>
                     <div class="product__item__text">
                         <h6>Multi-pocket Chest Bag</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <a href="#" class="add-cart">+ Thêm vào giỏ hàng</a>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -215,13 +215,13 @@
                     <div class="product__item__pic set-bg" data-setbg="img/product/product-4.jpg">
                         <ul class="product__hover">
                             <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>So sánh</span></a></li>
                             <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                         </ul>
                     </div>
                     <div class="product__item__text">
                         <h6>Diagonal Textured Cap</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <a href="#" class="add-cart">+ Thêm vào giỏ hàng</a>
                         <div class="rating">
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
@@ -249,13 +249,13 @@
                     <div class="product__item__pic set-bg" data-setbg="img/product/product-5.jpg">
                         <ul class="product__hover">
                             <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>So sánh</span></a></li>
                             <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                         </ul>
                     </div>
                     <div class="product__item__text">
                         <h6>Lether Backpack</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <a href="#" class="add-cart">+ Thêm vào giỏ hàng</a>
                         <div class="rating">
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
@@ -281,16 +281,16 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
                 <div class="product__item sale">
                     <div class="product__item__pic set-bg" data-setbg="img/product/product-6.jpg">
-                        <span class="label">Sale</span>
+                        <span class="label">Giảm giá</span>
                         <ul class="product__hover">
                             <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>So sánh</span></a></li>
                             <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                         </ul>
                     </div>
                     <div class="product__item__text">
                         <h6>Ankle Boots</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <a href="#" class="add-cart">+ Thêm vào giỏ hàng</a>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -318,13 +318,13 @@
                     <div class="product__item__pic set-bg" data-setbg="img/product/product-7.jpg">
                         <ul class="product__hover">
                             <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>So sánh</span></a></li>
                             <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                         </ul>
                     </div>
                     <div class="product__item__text">
                         <h6>T-shirt Contrast Pocket</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <a href="#" class="add-cart">+ Thêm vào giỏ hàng</a>
                         <div class="rating">
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
@@ -352,13 +352,13 @@
                     <div class="product__item__pic set-bg" data-setbg="img/product/product-8.jpg">
                         <ul class="product__hover">
                             <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>So sánh</span></a></li>
                             <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                         </ul>
                     </div>
                     <div class="product__item__text">
                         <h6>Basic Flowing Scarf</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <a href="#" class="add-cart">+ Thêm vào giỏ hàng</a>
                         <div class="rating">
                             <i class="fa fa-star-o"></i>
                             <i class="fa fa-star-o"></i>
@@ -392,41 +392,41 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="categories__text">
-                    <h2>Clothings Hot <br /> <span>Shoe Collection</span> <br /> Accessories</h2>
+                    <h2>Quần áo<br /> <span>Bộ sưu tập giày</span> <br /> Trang sức</h2>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="categories__hot__deal">
                     <img src="img/product-sale.png" alt="">
                     <div class="hot__deal__sticker">
-                        <span>Sale Of</span>
+                        <span>Giảm giá còn</span>
                         <h5>$29.99</h5>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 offset-lg-1">
                 <div class="categories__deal__countdown">
-                    <span>Deal Of The Week</span>
+                    <span>Deal trong tuần</span>
                     <h2>Multi-pocket Chest Bag Black</h2>
                     <div class="categories__deal__countdown__timer" id="countdown">
                         <div class="cd-item">
                             <span>3</span>
-                            <p>Days</p>
+                            <p>Ngày</p>
                         </div>
                         <div class="cd-item">
                             <span>1</span>
-                            <p>Hours</p>
+                            <p>Tiếng</p>
                         </div>
                         <div class="cd-item">
                             <span>50</span>
-                            <p>Minutes</p>
+                            <p>Phút</p>
                         </div>
                         <div class="cd-item">
                             <span>18</span>
-                            <p>Seconds</p>
+                            <p>Giây</p>
                         </div>
                     </div>
-                    <a href="#" class="primary-btn">Shop now</a>
+                    <a href="#" class="primary-btn">Mua sắm ngay</a>
                 </div>
             </div>
         </div>
@@ -451,8 +451,8 @@
             <div class="col-lg-4">
                 <div class="instagram__text">
                     <h2>Instagram</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
+                    <p>Chúng tôi luôn lắng nghe, tiếp nhận những đóng góp, ý kiến của khách hàng các bạn để
+                        đưa ra chất lượng dịch vụ tốt nhất.</p>
                     <h3>#Male_Fashion</h3>
                 </div>
             </div>
@@ -467,39 +467,39 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title">
-                    <span>Latest News</span>
-                    <h2>Fashion New Trends</h2>
+                    <span>Tin tức mới nhất</span>
+                    <h2>Trào lưu mới nhất</h2>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-1.jpg"></div>
+                    <div class="blog__item__pic set-bg" data-setbg="img/blog/details/blog-titles/blog-title-1.jpg"></div>
                     <div class="blog__item__text">
-                        <span><img src="img/icon/calendar.png" alt=""> 16 February 2020</span>
-                        <h5>What Curling Irons Are The Best Ones</h5>
-                        <a href="#">Read More</a>
+                        <span><img src="img/icon/calendar.png" alt=""> 21 Tháng 2 Năm 2019</span>
+                        <h5>Bạn có phải là một trong hàng ngàn người không biêt điều này</h5>
+                        <a href="blog-details-1.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-2.jpg"></div>
+                    <div class="blog__item__pic set-bg" data-setbg="img/blog/details/blog-titles/blog-title-2.jpg"></div>
                     <div class="blog__item__text">
-                        <span><img src="img/icon/calendar.png" alt=""> 21 February 2020</span>
-                        <h5>Eternity Bands Do Last Forever</h5>
-                        <a href="#">Read More</a>
+                        <span><img src="img/icon/calendar.png" alt=""> 26 Tháng 10 Năm 2020</span>
+                        <h5>Bộ suit nam thanh lịch cho ngày cuối tuần</h5>
+                        <a href="blog-details-2.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-3.jpg"></div>
+                    <div class="blog__item__pic set-bg" data-setbg="img/blog/details/blog-titles/blog-title-3.jpg"></div>
                     <div class="blog__item__text">
-                        <span><img src="img/icon/calendar.png" alt=""> 28 February 2020</span>
-                        <h5>The Health Benefits Of Sunglasses</h5>
-                        <a href="#">Read More</a>
+                        <span><img src="img/icon/calendar.png" alt=""> 12 Tháng 11 Năm 2020</span>
+                        <h5>Áo Jacket là gì? Tìm hiểu về áo Jacket</h5>
+                        <a href="blog-details-3.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>

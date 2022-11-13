@@ -31,7 +31,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h2>Our Blog</h2>
+                <h2>Blog của Nhóm 14</h2>
             </div>
         </div>
     </div>
@@ -44,91 +44,91 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-1.jpg"></div>
+                    <div class="blog__item__pic set-bg" data-setbg="img/blog/details/blog-titles/blog-title-1.jpg"></div>
                     <div class="blog__item__text">
-                        <span><img src="img/icon/calendar.png" alt=""> 16 February 2020</span>
-                        <h5>What Curling Irons Are The Best Ones</h5>
-                        <a href="#">Read More</a>
+                        <span><img src="img/icon/calendar.png" alt=""> 21 Tháng 2 Năm 2019</span>
+                        <h5>Bạn có phải là một trong hàng ngàn người không biêt điều này</h5>
+                        <a href="blog-details-1.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-2.jpg"></div>
+                    <div class="blog__item__pic set-bg" data-setbg="img/blog/details/blog-titles/blog-title-2.jpg"></div>
                     <div class="blog__item__text">
-                        <span><img src="img/icon/calendar.png" alt=""> 21 February 2020</span>
-                        <h5>Eternity Bands Do Last Forever</h5>
-                        <a href="#">Read More</a>
+                        <span><img src="img/icon/calendar.png" alt=""> 26 Tháng 10 Năm 2020</span>
+                        <h5>Bộ suit nam thanh lịch cho ngày cuối tuần</h5>
+                        <a href="blog-details-2.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-3.jpg"></div>
+                    <div class="blog__item__pic set-bg" data-setbg="img/blog/details/blog-titles/blog-title-3.jpg"></div>
                     <div class="blog__item__text">
-                        <span><img src="img/icon/calendar.png" alt=""> 28 February 2020</span>
-                        <h5>The Health Benefits Of Sunglasses</h5>
-                        <a href="#">Read More</a>
+                        <span><img src="img/icon/calendar.png" alt=""> 12 Tháng 11 Năm 2020</span>
+                        <h5>Áo Jacket là gì? Tìm hiểu về áo Jackety</h5>
+                        <a href="blog-details-3.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-4.jpg"></div>
+                    <div class="blog__item__pic set-bg" data-setbg="img/blog/details/blog-titles/blog-title-4.jpg"></div>
                     <div class="blog__item__text">
-                        <span><img src="img/icon/calendar.png" alt=""> 16 February 2020</span>
-                        <h5>Aiming For Higher The Mastopexy</h5>
-                        <a href="#">Read More</a>
+                        <span><img src="img/icon/calendar.png" alt=""> 27 Tháng 12 Năm 2020</span>
+                        <h5>Giặt áo da và bảo quản áo da đúng cách</h5>
+                        <a href="blog-details-4.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-5.jpg"></div>
+                    <div class="blog__item__pic set-bg" data-setbg="img/blog/details/blog-titles/blog-title-5.jpg"></div>
                     <div class="blog__item__text">
-                        <span><img src="img/icon/calendar.png" alt=""> 21 February 2020</span>
-                        <h5>Wedding Rings A Gift For A Lifetime</h5>
-                        <a href="#">Read More</a>
+                        <span><img src="img/icon/calendar.png" alt=""> 19 Tháng 4 Năm 2020</span>
+                        <h5>Nguồn gốc ra đời của Mũ Beret - Mũ nồi</h5>
+                        <a href="blog-details-5.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-6.jpg"></div>
+                    <div class="blog__item__pic set-bg" data-setbg="img/blog/details/blog-titles/blog-title-6.jpg"></div>
                     <div class="blog__item__text">
-                        <span><img src="img/icon/calendar.png" alt=""> 28 February 2020</span>
-                        <h5>The Different Methods Of Hair Removal</h5>
-                        <a href="#">Read More</a>
+                        <span><img src="img/icon/calendar.png" alt=""> 8 Tháng 3 Năm 2020</span>
+                        <h5>Cách chọn kính râm chất lượng</h5>
+                        <a href="blog-details-6.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-7.jpg"></div>
+                    <div class="blog__item__pic set-bg" data-setbg="img/blog/details/blog-titles/blog-title-7.jpg"></div>
                     <div class="blog__item__text">
-                        <span><img src="img/icon/calendar.png" alt=""> 16 February 2020</span>
-                        <h5>Hoop Earrings A Style From History</h5>
-                        <a href="#">Read More</a>
+                        <span><img src="img/icon/calendar.png" alt=""> 16 Tháng 3 Năm 2020</span>
+                        <h5>Khái niệm về vải Kaki (khaki) là gì?</h5>
+                        <a href="blog-details-7.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-8.jpg"></div>
+                    <div class="blog__item__pic set-bg" data-setbg="img/blog/details/blog-titles/blog-title-8.jpg"></div>
                     <div class="blog__item__text">
-                        <span><img src="img/icon/calendar.png" alt=""> 21 February 2020</span>
-                        <h5>Lasik Eye Surgery Are You Ready</h5>
-                        <a href="#">Read More</a>
+                        <span><img src="img/icon/calendar.png" alt=""> 28 Tháng 1 Năm 2020</span>
+                        <h5>Khái niệm về sợi Polyester</h5>
+                        <a href="blog-details-8.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="blog__item">
-                    <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-9.jpg"></div>
+                    <div class="blog__item__pic set-bg" data-setbg="img/blog/details/blog-titles/blog-title-9.jpg"></div>
                     <div class="blog__item__text">
-                        <span><img src="img/icon/calendar.png" alt=""> 28 February 2020</span>
-                        <h5>Lasik Eye Surgery Are You Ready</h5>
-                        <a href="#">Read More</a>
+                        <span><img src="img/icon/calendar.png" alt=""> 28 Tháng 1 Năm 2020</span>
+                        <h5>Sneaker là gì? Lịch sử giày Sneaker</h5>
+                        <a href="blog-details-9.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
