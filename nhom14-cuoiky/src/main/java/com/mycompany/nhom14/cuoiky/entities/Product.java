@@ -23,31 +23,46 @@ import javax.persistence.Temporal;
  * @author Linh
  */
 @Entity
-@Table(name = "product")
+@Table(name = "products")
 public class Product implements Serializable {
     @Id    
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_id")
+    @Column(name = "ID")
     private int id;
+    @Column(name = "TITLE")
     private String title;
+    @Column(name = "PRICE")
     private int price;
+    @Column(name = "QUANTITY")
     private int quantity;
+    @Column(name = "IMAGE")
     private String image;
+    @Column(name = "DESCRIPTION")
     private String description;
-    @Column(name = "created_at")
+    @Column(name = "CREATED_AT")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date createdAt;
-    @Column(name = "update_at")
+    @Column(name = "UPDATE_AT")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date updateAt;
+
+    @Column(name = "isDeleted")
+    private boolean isDeleted;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "CATEGORY_ID")
     private Category category;    
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "discount_id")
+    @JoinColumn(name = "DISCOUNT_ID")
     private Discount discount;
-    @OneToOne(mappedBy ="product")
-    private Galery galery;
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
 
     /**
      * @return the id
@@ -192,15 +207,6 @@ public class Product implements Serializable {
     /**
      * @return the galery
      */
-    public Galery getGalery() {
-        return galery;
-    }
 
-    /**
-     * @param galery the galery to set
-     */
-    public void setGalery(Galery galery) {
-        this.galery = galery;
-    }
 
 }

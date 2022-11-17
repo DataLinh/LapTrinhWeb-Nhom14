@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.nhom14.cuoiky;
+package com.mycompany.nhom14.cuoiky.util;
 
 import com.mycompany.nhom14.cuoiky.entities.Category;
 import com.mycompany.nhom14.cuoiky.entities.Discount;
 import com.mycompany.nhom14.cuoiky.entities.Feedback;
-import com.mycompany.nhom14.cuoiky.entities.Galery;
+import com.mycompany.nhom14.cuoiky.entities.Gallery;
 import com.mycompany.nhom14.cuoiky.entities.Order;
-import com.mycompany.nhom14.cuoiky.entities.OrderDetails;
+import com.mycompany.nhom14.cuoiky.entities.OrderLine;
 import com.mycompany.nhom14.cuoiky.entities.Product;
 import com.mycompany.nhom14.cuoiky.entities.User;
 import org.hibernate.SessionFactory;
@@ -33,10 +33,10 @@ public class HibernateUtil {
         conf.addAnnotatedClass(Discount.class);
         conf.addAnnotatedClass(User.class);
         conf.addAnnotatedClass(Product.class);
-        conf.addAnnotatedClass(Galery.class);
+        conf.addAnnotatedClass(Gallery.class);
         conf.addAnnotatedClass(Feedback.class);
         conf.addAnnotatedClass(Order.class);
-        conf.addAnnotatedClass(OrderDetails.class);
+        conf.addAnnotatedClass(OrderLine.class);
 
         ServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(conf.getProperties()).build();
 

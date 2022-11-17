@@ -23,22 +23,45 @@ import javax.persistence.Temporal;
  * @author Linh
  */
 @Entity
-@Table(name = "discount")
+@Table(name = "discounts")
 public class Discount implements Serializable {    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "discount_id")
+    @Column(name = "ID")
     private int id;
+    @Column(name = "NAME")
     private String name;
+    @Column(name = "TYPE")
     private byte type;
-    @Column(name = "created_at")
+    @Column(name = "EFFECTIVE_DATE")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date createdAt;
-    @Column(name = "expiration_date")
+    @Column(name = "EXPIRATION_DATE")
     @Temporal(javax.persistence.TemporalType.DATE)    
     private Date expirationDate;
+    @Column(name = "VALUE")
+    private int value ;
+    @Column(name = "isDeleted")
+    private boolean isDeleted;
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
+
     @OneToMany(fetch = FetchType.LAZY,mappedBy="discount", cascade=CascadeType.ALL)
     private List<Product> products;
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 
     /**
      * @return the id

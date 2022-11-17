@@ -4,7 +4,7 @@
  */
 package com.mycompany.nhom14.cuoiky.entities;
 
-import com.mycompany.nhom14.cuoiky.HibernateUtil;
+import com.mycompany.nhom14.cuoiky.util.HibernateUtil;
 import org.hibernate.Session;
 
 /**
@@ -27,7 +27,7 @@ public class Test {
             User u = session.get(User.class, 2);
             System.out.println(u.getAddress());
 
-            Galery g = session.get(Galery.class, 2);
+            Gallery g = session.get(Gallery.class, 2);
             System.out.println(g.getDescription());
 
            Feedback f = session.get(Feedback.class, 2);
@@ -36,8 +36,8 @@ public class Test {
             Order o = session.get(Order.class, 2);
            System.out.println(o.getAddress());
 
- //           OrderDetails od = session.get(OrderDetails.class, 2);
-   //         System.out.println(od.getProduct());
+//            OrderDetails od = session.get(OrderDetails.class, 2);
+//            System.out.println(od.getProduct());
 
     //        Product p = new Product();
     //        p.setTitle("Ok");            
@@ -45,7 +45,7 @@ public class Test {
       //      Discount d = session.get(Discount.class, 2);
       //     p.setCategory(c);
        //    p.setDiscount(d);
-            session.save(p);
+//            session.save(p);
             session.close();
         }
     }

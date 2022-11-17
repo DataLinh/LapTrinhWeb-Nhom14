@@ -5,8 +5,6 @@
 package com.mycompany.nhom14.cuoiky.entities;
 
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,8 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -24,22 +20,36 @@ import javax.persistence.Table;
  * @author Linh
  */
 @Entity
-@Table(name = "orders_details")
-public class OrderDetails implements Serializable {
+@Table(name = "order_line")
+public class OrderLine implements Serializable {
 
     @Id
+    @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "PRICE")
     private int price;
+    @Column(name = "QUATITY")
     private int quantity;
-    @Column(name = "total_money")
+    @Column(name = "TOTAL_MONEY")
     private int totalMoney;
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "order_id")
-    private Order orders;
-    @OneToMany(fetch = FetchType.LAZY,mappedBy="orders_details", cascade=CascadeType.ALL)
-    private List<Product> products;
 
+    @Column(name = "isDeleted")
+    private boolean isDeleted;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ORDER_ID")
+    private Order order;
+//    @OneToMany(fetch = FetchType.LAZY,mappedBy="order_details", cascade=CascadeType.ALL)
+//    private List<Product> products;
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
     /**
      * @return the id
      */
@@ -100,29 +110,29 @@ public class OrderDetails implements Serializable {
      * @return the orders
      */
     public Order getOrders() {
-        return orders;
+        return order;
     }
 
     /**
      * @param orders the orders to set
      */
     public void setOrders(Order orders) {
-        this.orders = orders;
+        this.order = orders;
     }
 
     /**
      * @return the products
      */
-    public List<Product> getProducts() {
-        return products;
-    }
-
-    /**
-     * @param products the products to set
-     */
-    public void setProducts(List<Product> products) {
-        this.products = products;
-    }
+//    public List<Product> getProducts() {
+//        return products;
+//    }
+//
+//    /**
+//     * @param products the products to set
+//     */
+//    public void setProducts(List<Product> products) {
+//        this.products = products;
+//    }
 
     
 
