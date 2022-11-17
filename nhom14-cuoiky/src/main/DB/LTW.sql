@@ -88,20 +88,6 @@ INSERT INTO `feed_backs` VALUES (1, 'Long', 'Lê', 'lelong@gmail.com', '11111111
 INSERT INTO `feed_backs` VALUES (2, 'Linh', 'Đức', 'duclinh@gmail.com', '2222222222', 'Đánh giá sản phẩm', 'Sản phẩm tuyệt vời ông mặt trời', b'0');
 
 -- ----------------------------
--- Table structure for galleries
--- ----------------------------
-DROP TABLE IF EXISTS `galleries`;
-CREATE TABLE `galleries`  (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `PRODUCT_ID` int(11) NULL DEFAULT NULL,
-  `DESCRIPTION` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL,
-  `IMAGE_LIST` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
-  `isDeleted` bit(1) NULL DEFAULT NULL,
-  PRIMARY KEY (`ID`) USING BTREE,
-  INDEX `FK9lw6jr8j2faw9rhrh4c1y7q9a`(`PRODUCT_ID`) USING BTREE,
-  CONSTRAINT `FK9lw6jr8j2faw9rhrh4c1y7q9a` FOREIGN KEY (`PRODUCT_ID`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
-
 -- ----------------------------
 -- Table structure for order_line
 -- ----------------------------
