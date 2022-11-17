@@ -5,8 +5,6 @@
 package com.mycompany.nhom14.cuoiky.entities;
 
 import java.io.Serializable;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -14,8 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -24,8 +20,8 @@ import javax.persistence.Table;
  * @author Linh
  */
 @Entity
-@Table(name = "order_details")
-public class OrderDetails implements Serializable {
+@Table(name = "order_line")
+public class OrderLine implements Serializable {
 
     @Id
     @Column(name = "ID")

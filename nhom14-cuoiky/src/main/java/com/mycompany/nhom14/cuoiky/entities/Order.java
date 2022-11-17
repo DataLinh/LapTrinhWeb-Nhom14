@@ -6,8 +6,6 @@ package com.mycompany.nhom14.cuoiky.entities;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -16,7 +14,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -59,7 +56,7 @@ public class Order implements Serializable {
     private User user;
     
     @OneToOne(mappedBy ="order")
-    private OrderDetails orderDetails;
+    private OrderLine orderDetails;
 
     public boolean isDeleted() {
         return isDeleted;
@@ -211,14 +208,14 @@ public class Order implements Serializable {
     /**
      * @return the orderDetails
      */
-    public OrderDetails getOrderDetails() {
+    public OrderLine getOrderDetails() {
         return orderDetails;
     }
 
     /**
      * @param orderDetails the orderDetails to set
      */
-    public void setOrderDetails(OrderDetails orderDetails) {
+    public void setOrderDetails(OrderLine orderDetails) {
         this.orderDetails = orderDetails;
     }
 
