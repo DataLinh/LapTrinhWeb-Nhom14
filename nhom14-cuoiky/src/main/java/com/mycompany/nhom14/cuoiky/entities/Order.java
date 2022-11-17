@@ -20,7 +20,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
-
 /**
  *
  * @author Linh
@@ -30,30 +29,45 @@ import javax.persistence.Temporal;
 public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "order_id")
+    @Column(name = "ID")
     private int id;
     
-    @Column(name = "full_name")
+    @Column(name = "FULL_NAME")
     private String fullName;
-    
+
+    @Column(name = "EMAIL")
     private String email;
-    @Column(name = "phone_number")
+    @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
+    @Column(name = "ADDRESS")
     private String address;
+    @Column(name = "NOTE")
     private String note;
-    @Column(name = "order_date")
+    @Column(name = "ORDER_DATE")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date orderDate;
+    @Column(name = "STATUS")
     private int status;
-    @Column(name = "total_money")
+    @Column(name = "TOTAL_MONEY")
     private int totalMoney;
+
+    @Column(name = "isDeleted")
+    private boolean isDeleted;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "USER_ID")
     private User user;
     
-    @OneToOne(mappedBy ="orders")
+    @OneToOne(mappedBy ="order")
     private OrderDetails orderDetails;
 
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
     /**
      * @return the id
      */

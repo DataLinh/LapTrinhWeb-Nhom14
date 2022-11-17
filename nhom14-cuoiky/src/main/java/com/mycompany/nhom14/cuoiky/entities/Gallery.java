@@ -8,12 +8,10 @@ import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -22,19 +20,31 @@ import javax.persistence.Table;
  * @author Linh
  */
 @Entity
-@Table(name = "gallery")
-public class Galery implements Serializable {
-
+@Table(name = "galleries")
+public class Gallery implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "galery_id")
+    @Column(name = "ID")
     private int id;
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "product_id")
+    @JoinColumn(name = "PRODUCT_ID")
     private Product Product;
+
+    @Column(name = "DESCRIPTION")
     private String description;
-    @Column(name = "image_list")
+    @Column(name = "IMAGE_LIST")
     private String imageList;
+
+    @Column(name = "isDeleted")
+    private boolean isDeleted;
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
 
     /**
      * @return the id

@@ -22,15 +22,28 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "category")
+@Table(name = "categories")
 public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "category_id")
+    @Column(name = "ID")
     private int id;
-    @Column(name = "category_name")
+    @Column(name = "NAME")
     private String categoryName;
+    @Column(name = "DESCRIPTION")
     private String description;
+
+    @Column(name = "isDeleted")
+    private boolean isDeleted;
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
+
     @OneToMany(fetch = FetchType.LAZY,mappedBy="category", cascade=CascadeType.ALL)
     private List<Product> products;
     /**

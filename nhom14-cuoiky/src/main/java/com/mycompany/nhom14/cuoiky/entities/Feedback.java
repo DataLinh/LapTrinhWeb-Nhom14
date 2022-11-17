@@ -17,23 +17,35 @@ import javax.persistence.Table;
  * @author Linh
  */
 @Entity
-@Table(name = "feed_back")
+@Table(name = "feed_backs")
 public class Feedback implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     private int id;
-    @Column(name = "first_name")
+    @Column(name = "FIRST_NAME")
     private String firstName;
-    @Column(name = "lase_name")
+    @Column(name = "LAST_NAME")
     private String lastName;
+    @Column(name = "EMAIL")
     private String email;
-    @Column(name = "phone_number")
+    @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
-    @Column(name = "subject_name")
+    @Column(name = "SUBJECT_NAME")
     private String subjectName;
-    private String note;
+    @Column(name = "isDeleted")
+    private boolean isDeleted;
 
+    @Column(name = "DESCRIPTION")
+    private String description;
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
     /**
      * @return the id
      */
@@ -121,15 +133,19 @@ public class Feedback implements Serializable {
     /**
      * @return the note
      */
-    public String getNote() {
-        return note;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    /**
-     * @param note the note to set
-     */
-    public void setNote(String note) {
-        this.note = note;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }

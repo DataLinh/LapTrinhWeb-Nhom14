@@ -30,24 +30,39 @@ public class User implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+    @Column(name = "ID")
     private int id;
+    @Column(name = "FULLNAME")
     private String fullName;
+    @Column(name = "EMAIL")
     private String email;
-    @Column(name = "phone_number")
+    @Column(name = "PHONE_NUMBER")
     private String phoneNumber;
+    @Column(name = "ADDRESS")
     private String address;
+    @Column(name = "PASSWORD")
     private String password;
+    @Column(name = "ROLE")
     private boolean role;
-    @Column(name = "create_at")
+    @Column(name = "CREATED_AT")
     @Temporal(javax.persistence.TemporalType.DATE)  
     private Date createdAt;
-    @Column(name = "update_at")
+    @Column(name = "UPDATE_AT")
     @Temporal(javax.persistence.TemporalType.DATE)  
     private Date updateAt;
-    @OneToMany(fetch = FetchType.LAZY,mappedBy="users", cascade=CascadeType.ALL)
+    @Column(name = "isDeleted")
+    private boolean isDeleted;
+
+    @OneToMany(fetch = FetchType.LAZY,mappedBy="user", cascade=CascadeType.ALL)
     private List<Order> orders;
 
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
     /**
      * @return the id
      */
