@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/owl.carousel.min.css" type="text/css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/css/slicknav.min.css" type="text/css">
         
-        <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css">
     </head>
 
     <body>
@@ -96,25 +96,25 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3">
                         <div class="header__logo">
-                            <a href="./index.jsp"><img src="${pageContext.request.contextPath}/img/logo.png" alt=""></a>
+                            <a href="${pageContext.request.contextPath}/index.jsp"><img src="${pageContext.request.contextPath}/img/logo.png" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li><a href="index.jsp">Trang Chủ</a></li>
-                                <li><a href="shop.jsp">Sản phẩm</a></li>
+                                <li><a href="${pageContext.request.contextPath}/index.jsp">Trang Chủ</a></li>
+                                <li><a href="${pageContext.request.contextPath}/shop.jsp">Sản phẩm</a></li>
                                 <li><a href="#">Xem thêm</a>
                                     <ul class="dropdown">
-                                        <li><a href="about.jsp">Về chúng tôi</a></li>
-                                        <li><a href="shop-details.jsp">Thông tin cửa hàng</a></li>
-                                        <li><a href="shopping-cart.jsp">Giỏ hàng</a></li>
-                                        <li><a href="checkout.jsp">Thanh toán</a></li>
-                                        <li><a href="blog.jsp">Thông tin blog</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/about.jsp">Về chúng tôi</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/shop-details.jsp">Thông tin cửa hàng</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/shopping-cart.jsp">Giỏ hàng</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/checkout.jsp">Thanh toán</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/blog.jsp">Thông tin blog</a></li>
                                     </ul>
                                 </li>
                                 <!--   <li class="active"><a href="./blog.jsp">Blog</a></li>  --> 
-                                <li><a href="contact.jsp">Liên hệ</a></li>
+                                <li><a href="${pageContext.request.contextPath}/contact.jsp">Liên hệ</a></li>
                             </ul>
                         </nav>
                     </div>

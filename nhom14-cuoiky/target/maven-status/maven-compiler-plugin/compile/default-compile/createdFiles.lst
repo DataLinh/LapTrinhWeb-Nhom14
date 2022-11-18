@@ -1,10 +1,10 @@
 com\mycompany\nhom14\cuoiky\entities\Feedback.class
 com\mycompany\nhom14\cuoiky\entities\Product.class
 com\mycompany\nhom14\cuoiky\entities\Test.class
-com\mycompany\nhom14\cuoiky\HibernateUtil.class
 com\mycompany\nhom14\cuoiky\entities\Order.class
 com\mycompany\nhom14\cuoiky\entities\User.class
 com\mycompany\nhom14\cuoiky\entities\Category.class
-com\mycompany\nhom14\cuoiky\entities\Galery.class
-com\mycompany\nhom14\cuoiky\entities\OrderDetails.class
+com\mycompany\nhom14\cuoiky\entities\Gallery.class
+com\mycompany\nhom14\cuoiky\entities\OrderLine.class
 com\mycompany\nhom14\cuoiky\entities\Discount.class
+com\mycompany\nhom14\cuoiky\util\HibernateUtil.class
