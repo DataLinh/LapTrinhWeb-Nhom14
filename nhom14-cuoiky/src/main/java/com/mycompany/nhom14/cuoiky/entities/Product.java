@@ -5,7 +5,10 @@
 package com.mycompany.nhom14.cuoiky.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -36,7 +39,7 @@ public class Product implements Serializable {
     @Column(name = "QUANTITY")
     private int quantity;
     @Column(name = "IMAGE")
-    private String image;
+    private List<String> image = new ArrayList<>();
     @Column(name = "DESCRIPTION")
     private String description;
     @Column(name = "CREATED_AT")
