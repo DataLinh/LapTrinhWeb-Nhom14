@@ -1,4 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<c:url value="/view/admin" var="url"></c:url>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,7 +10,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Trang đăng ký</title>
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="${url}/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
