@@ -19,14 +19,14 @@
                   rel="stylesheet">
 
             <!-- Css Styles -->
-            <link rel="stylesheet" href="view/web/css/bootstrap.min.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/font-awesome.min.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/elegant-icons.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/magnific-popup.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/nice-select.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/owl.carousel.min.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/slicknav.min.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/style.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/bootstrap.min.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/font-awesome.min.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/elegant-icons.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/magnific-popup.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/nice-select.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/owl.carousel.min.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/slicknav.min.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/style.css" type="text/css">
         </head>
 
         <body>
@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="about__pic">
-                                <img src="view/web/img/about/about-us.jpg" alt="">
+                                <img src="${url}/img/about/about-us.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                                 </p>
                                 <div class="testimonial__author">
                                     <div class="testimonial__author__pic">
-                                        <img src="view/web/img/about/testimonial-author.jpg" alt="">
+                                        <img src="${url}/img/about/testimonial-author.jpg" alt="">
                                     </div>
                                     <div class="testimonial__author__text">
                                         <h5>Augusta Schultz</h5>
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 p-0">
-                            <div class="testimonial__pic set-bg" data-setbg="view/web/img/about/testimonial-pic.jpg"></div>
+                            <div class="testimonial__pic set-bg" data-setbg="${url}/img/about/testimonial-pic.jpg"></div>
                         </div>
                     </div>
                 </div>
@@ -175,28 +175,28 @@
                     <div class="row">
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="team__item">
-                                <img src="view/web/img/about/team-1.jpg" alt="">
+                                <img src="${url}/img/about/team-1.jpg" alt="">
                                 <h4>John Smith</h4>
                                 <span>Nhà thiết kết thời trang</span>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="team__item">
-                                <img src="view/web/img/about/team-2.jpg" alt="">
+                                <img src="${url}/img/about/team-2.jpg" alt="">
                                 <h4>Christine Wise</h4>
                                 <span>Giám đốc điều hành</span>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="team__item">
-                                <img src="view/web/img/about/team-3.jpg" alt="">
+                                <img src="${url}/img/about/team-3.jpg" alt="">
                                 <h4>Sean Robbins</h4>
                                 <span>Quản lý</span>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="team__item">
-                                <img src="view/web/img/about/team-4.jpg" alt="">
+                                <img src="${url}/img/about/team-4.jpg" alt="">
                                 <h4>Lucy Myers</h4>
                                 <span>Người vận chuyển</span>
                             </div>
@@ -219,28 +219,28 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
-                            <a href="#" class="client__item"><img src="view/web/img/clients/client-1.png" alt=""></a>
+                            <a href="#" class="client__item"><img src="${url}/img/clients/client-1.png" alt=""></a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
-                            <a href="#" class="client__item"><img src="view/web/img/clients/client-2.png" alt=""></a>
+                            <a href="#" class="client__item"><img src="${url}/img/clients/client-2.png" alt=""></a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
-                            <a href="#" class="client__item"><img src="view/web/img/clients/client-3.png" alt=""></a>
+                            <a href="#" class="client__item"><img src="${url}/img/clients/client-3.png" alt=""></a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
-                            <a href="#" class="client__item"><img src="view/web/img/clients/client-4.png" alt=""></a>
+                            <a href="#" class="client__item"><img src="${url}/img/clients/client-4.png" alt=""></a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
-                            <a href="#" class="client__item"><img src="view/web/img/clients/client-5.png" alt=""></a>
+                            <a href="#" class="client__item"><img src="${url}/img/clients/client-5.png" alt=""></a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
-                            <a href="#" class="client__item"><img src="view/web/img/clients/client-6.png" alt=""></a>
+                            <a href="#" class="client__item"><img src="${url}/img/clients/client-6.png" alt=""></a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
-                            <a href="#" class="client__item"><img src="view/web/img/clients/client-7.png" alt=""></a>
+                            <a href="#" class="client__item"><img src="${url}/img/clients/client-7.png" alt=""></a>
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-4 col-6">
-                            <a href="#" class="client__item"><img src="view/web/img/clients/client-8.png" alt=""></a>
+                            <a href="#" class="client__item"><img src="${url}/img/clients/client-8.png" alt=""></a>
                         </div>
                     </div>
                 </div>

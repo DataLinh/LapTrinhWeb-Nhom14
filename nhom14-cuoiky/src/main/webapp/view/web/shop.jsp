@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<c:url value="view/web" var="url"></c:url>
+<c:url value="view/web}" var="url"></c:url>
 
 
     <!DOCTYPE html>
@@ -19,14 +19,14 @@
                   rel="stylesheet">
 
             <!-- Css Styles -->
-            <link rel="stylesheet" href="view/web/css/bootstrap.min.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/font-awesome.min.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/elegant-icons.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/magnific-popup.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/nice-select.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/owl.carousel.min.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/slicknav.min.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/style.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/bootstrap.min.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/font-awesome.min.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/elegant-icons.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/magnific-popup.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/nice-select.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/owl.carousel.min.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/slicknav.min.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/style.css" type="text/css">
         </head>
 
         <body>
@@ -238,12 +238,12 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="view/web/img/product/product-2.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="${url}/img/product/product-2.jpg">
                                             <ul class="product__hover">
-                                                <li><a href="#"><img src="view/web/img/icon/heart.png" alt=""></a></li>
-                                                <li><a href="#"><img src="view/web/img/icon/compare.png" alt=""> <span>So sánh</span></a>
+                                                <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                                 </li>
-                                                <li><a href="#"><img src="view/web/img/icon/search.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
@@ -273,13 +273,13 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item sale">
-                                        <div class="product__item__pic set-bg" data-setbg="view/web/img/product/product-3.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="${url}/img/product/product-3.jpg">
                                             <span class="label">Giảm giá</span>
                                             <ul class="product__hover">
-                                                <li><a href="#"><img src="view/web/img/icon/heart.png" alt=""></a></li>
-                                                <li><a href="#"><img src="view/web/img/icon/compare.png" alt=""> <span>So sánh</span></a>
+                                                <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                                 </li>
-                                                <li><a href="#"><img src="view/web/img/icon/search.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
@@ -309,12 +309,12 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="view/web/img/product/product-4.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="${url}/img/product/product-4.jpg">
                                             <ul class="product__hover">
-                                                <li><a href="#"><img src="view/web/img/icon/heart.png" alt=""></a></li>
-                                                <li><a href="#"><img src="view/web/img/icon/compare.png" alt=""> <span>So sánh</span></a>
+                                                <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                                 </li>
-                                                <li><a href="#"><img src="view/web/img/icon/search.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
@@ -344,13 +344,13 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item sale">
-                                        <div class="product__item__pic set-bg" data-setbg="view/web/img/product/product-6.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="${url}/img/product/product-6.jpg">
                                             <span class="label">Giảm giá</span>
                                             <ul class="product__hover">
-                                                <li><a href="#"><img src="view/web/img/icon/heart.png" alt=""></a></li>
-                                                <li><a href="#"><img src="view/web/img/icon/compare.png" alt=""> <span>So sánh</span></a>
+                                                <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                                 </li>
-                                                <li><a href="#"><img src="view/web/img/icon/search.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
@@ -380,12 +380,12 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="view/web/img/product/product-7.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="${url}/img/product/product-7.jpg">
                                             <ul class="product__hover">
-                                                <li><a href="#"><img src="view/web/img/icon/heart.png" alt=""></a></li>
-                                                <li><a href="#"><img src="view/web/img/icon/compare.png" alt=""> <span>So sánh</span></a>
+                                                <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                                 </li>
-                                                <li><a href="#"><img src="view/web/img/icon/search.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
@@ -415,12 +415,12 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="view/web/img/product/product-8.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="${url}/img/product/product-8.jpg">
                                             <ul class="product__hover">
-                                                <li><a href="#"><img src="view/web/img/icon/heart.png" alt=""></a></li>
-                                                <li><a href="#"><img src="view/web/img/icon/compare.png" alt=""> <span>So sánh</span></a>
+                                                <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                                 </li>
-                                                <li><a href="#"><img src="view/web/img/icon/search.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
@@ -450,12 +450,12 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="view/web/img/product/product-9.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="${url}/img/product/product-9.jpg">
                                             <ul class="product__hover">
-                                                <li><a href="#"><img src="view/web/img/icon/heart.png" alt=""></a></li>
-                                                <li><a href="#"><img src="view/web/img/icon/compare.png" alt=""> <span>So sánh</span></a>
+                                                <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                                 </li>
-                                                <li><a href="#"><img src="view/web/img/icon/search.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
@@ -485,13 +485,13 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item sale">
-                                        <div class="product__item__pic set-bg" data-setbg="view/web/img/product/product-10.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="${url}/img/product/product-10.jpg">
                                             <span class="label">Giảm giá</span>
                                             <ul class="product__hover">
-                                                <li><a href="#"><img src="view/web/img/icon/heart.png" alt=""></a></li>
-                                                <li><a href="#"><img src="view/web/img/icon/compare.png" alt=""> <span>So sánh</span></a>
+                                                <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                                 </li>
-                                                <li><a href="#"><img src="view/web/img/icon/search.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
@@ -521,12 +521,12 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="view/web/img/product/product-11.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="${url}/img/product/product-11.jpg">
                                             <ul class="product__hover">
-                                                <li><a href="#"><img src="view/web/img/icon/heart.png" alt=""></a></li>
-                                                <li><a href="#"><img src="view/web/img/icon/compare.png" alt=""> <span>So sánh</span></a>
+                                                <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                                 </li>
-                                                <li><a href="#"><img src="view/web/img/icon/search.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
@@ -556,13 +556,13 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item sale">
-                                        <div class="product__item__pic set-bg" data-setbg="view/web/img/product/product-12.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="${url}/img/product/product-12.jpg">
                                             <span class="label">Giảm giá</span>
                                             <ul class="product__hover">
-                                                <li><a href="#"><img src="view/web/img/icon/heart.png" alt=""></a></li>
-                                                <li><a href="#"><img src="view/web/img/icon/compare.png" alt=""> <span>So sánh</span></a>
+                                                <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                                 </li>
-                                                <li><a href="#"><img src="view/web/img/icon/search.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
@@ -592,12 +592,12 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="view/web/img/product/product-13.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="${url}/img/product/product-13.jpg">
                                             <ul class="product__hover">
-                                                <li><a href="#"><img src="view/web/img/icon/heart.png" alt=""></a></li>
-                                                <li><a href="#"><img src="view/web/img/icon/compare.png" alt=""> <span>So sánh</span></a>
+                                                <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                                 </li>
-                                                <li><a href="#"><img src="view/web/img/icon/search.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">
@@ -627,12 +627,12 @@
                                 </div>
                                 <div class="col-lg-4 col-md-6 col-sm-6">
                                     <div class="product__item">
-                                        <div class="product__item__pic set-bg" data-setbg="view/web/img/product/product-14.jpg">
+                                        <div class="product__item__pic set-bg" data-setbg="${url}/img/product/product-14.jpg">
                                             <ul class="product__hover">
-                                                <li><a href="#"><img src="view/web/img/icon/heart.png" alt=""></a></li>
-                                                <li><a href="#"><img src="view/web/img/icon/compare.png" alt=""> <span>So sánh</span></a>
+                                                <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                                 </li>
-                                                <li><a href="#"><img src="view/web/img/icon/search.png" alt=""></a></li>
+                                                <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>
                                             </ul>
                                         </div>
                                         <div class="product__item__text">

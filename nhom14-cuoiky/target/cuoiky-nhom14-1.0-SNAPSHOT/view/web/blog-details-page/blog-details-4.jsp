@@ -22,14 +22,14 @@
               rel="stylesheet">
 
         <!-- Css Styles -->
-        <link rel="stylesheet" href="/view/web/css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="/view/web/css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="/view/web/css/elegant-icons.css" type="text/css">
-        <link rel="stylesheet" href="/view/web/css/magnific-popup.css" type="text/css">
-        <link rel="stylesheet" href="/view/web/css/nice-select.css" type="text/css">
-        <link rel="stylesheet" href="/view/web/css/owl.carousel.min.css" type="text/css">
-        <link rel="stylesheet" href="/view/web/css/slicknav.min.css" type="text/css">
-        <link rel="stylesheet" href="/view/web/css/style.css" type="text/css">
+        <link rel="stylesheet" href="/${url}/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="/${url}/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="/${url}/css/elegant-icons.css" type="text/css">
+        <link rel="stylesheet" href="/${url}/css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="/${url}/css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="/${url}/css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="/${url}/css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="/${url}/css/style.css" type="text/css">
     </head>
 
 <!-- Blog Details Hero Begin -->
@@ -57,7 +57,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-lg-12">
                 <div class="blog__details__pic">
-                    <img src="/view/web/blog/details/blog-titles/blog-title-4.jpg" alt="">
+                    <img src="/${url}/blog/details/blog-titles/blog-title-4.jpg" alt="">
                 </div>
             </div>
             <div class="col-lg-8">
@@ -82,7 +82,7 @@
                         <h3>1. Giặt áo da với dầu oliu</h3>
                     </div>
                     <div>
-                        <img src="/view/web/blog/details/blog-details/blog-detail-4.jpg" alt=""/>
+                        <img src="/${url}/blog/details/blog-details/blog-detail-4.jpg" alt=""/>
                     </div>
                     <p>
                     <br>
@@ -96,7 +96,7 @@
                         <h3>2. Giặt áo da bằng máy giặt</h3>
                     </div>
                     <div>
-                        <img src="/view/web/blog/details/blog-details/blog-detail-4.1.jpg" alt=""/>
+                        <img src="/${url}/blog/details/blog-details/blog-detail-4.1.jpg" alt=""/>
                     </div>
                     <div class="blog__details__text">
                         <br>
@@ -122,7 +122,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="blog__details__author">
                                     <div class="blog__details__author__pic">
-                                        <img src="/view/web/blog/details/blog-authors/blog-author-2.jpg" alt="">
+                                        <img src="/${url}/blog/details/blog-authors/blog-author-2.jpg" alt="">
                                     </div>
                                     <div class="blog__details__author__text">
                                         <h5>Nhóm 14</h5>

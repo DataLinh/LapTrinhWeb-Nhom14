@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<c:url value="view/web" var="url"></c:url>
 
 <!-- Footer Section Begin -->
 <footer class="footer">
@@ -9,10 +9,10 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer__about">
                     <div class="footer__logo">
-                        <a href="#"><img src="view/web/img/footer-logo.png" alt=""></a>
+                        <a href="#"><img src="${url}/img/footer-logo.png" alt=""></a>
                     </div>
                     <p>Chuyên cung cấp các sản phẩm chất lượng tốt nhất với giá thành tối ưu phù hợp cho học sinh sinh viên.</p>
-                    <a href="#"><img src="view/web/img/payment.png" alt=""></a>
+                    <a href="#"><img src="${url}/img/payment.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
@@ -69,16 +69,16 @@
 <!-- Footer Section End -->
 
 <!-- Js Plugins -->
-<script src="view/web/js/jquery-3.3.1.min.js"></script>
-<script src="view/web/js/bootstrap.min.js"></script>
-<script src="view/web/js/jquery.nice-select.min.js"></script>
-<script src="view/web/js/jquery.nicescroll.min.js"></script>
-<script src="view/web/js/jquery.magnific-popup.min.js"></script>
-<script src="view/web/js/jquery.countdown.min.js"></script>
-<script src="view/web/js/jquery.slicknav.js"></script>
-<script src="view/web/js/mixitup.min.js"></script>
-<script src="view/web/js/owl.carousel.min.js"></script>
-<script src="view/web/js/main.js"></script>
+<script src="${url}/js/jquery-3.3.1.min.js"></script>
+<script src="${url}/js/bootstrap.min.js"></script>
+<script src="${url}/js/jquery.nice-select.min.js"></script>
+<script src="${url}/js/jquery.nicescroll.min.js"></script>
+<script src="${url}/js/jquery.magnific-popup.min.js"></script>
+<script src="${url}/js/jquery.countdown.min.js"></script>
+<script src="${url}/js/jquery.slicknav.js"></script>
+<script src="${url}/js/mixitup.min.js"></script>
+<script src="${url}/js/owl.carousel.min.js"></script>
+<script src="${url}/js/main.js"></script>
 </body>
 
 </html>

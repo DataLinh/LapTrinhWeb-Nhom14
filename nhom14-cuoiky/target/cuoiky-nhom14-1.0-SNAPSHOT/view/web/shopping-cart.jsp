@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<c:url value="view/web" var="url"></c:url>
+<c:url value="view/web}" var="url"></c:url>
 
 
     <!DOCTYPE html>
@@ -19,14 +19,14 @@
                   rel="stylesheet">
 
             <!-- Css Styles -->
-            <link rel="stylesheet" href="view/web/css/bootstrap.min.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/font-awesome.min.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/elegant-icons.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/magnific-popup.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/nice-select.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/owl.carousel.min.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/slicknav.min.css" type="text/css">
-            <link rel="stylesheet" href="view/web/css/style.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/bootstrap.min.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/font-awesome.min.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/elegant-icons.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/magnific-popup.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/nice-select.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/owl.carousel.min.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/slicknav.min.css" type="text/css">
+            <link rel="stylesheet" href="${url}/css/style.css" type="text/css">
         </head>
 
         <body>
@@ -68,7 +68,7 @@
                                         <tr>
                                             <td class="product__cart__item">
                                                 <div class="product__cart__item__pic">
-                                                    <img src="view/web/img/shopping-cart/cart-1.jpg" alt="">
+                                                    <img src="${url}/img/shopping-cart/cart-1.jpg" alt="">
                                                 </div>
                                                 <div class="product__cart__item__text">
                                                     <h6>T-shirt Contrast Pocket</h6>
@@ -88,7 +88,7 @@
                                         <tr>
                                             <td class="product__cart__item">
                                                 <div class="product__cart__item__pic">
-                                                    <img src="view/web/img/shopping-cart/cart-2.jpg" alt="">
+                                                    <img src="${url}/img/shopping-cart/cart-2.jpg" alt="">
                                                 </div>
                                                 <div class="product__cart__item__text">
                                                     <h6>Diagonal Textured Cap</h6>
@@ -108,7 +108,7 @@
                                         <tr>
                                             <td class="product__cart__item">
                                                 <div class="product__cart__item__pic">
-                                                    <img src="view/web/img/shopping-cart/cart-3.jpg" alt="">
+                                                    <img src="${url}/img/shopping-cart/cart-3.jpg" alt="">
                                                 </div>
                                                 <div class="product__cart__item__text">
                                                     <h6>Basic Flowing Scarf</h6>
@@ -128,7 +128,7 @@
                                         <tr>
                                             <td class="product__cart__item">
                                                 <div class="product__cart__item__pic">
-                                                    <img src="view/web/img/shopping-cart/cart-4.jpg" alt="">
+                                                    <img src="${url}/img/shopping-cart/cart-4.jpg" alt="">
                                                 </div>
                                                 <div class="product__cart__item__text">
                                                     <h6>Basic Flowing Scarf</h6>

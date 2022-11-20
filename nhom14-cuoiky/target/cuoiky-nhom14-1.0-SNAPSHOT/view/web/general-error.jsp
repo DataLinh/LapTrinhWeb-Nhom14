@@ -20,7 +20,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:700,900" rel="stylesheet">
 
 	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="/view/web/css/style1.css" />
+	<link type="text/css" rel="stylesheet" href="/${url}/css/style1.css" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,7 +39,7 @@
 				<h1>404</h1>
 				<h2>Đã xảy ra lỗi</h2>
 			</div>
-			<a href="/view/web/index.jsp">Trang chủ</a>
+			<a href="/${url}/index.jsp">Trang chủ</a>
 		</div>
 	</div>
 
