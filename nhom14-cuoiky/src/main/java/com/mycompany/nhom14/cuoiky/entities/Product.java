@@ -27,8 +27,8 @@ import javax.persistence.Temporal;
  */
 @Entity
 @Table(name = "products")
-public class Product implements Serializable {
-    @Id    
+public class Product implements Serializable {    
+	@Id    
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private int id;
@@ -58,6 +58,9 @@ public class Product implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DISCOUNT_ID")
     private Discount discount;
+    @OneToOne
+    @JoinColumn(name = "ID") 
+    private OrderLine orderLines;
 
     public boolean isDeleted() {
         return isDeleted;
@@ -67,144 +70,92 @@ public class Product implements Serializable {
         isDeleted = deleted;
     }
 
-    /**
-     * @return the id
-     */
     public int getId() {
-        return id;
-    }
+		return id;
+	}
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    /**
-     * @return the title
-     */
-    public String getTitle() {
-        return title;
-    }
+	public String getTitle() {
+		return title;
+	}
 
-    /**
-     * @param title the title to set
-     */
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-    /**
-     * @return the price
-     */
-    public int getPrice() {
-        return price;
-    }
+	public int getPrice() {
+		return price;
+	}
 
-    /**
-     * @param price the price to set
-     */
-    public void setPrice(int price) {
-        this.price = price;
-    }
+	public void setPrice(int price) {
+		this.price = price;
+	}
 
-    /**
-     * @return the quantity
-     */
-    public int getQuantity() {
-        return quantity;
-    }
+	public int getQuantity() {
+		return quantity;
+	}
 
-    /**
-     * @param quantity the quantity to set
-     */
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 
-    /**
-     * @return the image
-     */
-    public String getImage() {
-        return image;
-    }
+	public String getImage() {
+		return image;
+	}
 
-    /**
-     * @param image the image to set
-     */
-    public void setImage(String image) {
-        this.image = image;
-    }
+	public void setImage(String image) {
+		this.image = image;
+	}
 
-    /**
-     * @return the description
-     */
-    public String getDescription() {
-        return description;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    /**
-     * @param description the description to set
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    /**
-     * @return the createdAt
-     */
-    public Date getCreatedAt() {
-        return createdAt;
-    }
+	public Date getCreatedAt() {
+		return createdAt;
+	}
 
-    /**
-     * @param createdAt the createdAt to set
-     */
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
 
-    /**
-     * @return the updateAt
-     */
-    public Date getUpdateAt() {
-        return updateAt;
-    }
+	public Date getUpdateAt() {
+		return updateAt;
+	}
 
-    /**
-     * @param updateAt the updateAt to set
-     */
-    public void setUpdateAt(Date updateAt) {
-        this.updateAt = updateAt;
-    }
+	public void setUpdateAt(Date updateAt) {
+		this.updateAt = updateAt;
+	}
 
-    /**
-     * @return the category
-     */
-    public Category getCategory() {
-        return category;
-    }
+	public Category getCategory() {
+		return category;
+	}
 
-    /**
-     * @param category the category to set
-     */
-    public void setCategory(Category category) {
-        this.category = category;
-    }
+	public void setCategory(Category category) {
+		this.category = category;
+	}
 
-    /**
-     * @return the discount
-     */
-    public Discount getDiscount() {
-        return discount;
-    }
+	public Discount getDiscount() {
+		return discount;
+	}
 
-    /**
-     * @param discount the discount to set
-     */
-    public void setDiscount(Discount discount) {
-        this.discount = discount;
-    }
+	public void setDiscount(Discount discount) {
+		this.discount = discount;
+	}
+
+	public OrderLine getOrderLines() {
+		return orderLines;
+	}
+
+	public void setOrderLines(OrderLine orderLines) {
+		this.orderLines = orderLines;
+	}
 
 }

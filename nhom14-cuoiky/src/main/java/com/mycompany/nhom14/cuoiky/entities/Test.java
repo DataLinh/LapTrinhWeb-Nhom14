@@ -27,8 +27,7 @@ public class Test {
             User u = session.get(User.class, 2);
             System.out.println(u.getAddress());
 
-            Gallery g = session.get(Gallery.class, 2);
-            System.out.println(g.getDescription());
+            
 
            Feedback f = session.get(Feedback.class, 2);
             System.out.println(f.getFirstName());
