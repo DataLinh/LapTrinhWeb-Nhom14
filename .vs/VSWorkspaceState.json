@@ -5,7 +5,9 @@
     "\\nhom14-cuoiky\\src",
     "\\nhom14-cuoiky\\src\\main",
     "\\nhom14-cuoiky\\src\\main\\webapp",
-    "\\nhom14-cuoiky\\src\\main\\webapp\\view"
+    "\\nhom14-cuoiky\\src\\main\\webapp\\view",
+    "\\nhom14-cuoiky\\src\\main\\webapp\\view\\admin"
   ],
+  "SelectedNode": "\\nhom14-cuoiky\\src\\main\\webapp\\view\\admin\\index.jsp",
   "PreviewInSolutionExplorer": false
 }

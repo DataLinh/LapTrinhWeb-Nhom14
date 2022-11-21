@@ -39,7 +39,7 @@ public class Product implements Serializable {
     @Column(name = "QUANTITY")
     private int quantity;
     @Column(name = "IMAGE")
-    private List<String> image = new ArrayList<>();
+    private String image;
     @Column(name = "DESCRIPTION")
     private String description;
     @Column(name = "CREATED_AT")
@@ -206,10 +206,5 @@ public class Product implements Serializable {
     public void setDiscount(Discount discount) {
         this.discount = discount;
     }
-
-    /**
-     * @return the galery
-     */
-
 
 }

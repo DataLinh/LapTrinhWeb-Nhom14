@@ -113,7 +113,6 @@
                     </div>
                     <div class="container-fluid px-4">
               <button type="button" class="btn btn-success">Thêm sản phẩm</button>
-                <button type="button" class="btn btn-success">Cập nhật sản phẩm</button>
                 </div>
                 	<table class="table">
   						<thead>
@@ -136,7 +135,7 @@
       							<td>@mdo</td>
       							<td>@mdo</td>
       							<td>@mdo</td>
-      				
+      							<th><div><button type="button" class="btn btn-success">Cập nhật sản phẩm</button></div></th>
 							    </tr>
 							    <tr>
 							      <th scope="row">2</th>
@@ -146,7 +145,7 @@
 							      <td>@fat</td>
 							      <td>@fat</td>
 							      <td>@fat</td>
-		
+		                          <th><div><button type="button" class="btn btn-success">Cập nhật sản phẩm</button></div></th>
 							    </tr>
 							    <tr>
 							      <th scope="row">3</th>
@@ -156,7 +155,7 @@
 							      <td>@twitter</td>
 							      <td>@twitter</td>
 							      <td>@twitter</td>
-	
+	                              <th><div><button type="button" class="btn btn-success">Cập nhật sản phẩm</button></div></th>
 							    </tr>
 							  </tbody>
 							</table>
