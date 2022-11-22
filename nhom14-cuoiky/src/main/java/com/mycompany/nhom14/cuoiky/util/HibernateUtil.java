@@ -7,7 +7,6 @@ package com.mycompany.nhom14.cuoiky.util;
 import com.mycompany.nhom14.cuoiky.entities.Category;
 import com.mycompany.nhom14.cuoiky.entities.Discount;
 import com.mycompany.nhom14.cuoiky.entities.Feedback;
-import com.mycompany.nhom14.cuoiky.entities.Gallery;
 import com.mycompany.nhom14.cuoiky.entities.Order;
 import com.mycompany.nhom14.cuoiky.entities.OrderLine;
 import com.mycompany.nhom14.cuoiky.entities.Product;
