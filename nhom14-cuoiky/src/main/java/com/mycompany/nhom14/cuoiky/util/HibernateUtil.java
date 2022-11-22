@@ -4,6 +4,8 @@
  */
 package com.mycompany.nhom14.cuoiky.util;
 
+import com.mycompany.nhom14.cuoiky.entities.Cart;
+import com.mycompany.nhom14.cuoiky.entities.CartItem;
 import com.mycompany.nhom14.cuoiky.entities.Category;
 import com.mycompany.nhom14.cuoiky.entities.Discount;
 import com.mycompany.nhom14.cuoiky.entities.Feedback;
@@ -35,7 +37,9 @@ public class HibernateUtil {
         conf.addAnnotatedClass(Feedback.class);
         conf.addAnnotatedClass(Order.class);
         conf.addAnnotatedClass(OrderLine.class);
-
+        conf.addAnnotatedClass(Cart.class);
+        conf.addAnnotatedClass(CartItem.class);
+        
         ServiceRegistry registry = new StandardServiceRegistryBuilder().applySettings(conf.getProperties()).build();
 
         FACTORY = conf.buildSessionFactory(registry);

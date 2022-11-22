@@ -15,25 +15,26 @@ public class Test {
 
     public static void main(String[] args) {
         try ( Session session = HibernateUtil.getFactory().openSession()) {
-            Category c = session.get(Category.class, 2);
-            System.out.println(c.getCategoryName());
+//            Category c = session.get(Category.class, 2);
+//            System.out.println(c.getCategoryName());
+//
+//            Discount d = session.get(Discount.class, 2);
+//            System.out.println(d.getName());
+//
 
-            Discount d = session.get(Discount.class, 2);
-            System.out.println(d.getName());
-
-            Product p = session.get(Product.class, 1);
-            System.out.println(p.getTitle());
-
-            User u = session.get(User.class, 2);
-            System.out.println(u.getAddress());
-
-            
-
-           Feedback f = session.get(Feedback.class, 2);
-            System.out.println(f.getFirstName());
-
-            Order o = session.get(Order.class, 2);
-           System.out.println(o.getAddress());
+            Cart c = session.get(Cart.class, 1);
+            System.out.println(c.getUser().getFullName());
+//
+//            User u = session.get(User.class, 2);
+//            System.out.println(u.getAddress());
+//
+//            
+//
+//           Feedback f = session.get(Feedback.class, 2);
+//            System.out.println(f.getFirstName());
+//
+//            Order o = session.get(Order.class, 2);
+//           System.out.println(o.getAddress());
 
 //            OrderDetails od = session.get(OrderDetails.class, 2);
 //            System.out.println(od.getProduct());
