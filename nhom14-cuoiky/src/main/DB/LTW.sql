@@ -315,7 +315,6 @@ CREATE TABLE `users`  (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'Lê Long', 'lelong@gmail.com', '1111111111', 'Hồ Chí Minh', '123', b'1', '2022-08-01 22:30:28', '2022-08-02 22:30:40', b'0');
-INSERT INTO `users` VALUES (2, 'Ðức Linh', 'duclinh@gmail.com', '2222222222', 'Hồ Chí Minh', '123', b'1', '2021-03-01 22:30:46', '2022-09-01 22:30:54', b'0');
-
+INSERT INTO `users` VALUES (1, 'Lê Long', 'lelong@gmail.com', '1111111111', 'Hồ Chí Minh', '123', b'1', '2022-08-01 22:30:28', '2022-08-02 22:30:40', b'0', '1');
+INSERT INTO `users` VALUES (2, 'Ðức Linh', 'duclinh@gmail.com', '2222222222', 'Hồ Chí Minh', '123', b'1', '2021-03-01 22:30:46', '2022-09-01 22:30:54', b'0', '2');
 SET FOREIGN_KEY_CHECKS = 1;
