@@ -32,7 +32,6 @@ public class HibernateUtil {
         conf.addAnnotatedClass(Discount.class);
         conf.addAnnotatedClass(User.class);
         conf.addAnnotatedClass(Product.class);
-        conf.addAnnotatedClass(Gallery.class);
         conf.addAnnotatedClass(Feedback.class);
         conf.addAnnotatedClass(Order.class);
         conf.addAnnotatedClass(OrderLine.class);
