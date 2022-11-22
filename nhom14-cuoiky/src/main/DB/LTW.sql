@@ -11,11 +11,54 @@
  Target Server Version : 80013
  File Encoding         : 65001
 
- Date: 17/11/2022 13:16:47
+ Date: 22/11/2022 15:14:54
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for cartitems
+-- ----------------------------
+DROP TABLE IF EXISTS `cartitems`;
+CREATE TABLE `cartitems`  (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `QUANTITY` int(11) NULL DEFAULT NULL,
+  `PRODUCT_ID` int(11) NULL DEFAULT NULL,
+  `CART_ID` int(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`ID`) USING BTREE,
+  INDEX `PRODUCT_ID`(`PRODUCT_ID`) USING BTREE,
+  INDEX `CART_ID`(`CART_ID`) USING BTREE,
+  CONSTRAINT `cartitems_ibfk_1` FOREIGN KEY (`PRODUCT_ID`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `cartitems_ibfk_2` FOREIGN KEY (`CART_ID`) REFERENCES `carts` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of cartitems
+-- ----------------------------
+INSERT INTO `cartitems` VALUES (1, 1, 1, 1);
+INSERT INTO `cartitems` VALUES (2, 2, 2, 1);
+INSERT INTO `cartitems` VALUES (3, 5, 1, 2);
+INSERT INTO `cartitems` VALUES (4, 5, 1, 2);
+INSERT INTO `cartitems` VALUES (5, 3, 1, 3);
+INSERT INTO `cartitems` VALUES (6, 4, 2, 3);
+
+-- ----------------------------
+-- Table structure for carts
+-- ----------------------------
+DROP TABLE IF EXISTS `carts`;
+CREATE TABLE `carts`  (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `TOTAL` int(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`ID`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of carts
+-- ----------------------------
+INSERT INTO `carts` VALUES (1, 100000);
+INSERT INTO `carts` VALUES (2, 300000);
+INSERT INTO `carts` VALUES (3, 150000);
 
 -- ----------------------------
 -- Table structure for categories
@@ -29,7 +72,7 @@ CREATE TABLE `categories`  (
   PRIMARY KEY (`ID`) USING BTREE,
   INDEX `ID`(`ID`) USING BTREE,
   INDEX `ID_2`(`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of categories
@@ -50,14 +93,14 @@ CREATE TABLE `discounts`  (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NAME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `TYPE` bit(1) NULL DEFAULT NULL,
-  `EFFECTIVE_DATE` datetime(0) NULL DEFAULT NULL,
-  `EXPIRATION_DATE` datetime(0) NULL DEFAULT NULL,
+  `EFFECTIVE_DATE` datetime NULL DEFAULT NULL,
+  `EXPIRATION_DATE` datetime NULL DEFAULT NULL,
   `VALUE` int(11) NULL DEFAULT NULL,
   `isDeleted` bit(1) NULL DEFAULT NULL,
   PRIMARY KEY (`ID`) USING BTREE,
   INDEX `ID`(`ID`) USING BTREE,
   INDEX `ID_2`(`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of discounts
@@ -79,7 +122,7 @@ CREATE TABLE `feed_backs`  (
   `DESCRIPTION` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL,
   `isDeleted` bit(1) NULL DEFAULT NULL,
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of feed_backs
@@ -87,7 +130,6 @@ CREATE TABLE `feed_backs`  (
 INSERT INTO `feed_backs` VALUES (1, 'Long', 'Lê', 'lelong@gmail.com', '1111111111', 'Đánh giá sản phẩm', 'Sản phẩm đẹp chất lượng', b'0');
 INSERT INTO `feed_backs` VALUES (2, 'Linh', 'Đức', 'duclinh@gmail.com', '2222222222', 'Đánh giá sản phẩm', 'Sản phẩm tuyệt vời ông mặt trời', b'0');
 
--- ----------------------------
 -- ----------------------------
 -- Table structure for order_line
 -- ----------------------------
@@ -103,7 +145,7 @@ CREATE TABLE `order_line`  (
   PRIMARY KEY (`ID`) USING BTREE,
   INDEX `FKmjiqse9djoqxafyfta6lc945`(`ORDER_ID`) USING BTREE,
   CONSTRAINT `FKmjiqse9djoqxafyfta6lc945` FOREIGN KEY (`ORDER_ID`) REFERENCES `orders` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of order_line
@@ -125,7 +167,7 @@ CREATE TABLE `orders`  (
   `PHONE_NUMBER` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `ADDRESS` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `NOTE` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL,
-  `ORDER_DATE` datetime(0) NULL DEFAULT NULL,
+  `ORDER_DATE` datetime NULL DEFAULT NULL,
   `STATUS` int(11) NULL DEFAULT NULL,
   `TOTAL_MONEY` int(11) NULL DEFAULT NULL,
   `isDeleted` bit(1) NULL DEFAULT NULL,
@@ -133,7 +175,7 @@ CREATE TABLE `orders`  (
   INDEX `FKodpu7ljn8tsfvwhk95kp4nugq`(`USER_ID`) USING BTREE,
   INDEX `ID`(`ID`) USING BTREE,
   CONSTRAINT `FKodpu7ljn8tsfvwhk95kp4nugq` FOREIGN KEY (`USER_ID`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of orders
@@ -153,8 +195,8 @@ CREATE TABLE `products`  (
   `QUANTITY` int(11) NULL DEFAULT NULL,
   `IMAGE` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `DESCRIPTION` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NULL,
-  `CREATED_AT` datetime(0) NULL DEFAULT NULL,
-  `UPDATE_AT` datetime(0) NULL DEFAULT NULL,
+  `CREATED_AT` datetime NULL DEFAULT NULL,
+  `UPDATE_AT` datetime NULL DEFAULT NULL,
   `DISCOUNT_ID` int(11) NULL DEFAULT NULL,
   `isDeleted` bit(1) NULL DEFAULT NULL,
   PRIMARY KEY (`ID`) USING BTREE,
@@ -163,7 +205,7 @@ CREATE TABLE `products`  (
   INDEX `ID`(`ID`) USING BTREE,
   CONSTRAINT `FK89flbvp09klukqvnbbq6hmyhj` FOREIGN KEY (`CATEGORY_ID`) REFERENCES `categories` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `FKc64bvca5hri8pyf5q1k1ks20c` FOREIGN KEY (`DISCOUNT_ID`) REFERENCES `discounts` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 79 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 80 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of products
@@ -260,12 +302,15 @@ CREATE TABLE `users`  (
   `ADDRESS` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `PASSWORD` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `ROLE` bit(1) NULL DEFAULT NULL,
-  `CREATED_AT` datetime(0) NULL DEFAULT NULL,
-  `UPDATE_AT` datetime(0) NULL DEFAULT NULL,
+  `CREATED_AT` datetime NULL DEFAULT NULL,
+  `UPDATE_AT` datetime NULL DEFAULT NULL,
   `isDeleted` bit(1) NULL DEFAULT NULL,
+  `CART_ID` int(11) NULL DEFAULT NULL,
+  INDEX `CART_ID`(`CART_ID`) USING BTREE,
+  CONSTRAINT FOREIGN KEY (`CART_ID`) REFERENCES `carts` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   PRIMARY KEY (`ID`) USING BTREE,
   INDEX `ID`(`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of users
@@ -274,29 +319,3 @@ INSERT INTO `users` VALUES (1, 'Lê Long', 'lelong@gmail.com', '1111111111', 'H�
 INSERT INTO `users` VALUES (2, 'Ðức Linh', 'duclinh@gmail.com', '2222222222', 'Hồ Chí Minh', '123', b'1', '2021-03-01 22:30:46', '2022-09-01 22:30:54', b'0');
 
 SET FOREIGN_KEY_CHECKS = 1;
-
-CREATE TABLE carts
-(
-ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-TOTAL INT,
-USER_ID INT,
-FOREIGN KEY (USER_ID) REFERENCES users(ID)
-);
-INSERT INTO `carts` VALUES (1, 100000, 1);
-INSERT INTO `carts` VALUES (2, 300000, 2);
-INSERT INTO `carts` VALUES (3, 150000, 1);
-
-CREATE TABLE cartitems(
-ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-QUANTITY INT ,
-PRODUCT_ID INT,
-CART_ID INT,
-FOREIGN KEY (PRODUCT_ID) REFERENCES products(ID),
-FOREIGN KEY (CART_ID) REFERENCES carts(ID)
-);
-INSERT INTO `cartitems` VALUES (1, 1, 1,1);
-INSERT INTO `cartitems` VALUES (2, 2, 2,1);
-INSERT INTO `cartitems` VALUES (3, 5, 1,2);
-INSERT INTO `cartitems` VALUES (4, 5, 1,2);
-INSERT INTO `cartitems` VALUES (5, 3, 1,3);
-INSERT INTO `cartitems` VALUES (6, 4, 2,3);
