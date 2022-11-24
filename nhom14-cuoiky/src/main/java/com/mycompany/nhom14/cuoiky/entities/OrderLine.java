@@ -87,4 +87,16 @@ public class OrderLine implements Serializable {
 	public void setOrders(Order orders) {
 		this.orders = orders;
 	}
+
+	public OrderLine() {
+	}
+
+	public OrderLine(int id, int price, int quantity, int totalMoney, boolean isDeleted, Order orders) {
+		this.id = id;
+		this.price = price;
+		this.quantity = quantity;
+		this.totalMoney = totalMoney;
+		this.isDeleted = isDeleted;
+		this.orders = orders;
+	}
 }

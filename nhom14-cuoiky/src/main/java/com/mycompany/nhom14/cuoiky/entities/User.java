@@ -29,7 +29,6 @@ import javax.persistence.Temporal;
 @Table(name = "users")
 public class User implements Serializable {
 
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -230,5 +229,21 @@ public class User implements Serializable {
         this.cart = cart;
     }
 
-    
+    public User() {
+    }
+
+    public User(int id, String fullName, String email, String phoneNumber, String address, String password, boolean role, Date createdAt, Date updateAt, boolean isDeleted, List<Order> orders, Cart cart) {
+        this.id = id;
+        this.fullName = fullName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.password = password;
+        this.role = role;
+        this.createdAt = createdAt;
+        this.updateAt = updateAt;
+        this.isDeleted = isDeleted;
+        this.orders = orders;
+        this.cart = cart;
+    }
 }

@@ -102,5 +102,14 @@ public class Cart implements Serializable {
         this.cartItems = cartItems;
     }
 
-    
+    public Cart() {
+    }
+
+    public Cart(int id, int total, User user, List<CartItem> cartItems) {
+        this.id = id;
+        this.total = total;
+        this.user = user;
+        this.cartItems = cartItems;
+    }
+
 }

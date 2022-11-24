@@ -229,6 +229,21 @@ public class Order implements Serializable {
 		this.orderLines = orderLines;
 	}
 
-   
+    public Order() {
+    }
 
+    public Order(int id, String fullName, String email, String phoneNumber, String address, String note, Date orderDate, int status, int totalMoney, boolean isDeleted, User user, Set<OrderLine> orderLines) {
+        this.id = id;
+        this.fullName = fullName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.note = note;
+        this.orderDate = orderDate;
+        this.status = status;
+        this.totalMoney = totalMoney;
+        this.isDeleted = isDeleted;
+        this.user = user;
+        this.orderLines = orderLines;
+    }
 }

@@ -148,4 +148,18 @@ public class Feedback implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Feedback() {
+    }
+
+    public Feedback(int id, String firstName, String lastName, String email, String phoneNumber, String subjectName, boolean isDeleted, String description) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.subjectName = subjectName;
+        this.isDeleted = isDeleted;
+        this.description = description;
+    }
 }
