@@ -6,7 +6,7 @@
          version="3.1">    
     <display-name>Nhóm 14</display-name>
     <welcome-file-list>
-        <welcome-file>trang-admin</welcome-file>
+        <welcome-file>trang-chu</welcome-file>
     </welcome-file-list>   
     <!-- đưa vào controller
        <session-config>
