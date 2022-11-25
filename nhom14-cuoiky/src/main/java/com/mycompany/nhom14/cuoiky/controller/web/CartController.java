@@ -16,17 +16,16 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Linh
  */
-
-@WebServlet(urlPatterns = {"/TrangChu"})
-public class HomeController  extends HttpServlet {
+@WebServlet(urlPatterns = {"/GioHang"})
+public class CartController extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        RequestDispatcher rd = request.getRequestDispatcher("/view/web/index.jsp");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher rd = request.getRequestDispatcher("/view/web/shopping-cart.jsp");
         rd.forward(request, response);
     }
-    
+
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 }

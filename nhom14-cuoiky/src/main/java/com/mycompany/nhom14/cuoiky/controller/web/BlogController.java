@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Linh
  */
 
-@WebServlet(urlPatterns = {"/blog"})
+@WebServlet(urlPatterns = {"/Blog"})
 public class BlogController  extends HttpServlet {
 
     @Override

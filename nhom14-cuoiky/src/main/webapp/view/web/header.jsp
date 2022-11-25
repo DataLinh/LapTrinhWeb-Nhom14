@@ -52,7 +52,7 @@
         <div class="offcanvas__nav__option">
             <a href="#" class="search-switch"><img src="${url}/img/icon/search.png" alt=""></a>
             <a href="#"><img src="${url}/img/icon/heart.png" alt=""></a>
-            <a href="#"><img src="${url}/img/icon/cart.png" alt=""> <span>0</span></a>
+            <a href="${pageContext.request.contextPath}/GioHang"><img src="${url}/img/icon/cart.png" alt=""> <span>0</span></a>
             <div class="price">$0.00</div>
         </div>
         <div id="mobile-menu-wrap"></div>
@@ -76,7 +76,7 @@
                         <div class="header__top__right">
                             <div class="header__top__links">
                                 <a href="#">Đăng nhập</a>
-                                <a href="#">Câu hỏi thường gặp</a>
+                                <a href="#">Đăng ký</a>
                             </div>
                         </div>
                     </div>
@@ -93,15 +93,15 @@
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li><a href="${pageContext.request.contextPath}/trang-chu">Trang Chủ</a></li>
+                            <li><a href="${pageContext.request.contextPath}/TrangChu">Trang Chủ</a></li>
                             <li><a href="${pageContext.request.contextPath}/shop">Sản phẩm</a></li>
                             <li><a href="#">Xem thêm</a>
                                 <ul class="dropdown">
-                                    <li><a href="${pageContext.request.contextPath}/about">Về chúng tôi</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/ThongTinCuaHang">Về chúng tôi</a></li>
                                     <li><a href="${pageContext.request.contextPath}/shop-details">Thông tin cửa hàng</a></li>
-                                    <li><a href="${pageContext.request.contextPath}/shopping-cart">Giỏ hàng</a></li>
+                                   <!-- <li><a href="${pageContext.request.contextPath}/GioHang">Giỏ hàng</a></li> -->
                                     <li><a href="${pageContext.request.contextPath}/checkout">Thanh toán</a></li>
-                                    <li><a href="${pageContext.request.contextPath}/blog">Thông tin blog</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/Blog">Thông tin blog</a></li>
                                 </ul>
                             </li>
                             <!--   <li class="active"><a href="./blog.jsp">Blog</a></li>  --> 
@@ -113,7 +113,7 @@
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="${url}/img/icon/search.png" alt=""></a>
                         <a href="#"><img src="${url}/img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="${url}/img/icon/cart.png" alt=""> <span>0</span></a>
+                        <a href="${pageContext.request.contextPath}/GioHang"><img src="${url}/img/icon/cart.png" alt=""> <span>0</span></a>
                         <div class="price">$0.00</div>
                     </div>
                 </div>
