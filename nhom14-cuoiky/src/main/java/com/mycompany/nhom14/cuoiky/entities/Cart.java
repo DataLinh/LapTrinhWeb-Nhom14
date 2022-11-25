@@ -40,12 +40,10 @@ public class Cart implements Serializable {
     @Column(name = "TOTAL")
     private int total;
 
-   @OneToOne(mappedBy = "cart")
-   private User user;
 
    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
    private List<CartItem> cartItems;
-
+    
     /**
      * @return the id
      */
@@ -77,16 +75,7 @@ public class Cart implements Serializable {
     /**
      * @return the user
      */
-    public User getUser() {
-        return user;
-    }
 
-    /**
-     * @param user the user to set
-     */
-    public void setUser(User user) {
-        this.user = user;
-    }
 
     /**
      * @return the cartItems
@@ -108,7 +97,6 @@ public class Cart implements Serializable {
     public Cart(int id, int total, User user, List<CartItem> cartItems) {
         this.id = id;
         this.total = total;
-        this.user = user;
         this.cartItems = cartItems;
     }
 

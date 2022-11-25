@@ -23,7 +23,7 @@ public class Test {
 //
 
             Cart c = session.get(Cart.class, 1);
-            System.out.println(c.getUser().getFullName());
+            System.out.println(c.getCartItems());
 //
 //            User u = session.get(User.class, 2);
 //            System.out.println(u.getAddress());

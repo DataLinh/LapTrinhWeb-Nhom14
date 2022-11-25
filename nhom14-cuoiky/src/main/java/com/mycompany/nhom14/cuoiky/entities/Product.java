@@ -65,8 +65,6 @@ public class Product implements Serializable {
     @JoinColumn(name = "ID")
     private OrderLine orderLines;
 
-    @OneToMany(fetch = FetchType.LAZY,mappedBy = "product", cascade=CascadeType.ALL)
-    private List<CartItem> cartItems;
 
 //    
 
@@ -241,16 +239,6 @@ public class Product implements Serializable {
     /**
      * @return the cartItems
      */
-    public List<CartItem> getCartItems() {
-        return cartItems;
-    }
-
-    /**
-     * @param cartItems the cartItems to set
-     */
-    public void setCartItems(List<CartItem> cartItems) {
-        this.cartItems = cartItems;
-    }
 
     public Product() {
     }
@@ -268,6 +256,5 @@ public class Product implements Serializable {
         this.category = category;
         this.discount = discount;
         this.orderLines = orderLines;
-        this.cartItems = cartItems;
     }
 }

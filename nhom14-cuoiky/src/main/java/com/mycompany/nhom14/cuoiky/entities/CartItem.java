@@ -5,6 +5,7 @@
 package com.mycompany.nhom14.cuoiky.entities;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,21 +30,17 @@ public class CartItem implements Serializable {
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    
-    @Column(name = "QUATITY")
+
+    @Column(name = "QUANTITY")
     private int quantity;
 
-    
-    
-    
-    
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CART_ID")
+    @JoinColumn(name = "CART_ID", referencedColumnName = "id")
     private Cart cart;
 
-   @ManyToOne(fetch = FetchType.LAZY)
-   @JoinColumn(name = "PRODUCT_ID")
-   private Product product;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "id")
+    private Product product;
 
     /**
      * @return the id
