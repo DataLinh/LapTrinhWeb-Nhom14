@@ -36,121 +36,46 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <c:forEach items="${cartItem}" var="c">
                                 <tr>
                                     <td class="product__cart__item">
                                         <div class="product__cart__item__pic">
                                             <img src="${url}/img/shopping-cart/cart-1.jpg" alt="">
-                                    </div>
-                                    <div class="product__cart__item__text">
-                                        <h6>T-shirt Contrast Pocket</h6>
-                                        <h5>$98.49</h5>
-                                    </div>
-                                </td>
-                                <td class="quantity__item">
-                                    <div class="quantity">
-                                        <div class="pro-qty-2">
-                                            <input type="text" value="1">
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="cart__price">$ 30.00</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="product__cart__item">
-                                    <div class="product__cart__item__pic">
-                                        <img src="${url}/img/shopping-cart/cart-2.jpg" alt="">
-                                    </div>
-                                    <div class="product__cart__item__text">
-                                        <h6>Diagonal Textured Cap</h6>
-                                        <h5>$98.49</h5>
-                                    </div>
-                                </td>
-                                <td class="quantity__item">
-                                    <div class="quantity">
-                                        <div class="pro-qty-2">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="cart__price">$ 32.50</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="product__cart__item">
-                                    <div class="product__cart__item__pic">
-                                        <img src="${url}/img/shopping-cart/cart-3.jpg" alt="">
-                                    </div>
-                                    <div class="product__cart__item__text">
-                                        <h6>Basic Flowing Scarf</h6>
-                                        <h5>$98.49</h5>
-                                    </div>
-                                </td>
-                                <td class="quantity__item">
-                                    <div class="quantity">
-                                        <div class="pro-qty-2">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="cart__price">$ 47.00</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
-                            </tr>
-                            <tr>
-                                <td class="product__cart__item">
-                                    <div class="product__cart__item__pic">
-                                        <img src="${url}/img/shopping-cart/cart-4.jpg" alt="">
-                                    </div>
-                                    <div class="product__cart__item__text">
-                                        <h6>Basic Flowing Scarf</h6>
-                                        <h5>$98.49</h5>
-                                    </div>
-                                </td>
-                                <td class="quantity__item">
-                                    <div class="quantity">
-                                        <div class="pro-qty-2">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="cart__price">$ 30.00</td>
-                                <td class="cart__close"><i class="fa fa-close"></i></td>
-                            </tr>
+                                        <div class="product__cart__item__text">
+                                            <h6>${c.product.title}</h6>
+                                        </div> 
+                                        <div>${c.product.quantity}</div>   
+                                        <div>${c.product.price*c.product.quantity}</div>      
+                                    </td>
+                                </c:forEach>
                         </tbody>
                     </table>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn">
-                            <a href="#">Tiếp tục mua sắm</a>
+                            <a href="${pageContext.request.contextPath}/TrangChu">Tiếp tục mua sắm</a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn update__btn">
-                            <a href="#"><i class="fa fa-spinner"></i> Cập nhật đơn hàng</a>
+                            <a href="${pageContext.request.contextPath}/GioHang"><i class="fa fa-spinner"></i> Cập nhật đơn hàng</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="cart__discount">
-                    <h6>Mã giảm giá</h6>
-                    <form action="#">
-                        <input type="text" placeholder="Nhập mã tại đây">
-                        <button type="submit">Áp mã</button>
-                    </form>
-                </div>
-                <div class="cart__total">
-                    <h6>Tổng tiền giỏ hàng</h6>
-                    <ul>
-                        <li>Tạm tính <span>$ 169.50</span></li>
-                        <li>Tổng <span>$ 169.50</span></li>
-                    </ul>
-                    <a href="#" class="primary-btn">Mua hàng</a>
-                </div>
+            <div class="cart__total">
+                <h6>Tổng tiền giỏ hàng</h6>
+                <ul>
+                    <li>Tạm tính <span>$ 169.50</span></li>
+                    <li>Tổng <span>$ 169.50</span></li>
+                </ul>
+                <a href="${pageContext.request.contextPath}/GioHang" class="primary-btn">Mua hàng</a>
             </div>
         </div>
     </div>
+</div>
 </section>
 <!-- Shopping Cart Section End -->
 <%@ include file="footer.jsp" %>

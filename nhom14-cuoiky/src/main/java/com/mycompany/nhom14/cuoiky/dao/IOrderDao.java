@@ -4,25 +4,17 @@
  */
 package com.mycompany.nhom14.cuoiky.dao;
 
-import com.mycompany.nhom14.cuoiky.entities.CartItem;
+import com.mycompany.nhom14.cuoiky.entities.Order;
 import java.util.List;
 
 /**
  *
  * @author Linh
  */
-public interface ICartItemDao {
-
-    void insert(CartItem cartItem);
-
-    void update(CartItem cartItem);
-
+public interface IOrderDao {
+    void insert(Order order);
+    void update(Order order);
     void delete(int id);
-
-    List<CartItem> getAll();
-
-    CartItem get(int id);
-
-    CartItem findCartItem(int cartId, int productId);
-
+    List<Order> getAll();
+    Order get(int id); 
 }

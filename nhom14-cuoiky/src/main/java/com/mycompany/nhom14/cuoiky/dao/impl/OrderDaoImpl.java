@@ -4,33 +4,27 @@
  */
 package com.mycompany.nhom14.cuoiky.dao.impl;
 
-import com.mycompany.nhom14.cuoiky.entities.Cart;
-import org.hibernate.SessionFactory;
-import com.mycompany.nhom14.cuoiky.dao.ICartDao;
+import com.mycompany.nhom14.cuoiky.dao.IOrderDao;
+import com.mycompany.nhom14.cuoiky.entities.Order;
 import com.mycompany.nhom14.cuoiky.util.HibernateUtil;
-import java.util.List;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import javax.persistence.Query;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import java.util.List;
 /**
  *
  * @author Linh
  */
-public class CartDaoImpl implements ICartDao {
-
-    public CartDaoImpl() {
-
-    }
+public class OrderDaoImpl implements IOrderDao {
 
     @Override
-    public void insert(Cart cart) {
+    public void insert(Order order) {
         Transaction transaction = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {
             transaction = session.beginTransaction();
-            session.save(cart);
+            session.save(order);
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -40,30 +34,30 @@ public class CartDaoImpl implements ICartDao {
         }
     }
 
-   /* @Override
+    @Override
+    public void update(Order order) {
+        Transaction transaction = null;
+        try ( Session session = HibernateUtil.getFactory().openSession()) {
+            transaction = session.beginTransaction();
+            session.update(order);
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
+        }
+    }
+
+    @Override
     public void delete(int id) {
         Transaction transaction = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {
             transaction = session.beginTransaction();
-            Cart cart = session.get(Cart.class, id);
-            if (cart != null) {
-                session.delete(cart);
+            Order order = session.get(Order.class, id);
+            if (order != null) {
+                session.delete(order);
             }
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            if (transaction != null) {
-                transaction.rollback();
-            }
-        }
-    }
-*/
-    @Override
-    public void update(Cart cart) {
-        Transaction transaction = null;
-        try ( Session session = HibernateUtil.getFactory().openSession()) {
-            transaction = session.beginTransaction();
-            session.update(cart);
             transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -74,46 +68,27 @@ public class CartDaoImpl implements ICartDao {
     }
 
     @Override
-    public List<Cart> getAll() {
-        List<Cart> carts = null;
+    public List<Order> getAll() {
+        List<Order> orders = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {
             CriteriaBuilder builder = session.getCriteriaBuilder();
-            CriteriaQuery<Cart> criteriaQuery = builder.createQuery(Cart.class);
-            criteriaQuery.from(Cart.class);
-            carts = session.createQuery(criteriaQuery).getResultList();
+            CriteriaQuery<Order> criteriaQuery = builder.createQuery(Order.class);
+            criteriaQuery.from(Order.class);
+            orders = session.createQuery(criteriaQuery).getResultList();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return carts;
+        return orders;
     }
 
     @Override
-    public Cart get(int id) {
-        Cart cart = null;
+    public Order get(int id) {
+        Order order = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {
-            cart = session.get(Cart.class, id);
+            order = session.get(Order.class, id);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return cart;
+        return order;
     }
-
-    @Override
-    public Cart findCartByUserId(int id) {
-        Cart cart = null;
-        try ( Session session = HibernateUtil.getFactory().openSession()) {
-            String HQL = "SELECT c FROM Cart c WHERE c.user.id = :id";
-            Query query = session.createQuery(HQL);
-            query.setParameter("id", id);
-            List<Cart> carts = query.getResultList();
-            if (!carts.isEmpty()) {
-                cart = carts.get(0);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return cart;
-    }
-
 }

@@ -4,10 +4,20 @@
  */
 package com.mycompany.nhom14.cuoiky.service;
 
+import com.mycompany.nhom14.cuoiky.entities.Cart;
+import com.mycompany.nhom14.cuoiky.entities.CartItem;
+import java.util.List;
+
 /**
  *
  * @author Linh
  */
-public class ICartItemService {
+public interface ICartItemService {
+    void addCartItem(int cartId, int productId, int quantity);
     
+    void updateCartItem(int id, int productId , int cartId , int quantity);
+    
+    CartItem getCartItem(int id);
+    
+    List<CartItem> getAll();
 }

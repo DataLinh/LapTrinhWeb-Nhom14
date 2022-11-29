@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.mycompany.nhom14.cuoiky.entities;
+
 import java.util.List;
 
 import java.io.Serializable;
@@ -40,10 +41,12 @@ public class Cart implements Serializable {
     @Column(name = "TOTAL")
     private int total;
 
+    @OneToOne(mappedBy = "cart")
+    private User user;
 
-   @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
-   private List<CartItem> cartItems;
-    
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+    private List<CartItem> cartItems;
+
     /**
      * @return the id
      */
@@ -75,8 +78,6 @@ public class Cart implements Serializable {
     /**
      * @return the user
      */
-
-
     /**
      * @return the cartItems
      */
@@ -94,10 +95,23 @@ public class Cart implements Serializable {
     public Cart() {
     }
 
-    public Cart(int id, int total, User user, List<CartItem> cartItems) {
-        this.id = id;
+    public Cart( int total, User user) {
         this.total = total;
-        this.cartItems = cartItems;
+        this.user = user;
+    }
+
+    /**
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

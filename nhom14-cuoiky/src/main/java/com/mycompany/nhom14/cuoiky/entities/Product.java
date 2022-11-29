@@ -61,6 +61,7 @@ public class Product implements Serializable {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DISCOUNT_ID")
     private Discount discount;
+    
     @OneToOne
     @JoinColumn(name = "ID")
     private OrderLine orderLines;

@@ -4,16 +4,10 @@
  */
 package com.mycompany.nhom14.cuoiky.service;
 
-import com.mycompany.nhom14.cuoiky.entities.Cart;
-
 /**
  *
  * @author Linh
  */
-public interface ICartService {
-    
-    void create(int userId);
-
-    void update(int id, int total);
-
+public interface IUserService {
+    void newCart(int cartId);
 }
