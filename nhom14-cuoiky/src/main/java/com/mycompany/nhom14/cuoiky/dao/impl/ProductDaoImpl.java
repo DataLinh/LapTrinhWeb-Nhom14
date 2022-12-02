@@ -19,7 +19,7 @@ import java.util.List;
  * @author Linh
  */
 public class ProductDaoImpl implements IProductDao {
-
+    @Override
     public Product get(int id) {
         Product product = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {
@@ -29,4 +29,19 @@ public class ProductDaoImpl implements IProductDao {
         }
         return product;
     }
+    @Override
+    public List<Product> getAll() {
+      List<Product> products = null;
+      System.out.println("products");
+      try (Session session = HibernateUtil.getFactory().openSession()) {
+         CriteriaBuilder builder = session.getCriteriaBuilder();
+         CriteriaQuery<Product> criteriaQuery = builder.createQuery(Product.class);
+         criteriaQuery.from(Product.class);
+         products = session.createQuery(criteriaQuery).setMaxResults(10).getResultList();
+         System.out.println(products);
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+      return products;
+   }
 }

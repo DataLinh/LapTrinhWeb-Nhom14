@@ -9,5 +9,5 @@ package com.mycompany.nhom14.cuoiky.service;
  * @author Linh
  */
 public interface IUserService {
-    void newCart(int cartId);
+    void newCart(int userId);
 }

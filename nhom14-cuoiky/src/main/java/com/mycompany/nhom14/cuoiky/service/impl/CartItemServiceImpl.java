@@ -5,6 +5,9 @@
 package com.mycompany.nhom14.cuoiky.service.impl;
 
 import com.mycompany.nhom14.cuoiky.dao.ICartDao;
+import com.mycompany.nhom14.cuoiky.entities.Cart;
+import com.mycompany.nhom14.cuoiky.entities.Product;
+
 import com.mycompany.nhom14.cuoiky.dao.ICartItemDao;
 import com.mycompany.nhom14.cuoiky.dao.IProductDao;
 import com.mycompany.nhom14.cuoiky.dao.IUserDao;
@@ -36,10 +39,13 @@ public class CartItemServiceImpl implements ICartItemService {
 
     @Override
     public void addCartItem(int cartId, int productId, int quantity) {
-        if (cartDao.get(cartId) != null && productDao.get(productId) != null && quantity > 0) {
+        Cart cart = cartDao.get(cartId);
+        Product product = productDao.get(productId);
+        if (cart != null && product != null && quantity > 0) {
             CartItem cartItem = cartItemDao.findCartItem(cartId, productId);
             if (cartItem != null) {
-
+                cartItem.setQuantity(quantity + cartItem.getQuantity());
+                cartItemDao.update(cartItem);
             } else {
                 try {
                     cartItem = new CartItem(cartId, quantity, cartDao.get(cartId), productDao.get(productId));
@@ -48,6 +54,9 @@ public class CartItemServiceImpl implements ICartItemService {
                     e.printStackTrace();
                 }
             }
+
+            cart.setTotal(cart.getTotal() + quantity * product.getPrice());
+            cartDao.update(cart);
         }
     }
 
@@ -56,9 +65,18 @@ public class CartItemServiceImpl implements ICartItemService {
         CartItem cartItem = cartItemDao.get(id);
         if (cartItem != null) {
             try {
-                cartItem.setCart(cartDao.get(cartId));
-                cartItem.setProduct(productDao.get(productId));
+                Cart cart = cartDao.get(cartId);
+                Product product = productDao.get(productId);
+                cartItem.setCart(cart);
+                cartItem.setProduct(product);
+                int quantityOld = cartItem.getQuantity();
                 cartItem.setQuantity(quantity);
+                int quantityNew = cartItem.getQuantity();
+                int total = cart.getTotal();
+                cart.setTotal(total +(quantityNew - quantityOld) *product.getPrice());
+                cartDao.update(cart);
+                //Khi discount phải tính lại total cho toàn bộ cart có sản phẩm đổi giá
+                
                 cartItemDao.update(cartItem);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -72,7 +90,7 @@ public class CartItemServiceImpl implements ICartItemService {
     }
 
     @Override
-    public List<CartItem> getAll() {
-        return cartItemDao.getAll();
+    public List<CartItem> getAllByCartId(int cartId) {
+        return cartItemDao.getAllByCartId(cartId);
     }
 }

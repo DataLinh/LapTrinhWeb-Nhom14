@@ -5,6 +5,7 @@
 package com.mycompany.nhom14.cuoiky.dao;
 
 import com.mycompany.nhom14.cuoiky.entities.Product;
+import java.util.List;
 
 /**
  *
@@ -12,4 +13,6 @@ import com.mycompany.nhom14.cuoiky.entities.Product;
  */
 public interface IProductDao {
     Product get(int id);
+    
+    List<Product> getAll();
 }

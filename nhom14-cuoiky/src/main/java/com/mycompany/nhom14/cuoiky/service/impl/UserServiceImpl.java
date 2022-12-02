@@ -25,8 +25,8 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void newCart(int cartId) {
-        userDao.newCart(userDao.getIdByCartId(cartId));
+    public void newCart(int userId) {
+        userDao.newCart(userId);
     }
 
 }
