@@ -14,13 +14,13 @@
                     <th>Price</th>
                     <th>Buy</th>
                 </tr>
-            <c:forEach var="product" items="${products }">
+            <c:forEach var="product" items="${products}">
                 <tr>
                     <td>${product.id }</td>
                     <td>${product.title }</td>				
                     <td>${product.price }</td>
                     <td align="center">
-                        <a href="${pageContext.request.contextPath }/GioHang?&action=buy&productId=${product.id }">Thêm vào giỏ </a>
+                        <a href="${pageContext.request.contextPath }/GioHang?&action=buy&productId=${product.id}">Thêm vào giỏ </a>
                     </td>
                 </tr>
             </c:forEach>

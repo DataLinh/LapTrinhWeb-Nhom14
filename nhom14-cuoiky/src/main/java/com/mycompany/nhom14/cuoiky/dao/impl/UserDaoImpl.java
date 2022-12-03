@@ -23,11 +23,17 @@ public class UserDaoImpl implements IUserDao {
 
     @Override
     public User getById(int id) {
-        User user = null;
-        try ( Session session = HibernateUtil.getFactory().openSession()) {
-            user = session.get(User.class, id);
+        User user = null;        
+        Transaction transaction = null;
+        try ( Session session = HibernateUtil.getFactory().openSession()) {            
+            transaction = session.beginTransaction();
+            user = session.get(User.class, id);            
+            transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
         }
         return user;
     }

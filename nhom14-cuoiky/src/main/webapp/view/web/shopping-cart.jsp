@@ -101,7 +101,7 @@
                         <li>Tiền ship <span>0đ</span></li>
                         <li>Tổng <span>${total} đ</span></li>
                     </ul>
-                    <a href="#" class="primary-btn">Mua hàng</a>
+                    <a href="${pageContext.request.contextPath }/DatHang" class="primary-btn">Mua hàng</a>
 
 
 

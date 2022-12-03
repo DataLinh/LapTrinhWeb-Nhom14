@@ -4,8 +4,6 @@
  */
 package com.mycompany.nhom14.cuoiky.controller.web;
 
-import com.mycompany.nhom14.cuoiky.dao.IUserDao;
-import com.mycompany.nhom14.cuoiky.dao.impl.UserDaoImpl;
 import com.mycompany.nhom14.cuoiky.entities.Cart;
 import com.mycompany.nhom14.cuoiky.entities.User;
 
@@ -14,7 +12,6 @@ import com.mycompany.nhom14.cuoiky.service.IUserService;
 import com.mycompany.nhom14.cuoiky.service.impl.CartItemServiceImpl;
 import com.mycompany.nhom14.cuoiky.service.impl.UserServiceImpl;
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -51,15 +48,10 @@ public class CartController extends HttpServlet {
     }
 
     protected void doGet_UpdateItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-        // Đợi phần login 
-        //int userId = (int) request.getAttribute("username");
-        int userId = 1;
-        
-        
-        IUserDao userDao = new UserDaoImpl();
-        Cart cart = userDao.getById(userId).getCart();
-        int cartId = cart.getId();
+        HttpSession session = request.getSession();
+        int userId = (int) session.getAttribute("userId");
+        User user = userService.getById(userId);
+        int cartId = user.getCart().getId();
         int productId = Integer.parseInt(request.getParameter("productId"));
         int quantity = -1;
         try {
@@ -78,50 +70,34 @@ public class CartController extends HttpServlet {
     }
 
     protected void doGet_Display(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
-        // Đợi phần login 
-        //int userId = (int) request.getAttribute("username");
-        int userId = 1;
-        
-        
-        IUserDao userDao = new UserDaoImpl();
-        Cart cart = userDao.getById(userId).getCart();
-        int cartId = cart.getId();        
+        HttpSession session = request.getSession();
+        int userId = (int) session.getAttribute("userId");
+        User user = userService.getById(userId);
+        int cartId = user.getCart().getId();
         request.setAttribute("cartItems", cartItemService.getAllByCartId(cartId));
-        request.setAttribute("total", cart.getTotal());
+        request.setAttribute("total", user.getCart().getTotal());
         RequestDispatcher rd = request.getRequestDispatcher("/view/web/shopping-cart.jsp");
         rd.forward(request, response);
     }
 
     protected void doGet_Remove(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        // Đợi phần login 
-        //int userId = (int) request.getAttribute("username");
-        int userId = 1;
-        
-        
-        userService.newCart(userId);
+        HttpSession session = request.getSession();
+        int userId = (int) session.getAttribute("userId");
+        User user = userService.getById(userId);
+        userService.newCart(user.getId());
         doGet_Display(request, response);
     }
 
     protected void doGet_Buy(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String pId = request.getParameter("productId");
-        int productId = Integer.parseInt(pId);
-
-        
-        // Đợi phần login 
-        //int userId = (int) request.getAttribute("username");
-        int userId = 1;
-        IUserDao userDao = new UserDaoImpl();
-        int cartId = userDao.getById(userId).getCart().getId();
-
-        
-        ICartItemService cartItemService = new CartItemServiceImpl();
+        int productId = Integer.parseInt(request.getParameter("productId"));
+        int userId = (int) session.getAttribute("userId");
+        User user = userService.getById(userId);
+        int cartId = user.getCart().getId();
         cartItemService.addCartItem(cartId, productId, 1);
-        response.sendRedirect("GioHang");
+        doGet_Display(request, response);
     }
 
     @Override

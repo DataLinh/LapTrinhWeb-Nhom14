@@ -4,39 +4,39 @@
  */
 package com.mycompany.nhom14.cuoiky.controller.web;
 
-import com.mycompany.nhom14.cuoiky.dao.IProductDao;
 import com.mycompany.nhom14.cuoiky.dao.IUserDao;
-import com.mycompany.nhom14.cuoiky.dao.impl.ProductDaoImpl;
 import com.mycompany.nhom14.cuoiky.dao.impl.UserDaoImpl;
 import com.mycompany.nhom14.cuoiky.entities.Cart;
 import com.mycompany.nhom14.cuoiky.entities.User;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Linh
  */
-@WebServlet("/test")
-public class TestController extends HttpServlet {
+@WebServlet("/Login")
+public class LoginController extends HttpServlet {
 
-    IUserDao userDao = new UserDaoImpl();
+    private static final long serialVersionUID = 1L;
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        IProductDao product = new ProductDaoImpl();
-        request.setAttribute("products", product.getAll());
-        request.getRequestDispatcher("/view/web/test.jsp").forward(request, response);
+        HttpSession session = req.getSession();
+        //Chờ chức năng login
+        session.setAttribute("userId", 5);
+
+        req.getRequestDispatcher("/test").forward(req, resp);
     }
 
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
     }
+
 }

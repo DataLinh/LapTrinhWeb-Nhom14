@@ -43,7 +43,11 @@ public class Cart implements Serializable {
 
     @OneToOne(mappedBy = "cart")
     private User user;
-
+    
+    
+    @OneToOne(mappedBy = "cart")
+    private Order order;
+    
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
     private List<CartItem> cartItems;
 

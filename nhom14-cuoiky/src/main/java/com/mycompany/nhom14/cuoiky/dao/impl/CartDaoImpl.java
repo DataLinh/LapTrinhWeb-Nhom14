@@ -40,24 +40,6 @@ public class CartDaoImpl implements ICartDao {
         }
     }
 
-   /* @Override
-    public void delete(int id) {
-        Transaction transaction = null;
-        try ( Session session = HibernateUtil.getFactory().openSession()) {
-            transaction = session.beginTransaction();
-            Cart cart = session.get(Cart.class, id);
-            if (cart != null) {
-                session.delete(cart);
-            }
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            if (transaction != null) {
-                transaction.rollback();
-            }
-        }
-    }
-*/
     @Override
     public void update(Cart cart) {
         Transaction transaction = null;
@@ -71,20 +53,6 @@ public class CartDaoImpl implements ICartDao {
                 transaction.rollback();
             }
         }
-    }
-
-    @Override
-    public List<Cart> getAll() {
-        List<Cart> carts = null;
-        try ( Session session = HibernateUtil.getFactory().openSession()) {
-            CriteriaBuilder builder = session.getCriteriaBuilder();
-            CriteriaQuery<Cart> criteriaQuery = builder.createQuery(Cart.class);
-            criteriaQuery.from(Cart.class);
-            carts = session.createQuery(criteriaQuery).getResultList();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return carts;
     }
 
     @Override

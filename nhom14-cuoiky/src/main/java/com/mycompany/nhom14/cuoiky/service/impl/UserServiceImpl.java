@@ -8,6 +8,7 @@ import com.mycompany.nhom14.cuoiky.dao.ICartDao;
 import com.mycompany.nhom14.cuoiky.dao.IUserDao;
 import com.mycompany.nhom14.cuoiky.dao.impl.CartDaoImpl;
 import com.mycompany.nhom14.cuoiky.dao.impl.UserDaoImpl;
+import com.mycompany.nhom14.cuoiky.entities.User;
 import com.mycompany.nhom14.cuoiky.service.IUserService;
 
 /**
@@ -27,6 +28,11 @@ public class UserServiceImpl implements IUserService {
     @Override
     public void newCart(int userId) {
         userDao.newCart(userId);
+    }
+
+    @Override
+    public User getById(int id) {
+        return userDao.getById(id);
     }
 
 }

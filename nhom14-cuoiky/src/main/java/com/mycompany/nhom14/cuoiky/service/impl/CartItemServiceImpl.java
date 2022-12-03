@@ -75,6 +75,7 @@ public class CartItemServiceImpl implements ICartItemService {
                 int total = cart.getTotal();
                 cart.setTotal(total +(quantityNew - quantityOld) *product.getPrice());
                 cartDao.update(cart);
+                
                 //Khi discount phải tính lại total cho toàn bộ cart có sản phẩm đổi giá
                 
                 cartItemDao.update(cartItem);
