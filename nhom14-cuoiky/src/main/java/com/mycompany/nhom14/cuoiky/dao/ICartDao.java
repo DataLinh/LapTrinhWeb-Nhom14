@@ -19,8 +19,6 @@ public interface ICartDao {
 
     void update(Cart cart);
 
-    List<Cart> getAll();
-
     Cart get(int id);
 
     Cart findCartByUserId(int id);

@@ -26,27 +26,28 @@
 <!--        &lt;!&ndash;mapping class="com.mycompany.nhom14.cuoiky.entities.Category"></mapping&ndash;&gt;-->
 <!--        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>-->
 
-<!--        remote-->
-<!--         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>-->
-<!--        <property name="connection.url">jdbc:mysql://remotemysql.com:3306/t2SI0tc6Ml</property>-->
-<!--        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>-->
-<!--        <property name="connection.username">t2SI0tc6Ml</property>-->
-<!--        <property name="connection.password">iCjqJMS2NW</property>-->
-
-<!--        local-->
-        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/t2si0tc6mi</property>
+<!--
+         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://remotemysql.com:3306/t2SI0tc6Ml</property>
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
-        <property name="connection.username">long</property>
-        <property name="connection.password">20110299</property>
-
-
+        <property name="connection.username">t2SI0tc6Ml</property>
+        <property name="connection.password">iCjqJMS2NW</property>
         <property name="connection.pool_size">3</property>
         <property name="current_session_context_class">thread</property>
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
-     
+        -->
+      <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/ltw</property>
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="connection.username">duclinh</property>
+        <property name="connection.password">duclinh</property>
+        <property name="connection.pool_size">3</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
 
     </session-factory>
 </hibernate-configuration>

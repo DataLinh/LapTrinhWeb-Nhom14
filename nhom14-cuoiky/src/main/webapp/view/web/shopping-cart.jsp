@@ -26,17 +26,18 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="shopping__cart__table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Sản phẩm</th>
-                                    <th>Số lượng</th>
-                                    <th>Tổng tiền</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach items="${cartItem}" var="c">
+                        <div class="row">${error}</div>
+                    <table>                           
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Thành tiền</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach items="${cartItems}" var="c">
                                 <tr>
                                     <td class="product__cart__item">
                                         <div class="product__cart__item__pic">
@@ -44,38 +45,70 @@
                                         </div>
                                         <div class="product__cart__item__text">
                                             <h6>${c.product.title}</h6>
-                                        </div> 
-                                        <div>${c.product.quantity}</div>   
-                                        <div>${c.product.price*c.product.quantity}</div>      
+                                            <h5>${c.product.price}</h5>
+                                        </div>
                                     </td>
-                                </c:forEach>
+                                    <td>
+                                        <form action="GioHang" method="get">                                            
+                                            <input type="hidden" name="action" 
+                                                   value="updateItem">
+                                            <input type="hidden" name="cartItemId" 
+                                                   value="<c:out value='${c.id}'/>">
+                                            <input type="hidden" name="productId" 
+                                                   value="<c:out value='${c.product.id}'/>">
+                                            <input type=text name="quantity" 
+                                                   value="<c:out value='${c.quantity}'/>">
+                                            <input type="submit" value="Cập nhật">
+                                        </form>
+                                    </td>
+                                    <td class="cart__price"> ${c.quantity * c.product.price} đ</td>
+                                    <td>
+                                        <form action="GioHang" method="get">                                            
+                                            <input type="hidden" name="action" 
+                                                   value="updateItem">                                                                                 
+                                            <input type="hidden" name="cartItemId" 
+                                                   value="<c:out value='${c.id}'/>">
+                                            <input type="hidden" name="productId" 
+                                                   value="<c:out value='${c.product.id}'/>">
+                                            <input type="hidden" name="quantity" 
+                                                   value="0">
+                                            <input type="submit" value="Xóa">
+                                        </form> 
+                                    </td>
+                                </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn">
-                            <a href="${pageContext.request.contextPath}/TrangChu">Tiếp tục mua sắm</a>
+                            <a href="${pageContext.request.contextPath }/test">Tiếp tục mua sắm</a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn update__btn">
-                            <a href="${pageContext.request.contextPath}/GioHang"><i class="fa fa-spinner"></i> Cập nhật đơn hàng</a>
+                            <a href="${pageContext.request.contextPath }/GioHang?&action=remove"><i class="fa fa-spinner"></i> Xóa giỏ hàng</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="cart__total">
-                <h6>Tổng tiền giỏ hàng</h6>
-                <ul>
-                    <li>Tạm tính <span>$ 169.50</span></li>
-                    <li>Tổng <span>$ 169.50</span></li>
-                </ul>
-                <a href="${pageContext.request.contextPath}/GioHang" class="primary-btn">Mua hàng</a>
+            <div class="col-lg-4">
+                <div class="cart__total">
+                    <h6>Tổng tiền giỏ hàng</h6>
+                    <ul>
+                        <li>Tiền hàng <span>${total} đ</span></li>
+                        <li>Tiền ship <span>0đ</span></li>
+                        <li>Tổng <span>${total} đ</span></li>
+                    </ul>
+                    <a href="${pageContext.request.contextPath }/DatHang" class="primary-btn">Mua hàng</a>
+
+
+
+                </div>
+
             </div>
         </div>
-    </div>
-</div>
 </section>
 <!-- Shopping Cart Section End -->
 <%@ include file="footer.jsp" %>

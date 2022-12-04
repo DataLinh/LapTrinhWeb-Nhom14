@@ -31,8 +31,8 @@ public class Test {
             //            Discount d = session.get(Discount.class, 2);
             //            System.out.println(d.getName());
 
-            ICartItemDao cartItemDao = new CartItemDaoImpl();
-            System.out.println(cartItemDao.getAll());
+           IUserDao userDao = new UserDaoImpl();
+            System.out.println(userDao.getIdByCartId(6));
 
 //
 //            User u = session.get(User.class, 2);

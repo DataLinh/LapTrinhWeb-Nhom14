@@ -16,6 +16,7 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
+import javax.persistence.criteria.Root;
 
 /**
  *
@@ -72,13 +73,13 @@ public class CartItemDaoImpl implements ICartItemDao {
     }
 
     @Override
-    public List<CartItem> getAll() {
+    public List<CartItem> getAllByCartId(int cartId) {
         List<CartItem> cartItems = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {
-            CriteriaBuilder builder = session.getCriteriaBuilder();
-            CriteriaQuery<CartItem> criteriaQuery = builder.createQuery(CartItem.class);
-            criteriaQuery.from(CartItem.class);
-            cartItems = session.createQuery(criteriaQuery).getResultList();
+            String HQL = "SELECT c FROM CartItem c WHERE c.cart.id = :cartid and c.quantity > 0 ";
+            Query query = session.createQuery(HQL);
+            query.setParameter("cartid", cartId);
+            cartItems = query.getResultList();            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -113,6 +114,5 @@ public class CartItemDaoImpl implements ICartItemDao {
         }
         return cartItem;
     }
-    
-            
+
 }

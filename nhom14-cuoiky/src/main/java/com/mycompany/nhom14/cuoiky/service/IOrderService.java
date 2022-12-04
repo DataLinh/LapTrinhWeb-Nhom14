@@ -4,14 +4,14 @@
  */
 package com.mycompany.nhom14.cuoiky.service;
 
-import com.mycompany.nhom14.cuoiky.entities.User;
+import com.mycompany.nhom14.cuoiky.entities.Order;
 
 /**
  *
  * @author Linh
  */
-public interface IUserService {
-    void newCart(int userId);
+public interface IOrderService {
+    void thanhToan(Order order);
     
-    User getById(int id);
+    
 }

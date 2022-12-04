@@ -20,17 +20,24 @@ import java.util.List;
  * @author Linh
  */
 public class UserDaoImpl implements IUserDao {
+
     @Override
     public User getById(int id) {
-        User user = null;
-        try ( Session session = HibernateUtil.getFactory().openSession()) {
-            user = session.get(User.class, id);
+        User user = null;        
+        Transaction transaction = null;
+        try ( Session session = HibernateUtil.getFactory().openSession()) {            
+            transaction = session.beginTransaction();
+            user = session.get(User.class, id);            
+            transaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
+            if (transaction != null) {
+                transaction.rollback();
+            }
         }
         return user;
     }
-    
+
     @Override
     public int getIdByCartId(int id) {
         User user = null;
@@ -38,19 +45,21 @@ public class UserDaoImpl implements IUserDao {
         try ( Session session = HibernateUtil.getFactory().openSession()) {
             cart = session.get(Cart.class, id);
             user = cart.getUser();
+            return user.getId();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return user.getId();
+        return 0;
     }
 
     @Override
-    public void newCart(int userid){
-         Transaction transaction = null;
+    public void newCart(int userid) {
+        Transaction transaction = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {
             transaction = session.beginTransaction();
             Cart cart = new Cart();
-            User user = session.get(User.class, userid );
+            User user = session.get(User.class, userid);
             if (user != null) {
                 user.setCart(cart);
             }
@@ -62,5 +71,5 @@ public class UserDaoImpl implements IUserDao {
             }
         }
     }
-    
+
 }

@@ -19,5 +19,5 @@ public interface ICartItemService {
     
     CartItem getCartItem(int id);
     
-    List<CartItem> getAll();
+    List<CartItem> getAllByCartId(int cartId);
 }

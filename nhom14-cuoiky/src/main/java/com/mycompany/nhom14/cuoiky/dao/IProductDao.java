@@ -4,10 +4,7 @@
  */
 package com.mycompany.nhom14.cuoiky.dao;
 
-import com.mycompany.nhom14.cuoiky.entities.OrderLine;
 import com.mycompany.nhom14.cuoiky.entities.Product;
-
-import java.util.List;
 
 /**
  *
@@ -26,4 +23,5 @@ public interface IProductDao {
 
     List<Product> getListByPrice(List<Product> list,int price);
     List<Product> getWithCondition(List<Product> list,int categoryID, int price);
+
 }

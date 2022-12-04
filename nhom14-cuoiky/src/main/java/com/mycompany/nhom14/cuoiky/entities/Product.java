@@ -62,9 +62,7 @@ public class Product implements Serializable {
     @JoinColumn(name = "DISCOUNT_ID")
     private Discount discount;
     
-    @OneToOne
-    @JoinColumn(name = "ID")
-    private OrderLine orderLines;
+    
 
     public Product(int id, String title, int price, int quantity, String image, String description, Date createdAt, Date updateAt, boolean isDeleted, Category category, Discount discount, OrderLine orderLines) {
         this.id = id;
@@ -237,28 +235,12 @@ public class Product implements Serializable {
         this.discount = discount;
     }
 
-    /**
-     * @return the orderLines
-     */
-    public OrderLine getOrderLines() {
-        return orderLines;
-    }
-
-    /**
-     * @param orderLines the orderLines to set
-     */
-    public void setOrderLines(OrderLine orderLines) {
-        this.orderLines = orderLines;
-    }
-
-    /**
-     * @return the cartItems
-     */
+    
 
     public Product() {
     }
 
-    public Product(int id, String title, int price, int quantity, String image, String description, Date createdAt, Date updateAt, boolean isDeleted, Category category, Discount discount, OrderLine orderLines, List<CartItem> cartItems) {
+    public Product(int id, String title, int price, int quantity, String image, String description, Date createdAt, Date updateAt, boolean isDeleted, Category category, Discount discount) {
         this.id = id;
         this.title = title;
         this.price = price;
@@ -270,6 +252,5 @@ public class Product implements Serializable {
         this.isDeleted = isDeleted;
         this.category = category;
         this.discount = discount;
-        this.orderLines = orderLines;
     }
 }

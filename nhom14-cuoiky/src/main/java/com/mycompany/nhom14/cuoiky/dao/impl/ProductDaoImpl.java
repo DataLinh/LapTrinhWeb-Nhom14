@@ -24,7 +24,7 @@ import java.util.Queue;
  * @author Linh
  */
 public class ProductDaoImpl implements IProductDao {
-
+    @Override
     public Product get(int id) {
         Product product = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {

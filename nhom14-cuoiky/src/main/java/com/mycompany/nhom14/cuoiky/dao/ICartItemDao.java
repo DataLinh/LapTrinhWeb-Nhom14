@@ -19,7 +19,7 @@ public interface ICartItemDao {
 
     void delete(int id);
 
-    List<CartItem> getAll();
+    List<CartItem> getAllByCartId(int cartId);
 
     CartItem get(int id);
 
