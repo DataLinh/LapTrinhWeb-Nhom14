@@ -105,7 +105,7 @@
                                 </ul>
                             </li>
                             <!--   <li class="active"><a href="./blog.jsp">Blog</a></li>  --> 
-                            <li><a href="${pageContext.request.contextPath}/contact.jsp">Liên hệ</a></li>
+                            <li><a href="${pageContext.request.contextPath}/Contact">Liên hệ</a></li>
                         </ul>
                     </nav>
                 </div>

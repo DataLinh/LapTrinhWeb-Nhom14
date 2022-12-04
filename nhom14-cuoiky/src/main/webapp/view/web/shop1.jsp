@@ -77,7 +77,6 @@
                                     <input name="txtSearch" type="hidden" value="${txtSearch}">
                                 </c:if>
 
-
                                 <div class="card">
                                     <div class="card-heading">
                                         <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
@@ -142,7 +141,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="shop__product__option__left">
-                                <p>Showing 1–12 of 126 results</p>
+<%--                                <p>Showing 1–12 of 126 results</p>--%>
                             </div>
                         </div>
                     </div>
@@ -190,7 +189,7 @@
                     <div class="col-lg-12">
                         <div class="product__pagination">
                             <c:forEach begin="${1}" end="${numberPage}" var="i">
-                                <a ${i == page?'class="active"':""} href="<%=request.getContextPath()%>/ViewProductController?price=${1}&txtSearch=${txtSearch}&categoryID=${categoryID}&sort=${sort}&page=${i}">${i}</a>
+                                <a ${i == page?'class="active"':""} href="<%=request.getContextPath()%>/shop?price=${1}&txtSearch=${txtSearch}&categoryID=${categoryID}&sort=${sort}&page=${i}">${i}</a>
                             </c:forEach>
                         </div>
                     </div>
@@ -222,7 +221,6 @@
 </script>
 <script>
     function submitForm(){
-        document.getElementById("myForm").action = <%=request.getContextPath()%>/ViewProductController?page=1;
         document.getElementById("myForm").submit();
     }
 </script>

@@ -6,6 +6,8 @@ package com.mycompany.nhom14.cuoiky.dao;
 
 import com.mycompany.nhom14.cuoiky.entities.Product;
 
+import java.util.List;
+
 /**
  *
  * @author Linh
