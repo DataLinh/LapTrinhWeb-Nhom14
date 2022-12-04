@@ -35,7 +35,6 @@ public class CartServiceImpl implements ICartService {
             }
         }
     }
-
     @Override
     public void update(int id, int total) {
         Cart cart = cartDao.get(id);
@@ -48,8 +47,4 @@ public class CartServiceImpl implements ICartService {
             }
         }
     }
-
-    
-    
-    
 }

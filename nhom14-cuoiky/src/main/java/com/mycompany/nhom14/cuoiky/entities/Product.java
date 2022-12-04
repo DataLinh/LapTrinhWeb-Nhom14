@@ -65,7 +65,8 @@ public class Product implements Serializable {
     
 
 
-//    
+
+//
 
     /**
      * @return the id
