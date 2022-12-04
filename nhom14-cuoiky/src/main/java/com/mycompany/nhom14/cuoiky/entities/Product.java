@@ -66,8 +66,22 @@ public class Product implements Serializable {
     @JoinColumn(name = "ID")
     private OrderLine orderLines;
 
+    public Product(int id, String title, int price, int quantity, String image, String description, Date createdAt, Date updateAt, boolean isDeleted, Category category, Discount discount, OrderLine orderLines) {
+        this.id = id;
+        this.title = title;
+        this.price = price;
+        this.quantity = quantity;
+        this.image = image;
+        this.description = description;
+        this.createdAt = createdAt;
+        this.updateAt = updateAt;
+        this.isDeleted = isDeleted;
+        this.category = category;
+        this.discount = discount;
+        this.orderLines = orderLines;
+    }
 
-//    
+//
 
     /**
      * @return the id
