@@ -4,15 +4,23 @@
 <!--    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>-->
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-    <non-jta-data-source>Postgres</non-jta-data-source>
-    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+<!--    <non-jta-data-source>Postgres</non-jta-data-source>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>-->
+    
+    <class>com.mycompany.nhom14.cuoiky.entities.FeedBack</class>
+    <class>com.mycompany.nhom14.cuoiky.entities.Cart</class>
+    <class>com.mycompany.nhom14.cuoiky.entities.OrderLine</class>
+    <class>com.mycompany.nhom14.cuoiky.entities.Category</class>
+    <class>com.mycompany.nhom14.cuoiky.entities.CartItem</class>
+    <class>com.mycompany.nhom14.cuoiky.entities.Order</class>
+    <class>com.mycompany.nhom14.cuoiky.entities.Discount</class>
+    <class>com.mycompany.nhom14.cuoiky.entities.User</class>
+    <class>com.mycompany.nhom14.cuoiky.entities.Product</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://remotemysql.com:3306/t2SIOtc6MI"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://remotemysql.com:3306/t2SI0tc6Ml?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
       <property name="javax.persistence.jdbc.user" value="t2SI0tc6Ml"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="iCjqJMS2NW"/>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
-
     </properties>
   </persistence-unit>
 </persistence>

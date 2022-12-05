@@ -51,7 +51,7 @@
         </div>
         <div class="offcanvas__nav__option">
             <a href="#" class="search-switch"><img src="${url}/img/icon/search.png" alt=""></a>
-            <a href="#"><img src="${url}/img/icon/heart.png" alt=""></a>
+            <a href="${pageContext.request.contextPath}/SanPhamYeuThich"><img src="${url}/img/icon/heart.png" alt=""></a>
             <a href="${pageContext.request.contextPath}/GioHang"><img src="${url}/img/icon/cart.png" alt=""> <span>0</span></a>
             <div class="price">$0.00</div>
         </div>
@@ -112,7 +112,7 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="${url}/img/icon/search.png" alt=""></a>
-                        <a href="#"><img src="${url}/img/icon/heart.png" alt=""></a>
+                        <a href="${pageContext.request.contextPath}/SanPhamYeuThich"><img src="${url}/img/icon/heart.png" alt=""></a>
                         <a href="${pageContext.request.contextPath}/GioHang"><img src="${url}/img/icon/cart.png" alt=""> <span>0</span></a>
                         <div class="price">$0.00</div>
                     </div>

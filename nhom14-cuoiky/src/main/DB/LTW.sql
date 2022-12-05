@@ -588,3 +588,25 @@ INSERT INTO `users` VALUES (65, 'Toàn Bảo', 'trananh65@gmail.com', '032335760
 INSERT INTO `users` VALUES (66, 'Trung Minh', 'binhtu66@gmail.com', '03247397667', 'Thủ Đức, HCM', '1', b'0', '2022-12-03 22:10:00', '2022-12-03 22:10:00', b'0', 105);
 
 SET FOREIGN_KEY_CHECKS = 1;
+CREATE TABLE `favorite_product`  (
+  `PRODUCT_ID` int(11) NOT NULL,
+  `USER_ID` int(11) NOT NULL,
+  PRIMARY KEY (`PRODUCT_ID`, `USER_ID`) USING BTREE,
+  FOREIGN KEY (`PRODUCT_ID`) REFERENCES `products` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  FOREIGN KEY (`USER_ID`) REFERENCES `users` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+
+insert INTO favorite_product
+Values (4, 1);
+insert INTO favorite_product
+Values (6, 1);
+insert INTO favorite_product
+Values (14, 1);
+insert into favorite_product
+values (41, 1);
+insert into favorite_product
+values (23, 1);
+insert into favorite_product
+values (68, 1);
+insert into favorite_product
+values (25, 1);
