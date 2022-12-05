@@ -6,7 +6,7 @@
          version="3.1">    
     <display-name>Nhóm 14</display-name>
     <welcome-file-list>
-        <welcome-file>Login</welcome-file>
+        <welcome-file>DangNhap</welcome-file>
     </welcome-file-list>   
     <!-- đưa vào controller
        <session-config>

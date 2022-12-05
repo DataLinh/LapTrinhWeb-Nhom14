@@ -11,27 +11,28 @@
                         <h4>Giỏ hàng</h4>
                         <div class="breadcrumb__links">
                             <a href="${pageContext.request.contextPath }/TrangChu">Trang chủ</a>
-                            <a href="${pageContext.request.contextPath }/CuaHang">Cửa hàng</a>
-                            <span>Giỏ hàng</span>
-                        </div>
+                        <a href="${pageContext.request.contextPath }/CuaHang">Cửa hàng</a>
+                        <span>Giỏ hàng</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Shopping Cart Section Begin -->
-    <section class="shopping-cart spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="shopping__cart__table">
-                        <div class="row">${error}</div>
+<!-- Shopping Cart Section Begin -->
+<section class="shopping-cart spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="shopping__cart__table">
+                    <div class="row">${error}</div>
                     <table>                           
                         <thead>
                             <tr>
                                 <th>Sản phẩm</th>
                                 <th>Số lượng</th>
+                                <th> SL </th>
                                 <th>Thành tiền</th>
                                 <th></th>
                             </tr>
@@ -41,8 +42,7 @@
                                 <tr>
                                     <td class="product__cart__item">
                                         <div class="product__cart__item__pic">
-
-                                            <img src="${url}/${c.product.image}" alt="">
+                                            <img src="${url}/${c.product.image}.webp" alt="" width="90" height="90">
                                         </div>
                                         <div class="product__cart__item__text">
                                             <h6>${c.product.title}</h6>
@@ -62,15 +62,17 @@
                                             <input type="submit" value="Cập nhật">
                                         </form>
                                     </td>
+                                    
+
                                     <td class="cart__price"> ${c.quantity * c.product.price} đ</td>
                                     <td>
                                         <form action="GioHang" method="post">                                            
                                             <input type="hidden" name="action" 
                                                    value="updateItem">                                                                                 
                                             <input type="hidden" name="cartItemId" 
-                                                   value="<c:out value='${c.id}'/>">
+                                                   value="${c.id}">
                                             <input type="hidden" name="productId" 
-                                                   value="<c:out value='${c.product.id}'/>">
+                                                   value="${c.product.id}">
                                             <input type="hidden" name="quantity" 
                                                    value="0">
                                             <input type="submit" value="Xóa">

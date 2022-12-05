@@ -25,8 +25,7 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form action="TrangChu" method="get">
-                    <input type="hidden" name="action" value="order">   
+                <form action="CuaHang" method="get">                   
                     <div class="row">
                         <div class="checkout__order">
                             <h4 class="order__title" style="text-align:center;"> Đơn hàng đã được tiếp nhận!</h4>

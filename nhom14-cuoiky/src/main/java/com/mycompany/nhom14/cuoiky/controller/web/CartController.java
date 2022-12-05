@@ -35,7 +35,7 @@ public class CartController extends HttpServlet {
             throws ServletException, IOException {
 //        String action = request.getParameter("action");
 //        if (action == null) {
-            doGet_Display(request, response);
+        doGet_Display(request, response);
 //        }
     }
 
@@ -46,14 +46,15 @@ public class CartController extends HttpServlet {
             doGet_Display(request, response);
         } else if (action.equalsIgnoreCase("add")) {
             doPost_Add(request, response);
+        } else if (action.equalsIgnoreCase("minus")) {
+            doPost_Minus(request, response);
         } else if (action.equalsIgnoreCase("remove")) {
             doPost_Remove(request, response);
         } else if (action.equalsIgnoreCase("updateItem")) {
             doPost_UpdateItem(request, response);
         }
     }
-    
-    
+
     protected void doGet_Display(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         int userId = (int) session.getAttribute("userId");
@@ -64,7 +65,7 @@ public class CartController extends HttpServlet {
         RequestDispatcher rd = request.getRequestDispatcher("/view/web/shopping-cart.jsp");
         rd.forward(request, response);
     }
-    
+
     protected void doPost_UpdateItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         int userId = (int) session.getAttribute("userId");
@@ -104,6 +105,17 @@ public class CartController extends HttpServlet {
         User user = userService.getById(userId);
         int cartId = user.getCart().getId();
         cartItemService.addCartItem(cartId, productId, 1);
+        doGet_Display(request, response);
+    }
+    
+        protected void doPost_Minus(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        int productId = Integer.parseInt(request.getParameter("productId"));
+        int userId = (int) session.getAttribute("userId");
+        User user = userService.getById(userId);
+        int cartId = user.getCart().getId();
+        cartItemService.addCartItem(cartId, productId, -1);
         doGet_Display(request, response);
     }
 

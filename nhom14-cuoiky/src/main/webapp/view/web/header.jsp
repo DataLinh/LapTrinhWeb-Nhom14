@@ -94,18 +94,18 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li><a href="${pageContext.request.contextPath}/TrangChu">Trang Chủ</a></li>
-                            <li><a href="${pageContext.request.contextPath}/shop">Sản phẩm</a></li>
+                            <li><a href="${pageContext.request.contextPath}/CuaHang">Sản phẩm</a></li>
                             <li><a href="#">Xem thêm</a>
                                 <ul class="dropdown">
                                     <li><a href="${pageContext.request.contextPath}/ThongTinCuaHang">Về chúng tôi</a></li>
                                     <li><a href="${pageContext.request.contextPath}/shop-details">Thông tin cửa hàng</a></li>
-                                   <!-- <li><a href="${pageContext.request.contextPath}/GioHang">Giỏ hàng</a></li> -->
-                                    <li><a href="${pageContext.request.contextPath}/checkout">Thanh toán</a></li>
+<!--                                    <li><a href="${pageContext.request.contextPath}/CuaHang">Cửa hàng</a></li> -->
+                                    <li><a href="${pageContext.request.contextPath}/DatHang">Đặt hàng</a></li>
                                     <li><a href="${pageContext.request.contextPath}/Blog">Thông tin blog</a></li>
                                 </ul>
                             </li>
                             <!--   <li class="active"><a href="./blog.jsp">Blog</a></li>  --> 
-                            <li><a href="${pageContext.request.contextPath}/Contact">Liên hệ</a></li>
+                            <li><a href="${pageContext.request.contextPath}/LienHe">Liên hệ</a></li>
                         </ul>
                     </nav>
                 </div>
