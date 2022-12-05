@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.nhom14.cuoiky.dao;
+package com.mycompany.nhom14.cuoiky.service;
 
 import java.util.List;
 
 import com.mycompany.nhom14.cuoiky.entities.Product;
+import com.mycompany.nhom14.cuoiky.entities.User;
 
 /**
  *
  * @author Linh
  */
-public interface IProductDao {
-    Product get(int id);
+public interface IProductService {
 
 	void insert(Product product);
 

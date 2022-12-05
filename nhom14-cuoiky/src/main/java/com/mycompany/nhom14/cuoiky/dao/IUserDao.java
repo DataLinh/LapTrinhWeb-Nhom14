@@ -6,6 +6,7 @@ package com.mycompany.nhom14.cuoiky.dao;
 
 import com.mycompany.nhom14.cuoiky.entities.User;
 
+
 /**
  *
  * @author Linh
@@ -17,5 +18,11 @@ public interface IUserDao {
     int getIdByCartId(int id);
 
     void newCart(int userid);
+
+	void Register(String userName, String userEmail, String userPass);
+
+	User Login(String email, String password);
+
+	User CheckEmail(String email);
 
 }
