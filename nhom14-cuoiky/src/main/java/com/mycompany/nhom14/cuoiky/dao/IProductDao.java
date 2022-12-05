@@ -24,6 +24,7 @@ public interface IProductDao {
     List<Product> getListByCategory(List<Product> list,int CategoryID);
 
     List<Product> getListByPrice(List<Product> list,int price);
+    
     List<Product> getWithCondition(List<Product> list,int categoryID, int price);
 
 }

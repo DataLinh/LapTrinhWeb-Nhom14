@@ -32,7 +32,7 @@ public class LoginController extends HttpServlet {
         //Chờ chức năng login
         session.setAttribute("userId", 5);
 
-        req.getRequestDispatcher("/test").forward(req, resp);
+        req.getRequestDispatcher("/CuaHang").forward(req, resp);
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)

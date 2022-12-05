@@ -10,8 +10,8 @@
                     <div class="breadcrumb__text">
                         <h4>Giỏ hàng</h4>
                         <div class="breadcrumb__links">
-                            <a href="./index.jsp">Trang chủ</a>
-                            <a href="./shop.jsp">Cửa hàng</a>
+                            <a href="${pageContext.request.contextPath }/TrangChu">Trang chủ</a>
+                            <a href="${pageContext.request.contextPath }/CuaHang">Cửa hàng</a>
                             <span>Giỏ hàng</span>
                         </div>
                     </div>
@@ -41,7 +41,8 @@
                                 <tr>
                                     <td class="product__cart__item">
                                         <div class="product__cart__item__pic">
-                                            <img src="${url}/img/shopping-cart/cart-1.jpg" alt="">
+
+                                            <img src="${url}/${c.product.image}" alt="">
                                         </div>
                                         <div class="product__cart__item__text">
                                             <h6>${c.product.title}</h6>
@@ -49,21 +50,21 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <form action="GioHang" method="get">                                            
+                                        <form action="GioHang" method="post">                                            
                                             <input type="hidden" name="action" 
                                                    value="updateItem">
                                             <input type="hidden" name="cartItemId" 
-                                                   value="<c:out value='${c.id}'/>">
+                                                   value="${c.id}">
                                             <input type="hidden" name="productId" 
-                                                   value="<c:out value='${c.product.id}'/>">
+                                                   value="${c.product.id}">
                                             <input type=text name="quantity" 
-                                                   value="<c:out value='${c.quantity}'/>">
+                                                   value="${c.quantity}">
                                             <input type="submit" value="Cập nhật">
                                         </form>
                                     </td>
                                     <td class="cart__price"> ${c.quantity * c.product.price} đ</td>
                                     <td>
-                                        <form action="GioHang" method="get">                                            
+                                        <form action="GioHang" method="post">                                            
                                             <input type="hidden" name="action" 
                                                    value="updateItem">                                                                                 
                                             <input type="hidden" name="cartItemId" 
@@ -83,12 +84,16 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn">
-                            <a href="${pageContext.request.contextPath }/test">Tiếp tục mua sắm</a>
+                            <a href="${pageContext.request.contextPath }/CuaHang">Tiếp tục mua sắm</a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn update__btn">
-                            <a href="${pageContext.request.contextPath }/GioHang?&action=remove"><i class="fa fa-spinner"></i> Xóa giỏ hàng</a>
+                            <form action="GioHang" method="post">                                            
+                                <input type="hidden" name="action" 
+                                       value="remove">   
+                                <input type="submit" value="Xóa giỏ hàng">
+                            </form>                         
                         </div>
                     </div>
                 </div>
@@ -101,12 +106,8 @@
                         <li>Tiền ship <span>0đ</span></li>
                         <li>Tổng <span>${total} đ</span></li>
                     </ul>
-                    <a href="${pageContext.request.contextPath }/DatHang" class="primary-btn">Mua hàng</a>
-
-
-
+                    <a href="${pageContext.request.contextPath }/DatHang" class="primary-btn">Đặt hàng ngay</a>
                 </div>
-
             </div>
         </div>
 </section>

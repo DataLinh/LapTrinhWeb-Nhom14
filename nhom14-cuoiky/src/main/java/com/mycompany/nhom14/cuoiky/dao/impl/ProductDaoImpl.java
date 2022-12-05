@@ -132,10 +132,11 @@ public class ProductDaoImpl implements IProductDao {
     public List<Product> getWithCondition(List<Product> list, int categoryID, int price) {
         return getListByPrice(getListByCategory(list,categoryID),price);
     }
-    public static void main(String[] args) {
-        ProductDaoImpl productDao = new ProductDaoImpl();
-        List<Product> products = productDao.getAll();
-        products.forEach(p->System.out.println(p.getId()));
-    }
+    
+//    public static void main(String[] args) {
+//        ProductDaoImpl productDao = new ProductDaoImpl();
+//        List<Product> products = productDao.getAll();
+//        products.forEach(p->System.out.println(p.getId()));
+//    }
 
 }

@@ -11,7 +11,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ShopController", value = "/shop")
+@WebServlet(name = "ShopController", value = "/CuaHang")
 public class ShopController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -83,7 +83,7 @@ public class ShopController extends HttpServlet {
         request.setAttribute("categories",categories);
         request.setAttribute("products",products);
 //        request.getRequestDispatcher("view/web/shop.jsp").forward(request,response);
-        request.getRequestDispatcher("view/web/shop1.jsp").forward(request,response);
+        request.getRequestDispatcher("view/web/shop.jsp").forward(request,response);
 
     }
 

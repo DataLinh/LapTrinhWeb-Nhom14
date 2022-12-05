@@ -10,8 +10,8 @@
                     <div class="breadcrumb__text">
                         <h4>Điền thông tin</h4>
                         <div class="breadcrumb__links">
-                            <a href="./index.jsp">Trang chủ</a>
-                            <a href="./shop.jsp">Cửa hàng</a>
+                            <a href="${pageContext.request.contextPath }/TrangChu">Trang chủ</a>
+                            <a href="${pageContext.request.contextPath }/CuaHang">Cửa hàng</a>
                             <span>Điền thông tin</span>
                         </div>
                     </div>

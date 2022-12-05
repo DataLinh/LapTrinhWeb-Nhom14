@@ -33,21 +33,39 @@ public class CartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+//        String action = request.getParameter("action");
+//        if (action == null) {
+            doGet_Display(request, response);
+//        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
             doGet_Display(request, response);
-        } else {
-            if (action.equalsIgnoreCase("buy")) {
-                doGet_Buy(request, response);
-            } else if (action.equalsIgnoreCase("remove")) {
-                doGet_Remove(request, response);
-            } else if (action.equalsIgnoreCase("updateItem")) {
-                doGet_UpdateItem(request, response);
-            }
+        } else if (action.equalsIgnoreCase("add")) {
+            doPost_Add(request, response);
+        } else if (action.equalsIgnoreCase("remove")) {
+            doPost_Remove(request, response);
+        } else if (action.equalsIgnoreCase("updateItem")) {
+            doPost_UpdateItem(request, response);
         }
     }
-
-    protected void doGet_UpdateItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    
+    
+    protected void doGet_Display(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        int userId = (int) session.getAttribute("userId");
+        User user = userService.getById(userId);
+        int cartId = user.getCart().getId();
+        request.setAttribute("cartItems", cartItemService.getAllByCartId(cartId));
+        request.setAttribute("total", user.getCart().getTotal());
+        RequestDispatcher rd = request.getRequestDispatcher("/view/web/shopping-cart.jsp");
+        rd.forward(request, response);
+    }
+    
+    protected void doPost_UpdateItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         int userId = (int) session.getAttribute("userId");
         User user = userService.getById(userId);
@@ -69,18 +87,7 @@ public class CartController extends HttpServlet {
         doGet_Display(request, response);
     }
 
-    protected void doGet_Display(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        int userId = (int) session.getAttribute("userId");
-        User user = userService.getById(userId);
-        int cartId = user.getCart().getId();
-        request.setAttribute("cartItems", cartItemService.getAllByCartId(cartId));
-        request.setAttribute("total", user.getCart().getTotal());
-        RequestDispatcher rd = request.getRequestDispatcher("/view/web/shopping-cart.jsp");
-        rd.forward(request, response);
-    }
-
-    protected void doGet_Remove(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost_Remove(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         int userId = (int) session.getAttribute("userId");
@@ -89,7 +96,7 @@ public class CartController extends HttpServlet {
         doGet_Display(request, response);
     }
 
-    protected void doGet_Buy(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost_Add(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         int productId = Integer.parseInt(request.getParameter("productId"));
@@ -100,7 +107,4 @@ public class CartController extends HttpServlet {
         doGet_Display(request, response);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    }
 }
