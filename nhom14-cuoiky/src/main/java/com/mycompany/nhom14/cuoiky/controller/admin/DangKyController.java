@@ -17,7 +17,7 @@ import com.mycompany.nhom14.cuoiky.service.IUserService;
 import com.mycompany.nhom14.cuoiky.service.impl.UserServiceImpl;
 
 
-@WebServlet({"/DangKy","/DangKy/Register"})
+@WebServlet(urlPatterns = {"/DangKy","/DangKy/Register"})
 public class DangKyController  extends HttpServlet {
 
     @Override
@@ -26,6 +26,7 @@ public class DangKyController  extends HttpServlet {
     	if(url.contains("Register")) {
     		register(request,response);
     	}
+    	else
     	request.getRequestDispatcher("/view/admin/register.jsp").forward(request,response);
     }
     
@@ -35,6 +36,7 @@ public class DangKyController  extends HttpServlet {
     	if(url.contains("Register")) {
     		register(request,response);
     	}
+    	else
     	request.getRequestDispatcher("/view/admin/register.jsp").forward(request,response);
     }
     protected void register(HttpServletRequest request, HttpServletResponse response)
@@ -46,17 +48,17 @@ public class DangKyController  extends HttpServlet {
 		String rePass = request.getParameter("reUserPass");
 		
 		if (!pass.equals(rePass)) {
-			RequestDispatcher rd = request.getRequestDispatcher("DangKy");
+			RequestDispatcher rd = request.getRequestDispatcher("/view/admin/register.jsp");
 			rd.forward(request, response);
 		} else {
 			IUserService UserService = new UserServiceImpl();
 			User a = UserService.CheckEmail(email);
 			if (a == null) {
 				UserService.Register(user, email, pass);
-				RequestDispatcher rd = request.getRequestDispatcher("DangNhap");
+				RequestDispatcher rd = request.getRequestDispatcher("/view/admin/login.jsp");
 				rd.forward(request, response);
 			} else {
-				RequestDispatcher rd = request.getRequestDispatcher("DangKy");
+				RequestDispatcher rd = request.getRequestDispatcher("/view/admin/register.jsp");
 				rd.forward(request, response);
 			}
 		}

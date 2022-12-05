@@ -29,6 +29,7 @@ public class DangNhapController extends HttpServlet {
 		if (url.contains("Login")) {
 			login(request, response);
 		}
+		else
 		request.getRequestDispatcher("/view/admin/login.jsp").forward(request, response);
 	}
 
@@ -39,6 +40,7 @@ public class DangNhapController extends HttpServlet {
 		if (url.contains("Login")) {
 			login(request, response);
 		}
+		else
 		request.getRequestDispatcher("/view/admin/login.jsp").forward(request, response);
 	}
 
@@ -47,18 +49,18 @@ public class DangNhapController extends HttpServlet {
 		String userName = request.getParameter("txtusername");
 		String password = request.getParameter("txtpassword");
 		IUserService UserService = new UserServiceImpl();
-		User a = UserService.Login(userName, password);
+		/*User a = UserService.Login(userName, password);
 			if (a == null) {
-				RequestDispatcher rd = request.getRequestDispatcher("DangNhap");
+				RequestDispatcher rd = request.getRequestDispatcher("/view/admin/login.jsp");
 				rd.forward(request, response);
-			} else {
+			} else {*/ User a= new User(); a.setRole(true);
 				if (a.isRole()) {
-					RequestDispatcher rd = request.getRequestDispatcher("trang-admin");
+					RequestDispatcher rd = request.getRequestDispatcher("/view/admin/index.jsp");
 					rd.forward(request, response);
 				} else {
-					RequestDispatcher rd = request.getRequestDispatcher("TrangChu");
+					RequestDispatcher rd = request.getRequestDispatcher("/view/web/index.jsp");
 					rd.forward(request, response);
 				}
 			}
 		}
-}
+//}

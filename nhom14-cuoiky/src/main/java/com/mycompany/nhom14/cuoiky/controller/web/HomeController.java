@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author Linh
  */
 
-@WebServlet({"/TrangChu"})
+@WebServlet(urlPatterns = {"/TrangChu"})
 public class HomeController  extends HttpServlet {
 
     @Override
