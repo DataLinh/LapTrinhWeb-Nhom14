@@ -101,7 +101,7 @@
                                     <li><a href="${pageContext.request.contextPath}/shop-details">Thông tin cửa hàng</a></li>
 <!--                                    <li><a href="${pageContext.request.contextPath}/CuaHang">Cửa hàng</a></li> -->
                                     <li><a href="${pageContext.request.contextPath}/DatHang">Đặt hàng</a></li>
-                                    <li><a href="${pageContext.request.contextPath}/Blog">Thông tin blog</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/Blog">Blog</a></li>
                                 </ul>
                             </li>
                             <!--   <li class="active"><a href="./blog.jsp">Blog</a></li>  --> 
