@@ -13,7 +13,7 @@
                         <h4>Shop</h4>
                         <div class="breadcrumb__links">
                             <a href="${pageContext.request.contextPath }/TrangChu">Trang chủ</a>
-                        <span>Shop</span>
+                        <span>Cửa hàng</span>
                     </div>
                 </div>
             </div>

@@ -75,7 +75,6 @@ public class CartController extends HttpServlet {
         int quantity = -1;
         try {
             quantity = Integer.parseInt(request.getParameter("quantity"));
-
         } catch (Exception e) {
             request.setAttribute("error", "Vui lòng nhập số hợp lệ");
         }
@@ -85,7 +84,7 @@ public class CartController extends HttpServlet {
         } else {
             request.setAttribute("error", "Vui lòng nhập số hợp lệ");
         }
-        doGet_Display(request, response);
+        response.sendRedirect("GioHang");
     }
 
     protected void doPost_Remove(HttpServletRequest request, HttpServletResponse response)
@@ -94,7 +93,7 @@ public class CartController extends HttpServlet {
         int userId = (int) session.getAttribute("userId");
         User user = userService.getById(userId);
         userService.newCart(user.getId());
-        doGet_Display(request, response);
+        response.sendRedirect("GioHang");
     }
 
     protected void doPost_Add(HttpServletRequest request, HttpServletResponse response)
@@ -105,10 +104,10 @@ public class CartController extends HttpServlet {
         User user = userService.getById(userId);
         int cartId = user.getCart().getId();
         cartItemService.addCartItem(cartId, productId, 1);
-        doGet_Display(request, response);
+        response.sendRedirect("GioHang");
     }
-    
-        protected void doPost_Minus(HttpServletRequest request, HttpServletResponse response)
+
+    protected void doPost_Minus(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
         int productId = Integer.parseInt(request.getParameter("productId"));
@@ -116,7 +115,6 @@ public class CartController extends HttpServlet {
         User user = userService.getById(userId);
         int cartId = user.getCart().getId();
         cartItemService.addCartItem(cartId, productId, -1);
-        doGet_Display(request, response);
+        response.sendRedirect("GioHang");
     }
-
 }
