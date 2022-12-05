@@ -16,6 +16,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -61,6 +62,8 @@ public class User implements Serializable {
    @JoinColumn(name = "CART_ID", referencedColumnName = "id")
    private Cart cart;
 
+    @ManyToMany(mappedBy = "users", fetch = FetchType.LAZY)
+    private Collection<Product> products;
     /**
      * @return the id
      */

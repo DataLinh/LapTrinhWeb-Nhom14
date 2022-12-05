@@ -6,6 +6,7 @@ package com.mycompany.nhom14.cuoiky.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -17,6 +18,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -63,10 +66,12 @@ public class Product implements Serializable {
     private Discount discount;
     
     
-
-
-
-//
+    @JoinTable(name = "favorite_product", joinColumns = {
+    @JoinColumn(name = "PRODUCT_ID", referencedColumnName = "ID")}, inverseJoinColumns = {
+    @JoinColumn(name = "USER_ID", referencedColumnName = "ID")})
+    @ManyToMany(fetch = FetchType.LAZY)
+    private Collection<User> users;
+//    
 
     /**
      * @return the id
