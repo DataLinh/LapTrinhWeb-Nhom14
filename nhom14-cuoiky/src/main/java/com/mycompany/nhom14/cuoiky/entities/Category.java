@@ -101,4 +101,16 @@ public class Category implements Serializable {
     public void setProducts(List<Product> products) {
         this.products = products;
     }
+
+    public Category() {
+    }
+
+    public Category(int id, String categoryName, String description, boolean isDeleted, List<Product> products) {
+        this.id = id;
+        this.categoryName = categoryName;
+        this.description = description;
+        this.isDeleted = isDeleted;
+        this.products = products;
+    }
+
 }

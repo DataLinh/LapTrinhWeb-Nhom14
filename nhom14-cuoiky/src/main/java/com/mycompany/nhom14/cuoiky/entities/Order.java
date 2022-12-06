@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,6 +22,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
+
 /**
  *
  * @author Linh
@@ -28,11 +30,40 @@ import javax.persistence.Temporal;
 @Entity
 @Table(name = "orders")
 public class Order implements Serializable {
-	@Id
+
+    /**
+     * @return the isDeleted
+     */
+    public boolean isIsDeleted() {
+        return isDeleted;
+    }
+
+    /**
+     * @param isDeleted the isDeleted to set
+     */
+    public void setIsDeleted(boolean isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+
+    /**
+     * @return the cart
+     */
+    public Cart getCart() {
+        return cart;
+    }
+
+    /**
+     * @param cart the cart to set
+     */
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private int id;
-    
+
     @Column(name = "FULL_NAME")
     private String fullName;
 
@@ -57,16 +88,22 @@ public class Order implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "USER_ID")
-    private User user;    
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "orders")
-    private Set<OrderLine> orderLines = new HashSet<>();
+    private User user;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "orders")
+//    private Set<OrderLine> orderLines = new HashSet<>();
+
+   @OneToOne(cascade = CascadeType.ALL)
+   @JoinColumn(name = "CART_ID", referencedColumnName = "id")
+   private Cart cart;
+    
     public boolean isDeleted() {
-        return isDeleted;
+        return isIsDeleted();
     }
 
     public void setDeleted(boolean deleted) {
-        isDeleted = deleted;
+        setIsDeleted(deleted);
     }
+
     /**
      * @return the id
      */
@@ -217,18 +254,31 @@ public class Order implements Serializable {
     /**
      * @param orderDetails the orderDetails to set
      */
-  /*  public void setOrderDetails(OrderLine orderDetails) {
+ /*  public void setOrderDetails(OrderLine orderDetails) {
         this.orderDetails = orderDetails;
-    }*/ 
+    }*/
+//    public Set<OrderLine> getOrderLines() {
+//        return orderLines;
+//    }
+//
+//    public void setOrderLines(Set<OrderLine> orderLines) {
+//        this.orderLines = orderLines;
+//    }
 
-    public Set<OrderLine> getOrderLines() {
-		return orderLines;
-	}
+    public Order() {
+    }
 
-	public void setOrderLines(Set<OrderLine> orderLines) {
-		this.orderLines = orderLines;
-	}
-
-   
-
+    public Order(int id, String fullName, String email, String phoneNumber, String address, String note, Date orderDate, int status, int totalMoney, boolean isDeleted) {
+        this.id = id;
+        this.fullName = fullName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.note = note;
+        this.orderDate = orderDate;
+        this.status = status;
+        this.totalMoney = totalMoney;
+        this.isDeleted = isDeleted;
+        this.user = user;
+    }
 }

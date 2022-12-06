@@ -146,5 +146,18 @@ public class Discount implements Serializable {
     public void setProducts(List<Product> products) {
         this.products = products;
     }
-    
+
+    public Discount() {
+    }
+
+    public Discount(int id, String name, byte type, Date createdAt, Date expirationDate, int value, boolean isDeleted, List<Product> products) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.createdAt = createdAt;
+        this.expirationDate = expirationDate;
+        this.value = value;
+        this.isDeleted = isDeleted;
+        this.products = products;
+    }
 }

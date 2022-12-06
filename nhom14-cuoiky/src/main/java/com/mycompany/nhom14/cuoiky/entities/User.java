@@ -15,7 +15,10 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
@@ -27,7 +30,6 @@ import javax.persistence.Temporal;
 @Table(name = "users")
 public class User implements Serializable {
 
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
@@ -55,14 +57,13 @@ public class User implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY,mappedBy="user", cascade=CascadeType.ALL)
     private List<Order> orders;
+    
+   @OneToOne(cascade = CascadeType.ALL)
+   @JoinColumn(name = "CART_ID", referencedColumnName = "id")
+   private Cart cart;
 
-    public boolean isDeleted() {
-        return isDeleted;
-    }
-
-    public void setDeleted(boolean deleted) {
-        isDeleted = deleted;
-    }
+    @ManyToMany(mappedBy = "users", fetch = FetchType.LAZY)
+    private Collection<Product> products;
     /**
      * @return the id
      */
@@ -190,6 +191,20 @@ public class User implements Serializable {
     }
 
     /**
+     * @return the isDeleted
+     */
+    public boolean isIsDeleted() {
+        return isDeleted;
+    }
+
+    /**
+     * @param isDeleted the isDeleted to set
+     */
+    public void setIsDeleted(boolean isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+
+    /**
      * @return the orders
      */
     public List<Order> getOrders() {
@@ -203,5 +218,35 @@ public class User implements Serializable {
         this.orders = orders;
     }
 
-    
+    /**
+     * @return the cart
+     */
+    public Cart getCart() {
+        return cart;
+    }
+
+    /**
+     * @param cart the cart to set
+     */
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
+
+    public User() {
+    }
+
+    public User(int id, String fullName, String email, String phoneNumber, String address, String password, boolean role, Date createdAt, Date updateAt, boolean isDeleted, List<Order> orders, Cart cart) {
+        this.id = id;
+        this.fullName = fullName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.password = password;
+        this.role = role;
+        this.createdAt = createdAt;
+        this.updateAt = updateAt;
+        this.isDeleted = isDeleted;
+        this.orders = orders;
+        this.cart = cart;
+    }
 }
