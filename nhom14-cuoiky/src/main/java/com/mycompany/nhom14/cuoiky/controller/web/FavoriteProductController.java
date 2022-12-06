@@ -6,9 +6,9 @@ package com.mycompany.nhom14.cuoiky.controller.web;
 
 import com.mycompany.nhom14.cuoiky.entities.Product;
 import com.mycompany.nhom14.cuoiky.entities.User;
-import com.mycompany.nhom14.cuoiky.service.impl.FavoriteProductService;
+import com.mycompany.nhom14.cuoiky.service.IFavoriteProductService;
+import com.mycompany.nhom14.cuoiky.service.impl.FavoriteProductServiceImpl;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Collection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,20 +24,23 @@ import javax.servlet.http.HttpServletResponse;
 public class FavoriteProductController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        IFavoriteProductService favoriteProductService = new FavoriteProductServiceImpl();
         response.setContentType("text/html;charset=UTF-8");
+        
         User user = new User();
         user.setId(1);
-        System.out.println("Okla");
-        if (request.getParameter("idProduct") != null) {
-            System.out.println("Okla");
-            System.out.println(request.getParameter("idProduct"));
-            String idProduct = request.getParameter("idProduct");
-            Product product = new Product();
-            product.setId(Integer.parseInt(idProduct));
-            FavoriteProductService.XoaSanPhamYeuThich(user, product);
+        
+        if ("DeleteFavoriteProduct".equals(request.getParameter("action"))) {
+            Product product = createProductFromRequest(request);
+            favoriteProductService.XoaSanPhamYeuThich(user, product);
         }
 
-        Collection <Product> products = FavoriteProductService.LayDanhSachSanPhamYeuThich(user);
+        if ("AddFavoriteProduct".equals(request.getParameter("action"))) {
+            Product product = createProductFromRequest(request);
+            favoriteProductService.ThemSanPhamYeuThich(user, product);
+        }
+        
+        Collection <Product> products = favoriteProductService.LayDanhSachSanPhamYeuThich(user);
         request.setAttribute("products", products);
         
         getServletContext()
@@ -45,6 +48,13 @@ public class FavoriteProductController extends HttpServlet {
                 .forward(request, response);
     }
 
+    public Product createProductFromRequest(HttpServletRequest request) {
+        String idProduct = request.getParameter("idProduct");
+        Product product = new Product();
+        product.setId(Integer.parseInt(idProduct));
+        return product;  
+    }
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

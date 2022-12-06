@@ -117,7 +117,15 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="${url}/${p.image}.webp" width="260" height="260">
                                     <ul class="product__hover">
-                                        <li><a href="#"><img src="${url}/img/icon/heart.png" alt=""></a></li>
+                                        <li> <a>
+                                                <iframe name="votar" style="display:none;"></iframe>
+                                                <form action="SanPhamYeuThich" method="post" target="votar">
+                                                    <input type="hidden" id="action" name="action" value="AddFavoriteProduct">
+                                                    <input type="hidden" id="idProduct" name="idProduct" value="${p.id}">
+                                                    <input type="image" class="heart" src="img/icon/heart.png" alt="submit" style="background: #ffffff;padding: 10px;display: inline-block;">
+                                                </form>
+                                                <span>Yêu thích</span>
+                                            </a> </li>
                                         <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>
                                         </li>
                                         <li><a href="#"><img src="${url}/img/icon/search.png" alt=""></a></li>

@@ -222,6 +222,7 @@
                     <td>
 <!--                        <iframe name="votar" style="display:none;"></iframe>-->
                         <form id="${product.id}" action="SanPhamYeuThich" method="post" target="votar">
+                            <input type="hidden" id="action" name="action" value="DeleteFavoriteProduct">
                             <input type="hidden" id="idProduct" name="idProduct" value="${product.id}">
                         </form>
                     </td>
