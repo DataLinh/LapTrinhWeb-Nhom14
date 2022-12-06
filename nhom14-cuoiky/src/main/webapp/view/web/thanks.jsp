@@ -22,7 +22,7 @@
 
 
     <!-- Checkout Section Begin -->
-    <section class="checkout spad" style="text-align:center;">
+    <section class="checkout spad" style="width:90%">
         <div class="container">
             <div class="checkout__form">
                 <form action="CuaHang" method="get">                   

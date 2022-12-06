@@ -32,7 +32,6 @@
                             <tr>
                                 <th>Sản phẩm</th>
                                 <th>Số lượng</th>
-                                <th> SL </th>
                                 <th>Thành tiền</th>
                                 <th></th>
                             </tr>
@@ -49,33 +48,41 @@
                                             <h5>${c.product.price}</h5>
                                         </div>
                                     </td>
-                                    <td>
-                                        <form action="GioHang" method="post">                                            
-                                            <input type="hidden" name="action" 
-                                                   value="updateItem">
-                                            <input type="hidden" name="cartItemId" 
-                                                   value="${c.id}">
-                                            <input type="hidden" name="productId" 
-                                                   value="${c.product.id}">
-                                            <input type=text name="quantity" 
-                                                   value="${c.quantity}">
-                                            <input type="submit" value="Cập nhật">
-                                        </form>
+                                    <td style="text-align: center; vertical-align: middle;">
+                                        <div class="row">
+                                            <form action="GioHang" method="post">                                            
+                                                <input type="hidden" name="action" 
+                                                       value="add">
+                                                <input type="hidden" name="cartItemId" 
+                                                       value="${c.id}">
+                                                <input type="hidden" name="productId" 
+                                                       value="${c.product.id}">                                         
+                                                <input type="image" src="${url}/img/icon/add.png" height="15" width="15">
+                                            </form>
+                                            <p>&ensp;${c.quantity}&ensp;</p>
+                                            <form action="GioHang" method="post">                                            
+                                                <input type="hidden" name="action" 
+                                                       value="minus">
+                                                <input type="hidden" name="cartItemId" 
+                                                       value="${c.id}">
+                                                <input type="hidden" name="productId" 
+                                                       value="${c.product.id}">                                        
+                                                <input type="image" src="${url}/img/icon/minus.png" height="15" width="15">
+                                            </form>
+                                        </div>
                                     </td>
-                                    
+
 
                                     <td class="cart__price"> ${c.quantity * c.product.price} đ</td>
                                     <td>
                                         <form action="GioHang" method="post">                                            
                                             <input type="hidden" name="action" 
-                                                   value="updateItem">                                                                                 
+                                                   value="removeItem">                                                                                 
                                             <input type="hidden" name="cartItemId" 
                                                    value="${c.id}">
                                             <input type="hidden" name="productId" 
                                                    value="${c.product.id}">
-                                            <input type="hidden" name="quantity" 
-                                                   value="0">
-                                            <input type="submit" value="Xóa">
+                                            <input type="image" src="${url}/img/icon/delete.png" height="50" width="50" style="text-align:center;">
                                         </form> 
                                     </td>
                                 </tr>

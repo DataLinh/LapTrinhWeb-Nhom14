@@ -50,8 +50,8 @@ public class CartController extends HttpServlet {
             doPost_Minus(request, response);
         } else if (action.equalsIgnoreCase("remove")) {
             doPost_Remove(request, response);
-        } else if (action.equalsIgnoreCase("updateItem")) {
-            doPost_UpdateItem(request, response);
+        } else if (action.equalsIgnoreCase("removeItem")) {
+            doPost_RemoveItem(request, response);
         }
     }
 
@@ -66,24 +66,14 @@ public class CartController extends HttpServlet {
         rd.forward(request, response);
     }
 
-    protected void doPost_UpdateItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost_RemoveItem(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         int userId = (int) session.getAttribute("userId");
         User user = userService.getById(userId);
         int cartId = user.getCart().getId();
         int productId = Integer.parseInt(request.getParameter("productId"));
-        int quantity = -1;
-        try {
-            quantity = Integer.parseInt(request.getParameter("quantity"));
-        } catch (Exception e) {
-            request.setAttribute("error", "Vui lòng nhập số hợp lệ");
-        }
-        if (quantity >= 0) {
-            int cartItemId = Integer.parseInt(request.getParameter("cartItemId"));
-            cartItemService.updateCartItem(cartItemId, cartId, productId, quantity);
-        } else {
-            request.setAttribute("error", "Vui lòng nhập số hợp lệ");
-        }
+        int cartItemId = Integer.parseInt(request.getParameter("cartItemId"));
+        cartItemService.updateCartItem(cartItemId, cartId, productId, 0);
         response.sendRedirect("GioHang");
     }
 

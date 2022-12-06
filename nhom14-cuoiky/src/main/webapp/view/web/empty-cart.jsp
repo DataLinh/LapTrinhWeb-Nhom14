@@ -24,11 +24,13 @@
 <!-- Checkout Section Begin -->
 <section style="text-align:center;">
     <img src="${url}/img/shopping-cart/empty-cart.webp" >
-    <div class="col-lg-6 col-md-6 col-sm-6">
-        <div class="continue__btn" style="text-align:center;">
+    <br>    <br>    <br>    <br>
+    <div class="col-lg-6 col-md-6 col-sm-6" style="text-align: center; display: inline-block;">
+        <div class="continue__btn" >
             <a href="${pageContext.request.contextPath }/CuaHang" >Tiếp tục mua sắm</a>
         </div>
     </div>
+    <br>    <br>    <br>    <br>
 </section>
 <!-- Checkout Section End -->
 

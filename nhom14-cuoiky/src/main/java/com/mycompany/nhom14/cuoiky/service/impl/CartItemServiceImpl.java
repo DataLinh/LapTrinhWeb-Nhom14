@@ -41,7 +41,7 @@ public class CartItemServiceImpl implements ICartItemService {
     public void addCartItem(int cartId, int productId, int quantity) {
         Cart cart = cartDao.get(cartId);
         Product product = productDao.get(productId);
-        if (cart != null && product != null && quantity > 0) {
+        if (cart != null && product != null) {
             CartItem cartItem = cartItemDao.findCartItem(cartId, productId);
             if (cartItem != null) {
                 cartItem.setQuantity(quantity + cartItem.getQuantity());
@@ -75,9 +75,6 @@ public class CartItemServiceImpl implements ICartItemService {
                 int total = cart.getTotal();
                 cart.setTotal(total +(quantityNew - quantityOld) *product.getPrice());
                 cartDao.update(cart);
-                
-                //Khi discount phải tính lại total cho toàn bộ cart có sản phẩm đổi giá
-                
                 cartItemDao.update(cartItem);
             } catch (Exception e) {
                 e.printStackTrace();

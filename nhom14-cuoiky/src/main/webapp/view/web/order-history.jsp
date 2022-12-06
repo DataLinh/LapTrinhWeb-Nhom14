@@ -22,15 +22,19 @@
 
 
 <!-- Checkout Section Begin -->
-
-<table>                           
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<table style="width:95%">                           
     <thead>
         <tr>
 
-            <th>Mã đơn hàng</th>
-            <th>Ngày đặt hàng</th>
-            <th>Tổng tiền</th>
-            <td> Chi tiết </td>
+            <th> Mã đơn hàng </th>
+            <th> Ngày đặt hàng </th>
+            <th> Tổng tiền</th>
+            <td> Chi tiết  </td>
         </tr>
     </thead>
     <tbody>
