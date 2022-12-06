@@ -122,7 +122,7 @@
                                                 <form action="SanPhamYeuThich" method="post" target="votar">
                                                     <input type="hidden" id="action" name="action" value="AddFavoriteProduct">
                                                     <input type="hidden" id="idProduct" name="idProduct" value="${p.id}">
-                                                    <input type="image" class="heart" src="img/icon/heart.png" alt="submit" style="background: #ffffff;padding: 10px;display: inline-block;">
+                                                    <input type="image" class="heart" src="${url}/img/icon/heart.png" alt="submit" style="background: #ffffff;padding: 10px;display: inline-block;">
                                                 </form>
                                                 <span>Yêu thích</span>
                                             </a> </li>
