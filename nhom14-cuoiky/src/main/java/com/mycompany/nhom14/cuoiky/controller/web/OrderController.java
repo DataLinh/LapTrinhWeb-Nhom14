@@ -70,30 +70,31 @@ public class OrderController extends HttpServlet {
         HttpSession session = request.getSession();
         int userId = (int) session.getAttribute("userId");
         User user = userService.getById(userId);
-        int total = user.getCart().getTotal();
-        if (total > 0) {
-            String fullName = request.getParameter("fullName");
-            String phoneNumber = request.getParameter("phoneNumber");
-            String email = request.getParameter("email");
-            String note = request.getParameter("note");
-            String address = request.getParameter("address");
-            Date date = new Date(System.currentTimeMillis());
-            Order order = new Order();
-            order.setAddress(address);
-            order.setFullName(fullName);
-            order.setDeleted(false);
-            order.setUser(user);
-            order.setEmail(email);
-            order.setPhoneNumber(phoneNumber);
-            order.setNote(note);
-            order.setTotalMoney(user.getCart().getTotal());
-            order.setOrderDate(date);
-            order.setStatus(0);
+        String fullName = request.getParameter("fullName");
+        String phoneNumber = request.getParameter("phoneNumber");
+        String email = request.getParameter("email");
+        String note = request.getParameter("note");
+        String address = request.getParameter("address");
+        Date date = new Date(System.currentTimeMillis());
+        Order order = new Order();
+        order.setAddress(address);
+        order.setFullName(fullName);
+        order.setDeleted(false);
+        order.setUser(user);
+        order.setEmail(email);
+        order.setPhoneNumber(phoneNumber);
+        order.setNote(note);
+        order.setTotalMoney(user.getCart().getTotal());
+        order.setOrderDate(date);
+        order.setStatus(0);
 
-            orderService.thanhToan(order);
-            response.sendRedirect("TrangCamOn");
-        } else {
-            response.sendRedirect("GioHangTrong");
-        }
+        request.setAttribute("user", user);
+        request.setAttribute("total", user.getCart().getTotal());
+        request.setAttribute("cartItems", cartItemService.getAllByCartId(user.getCart().getId()));
+
+        orderService.thanhToan(order);
+
+        RequestDispatcher rd = request.getRequestDispatcher("/view/web/thanks.jsp");
+        rd.forward(request, response);
     }
 }

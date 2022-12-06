@@ -5,7 +5,6 @@
 package com.mycompany.nhom14.cuoiky.dao.impl;
 
 import com.mycompany.nhom14.cuoiky.dao.IOrderDao;
-import com.mycompany.nhom14.cuoiky.entities.Cart;
 import com.mycompany.nhom14.cuoiky.entities.Order;
 import com.mycompany.nhom14.cuoiky.util.HibernateUtil;
 import org.hibernate.Session;
@@ -14,8 +13,6 @@ import org.hibernate.Transaction;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.util.List;
-import javax.persistence.Query;
-
 /**
  *
  * @author Linh
@@ -71,13 +68,13 @@ public class OrderDaoImpl implements IOrderDao {
     }
 
     @Override
-    public List<Order> getAllByUserId(int userId) {
+    public List<Order> getAll() {
         List<Order> orders = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {
-            String HQL = "SELECT o FROM Order o WHERE o.user.id = :userid and o.isDeleted is false";
-            Query query = session.createQuery(HQL);
-            query.setParameter("userid", userId);
-            orders = query.getResultList();
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<Order> criteriaQuery = builder.createQuery(Order.class);
+            criteriaQuery.from(Order.class);
+            orders = session.createQuery(criteriaQuery).getResultList();
         } catch (Exception e) {
             e.printStackTrace();
         }

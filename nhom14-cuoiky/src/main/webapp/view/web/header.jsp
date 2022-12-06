@@ -100,14 +100,12 @@
                                     <li><a href="${pageContext.request.contextPath}/ThongTinCuaHang">Về chúng tôi</a></li>
                                     <li><a href="${pageContext.request.contextPath}/shop-details">Thông tin cửa hàng</a></li>
 <!--                                    <li><a href="${pageContext.request.contextPath}/CuaHang">Cửa hàng</a></li> -->
-<!--                                    <li><a href="${pageContext.request.contextPath}/DatHang">Đặt hàng</a></li>-->
+                                    <li><a href="${pageContext.request.contextPath}/DatHang">Đặt hàng</a></li>
                                     <li><a href="${pageContext.request.contextPath}/Blog">Blog</a></li>
-                                    <li><a href="${pageContext.request.contextPath}/LienHe">Liên hệ</a></li>
-
                                 </ul>
                             </li>
                             <!--   <li class="active"><a href="./blog.jsp">Blog</a></li>  --> 
-                            <li><a href="${pageContext.request.contextPath}/LichSuDatHang"> Lịch sử đặt hàng</a></li>
+                            <li><a href="${pageContext.request.contextPath}/LienHe">Liên hệ</a></li>
                         </ul>
                     </nav>
                 </div>

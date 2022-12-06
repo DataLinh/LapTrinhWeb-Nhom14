@@ -25,7 +25,7 @@ public class OrderServiceImpl implements IOrderService {
 
     private ICartDao cartDao;
     private IUserDao userDao;
-    private ICartItemDao cartItemDao;
+    private ICartItemDao cartItemDao;   
     private IOrderDao orderDao;
 
     public OrderServiceImpl() {
@@ -40,10 +40,5 @@ public class OrderServiceImpl implements IOrderService {
         order.setCart(order.getUser().getCart());
         userDao.newCart(order.getUser().getId());
         orderDao.insert(order);
-    }
-
-    @Override
-    public List<Order> getAllByUserId(int userId) {
-        return orderDao.getAllByUserId(userId);
     }
 }
