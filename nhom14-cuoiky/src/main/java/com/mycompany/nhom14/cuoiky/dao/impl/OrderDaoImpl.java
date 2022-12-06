@@ -74,7 +74,7 @@ public class OrderDaoImpl implements IOrderDao {
     public List<Order> getAllByUserId(int userId) {
         List<Order> orders = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {
-            String HQL = "SELECT o FROM Order o WHERE o.user.id = :userid and o.isDeleted is false";
+            String HQL = "SELECT o FROM Order o WHERE o.user.id = :userid and o.isDeleted is false order by o.id DESC";
             Query query = session.createQuery(HQL);
             query.setParameter("userid", userId);
             orders = query.getResultList();

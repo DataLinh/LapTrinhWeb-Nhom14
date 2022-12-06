@@ -26,7 +26,6 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="shopping__cart__table">
-                    <div class="row">${error}</div>
                     <table>                           
                         <thead>
                             <tr>
@@ -101,7 +100,7 @@
                             <form action="GioHang" method="post">                                            
                                 <input type="hidden" name="action" 
                                        value="remove">   
-                                <input type="submit" value="Xóa giỏ hàng">
+                                <input type="submit"  class="site-btn" value="Xóa giỏ hàng">
                             </form>                         
                         </div>
                     </div>

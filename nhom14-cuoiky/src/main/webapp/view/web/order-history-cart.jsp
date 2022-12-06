@@ -37,10 +37,7 @@
                             <c:forEach items="${cartItems}" var="c">
                                 <li>${c.quantity}  &emsp;&emsp;&emsp; ${c.product.title} &emsp;  <span> &emsp; ${c.product.price*c.quantity}</span></li>
                             </c:forEach>
-                        </ul>
-                        <ul class="checkout__total__all">
-                            <li>Tổng tiền <span>${total}</span></li>
-                        </ul>                            
+                        </ul>                          
                         <button type="submit" class="site-btn"> Tiếp tục mua sắm !!</button>
                     </div>
 

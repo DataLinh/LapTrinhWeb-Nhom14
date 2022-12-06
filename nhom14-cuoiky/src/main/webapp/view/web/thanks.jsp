@@ -22,11 +22,11 @@
 
 
     <!-- Checkout Section Begin -->
-    <section class="checkout spad" style="width:90%">
-        <div class="container">
-            <div class="checkout__form">
-                <form action="CuaHang" method="get">                   
-                    <div class="row">
+    <section class="checkout spad" style="width:95%">
+        <div class="container" style="width:95%">
+            <div class="checkout__form" style="width:95%">
+                <form action="CuaHang" method="get" style="width:95%">                   
+                    <div class="row" style="width:95%">
                         <div class="checkout__order">
                             <h4 class="order__title" style="text-align:center;"> Đơn hàng đã được tiếp nhận!</h4>
                             <h5 class="order__title" style="text-align:center;" >&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  </h5>                        

@@ -22,37 +22,42 @@
 
 
 <!-- Checkout Section Begin -->
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
+<section class="shopping-cart spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="shopping__cart__table">
 <table style="width:95%">                           
     <thead>
         <tr>
 
-            <th> Mã đơn hàng </th>
             <th> Ngày đặt hàng </th>
+            <th> Mã đơn hàng </th>
             <th> Tổng tiền</th>
-            <td> Chi tiết  </td>
+            <td>  </td>
         </tr>
     </thead>
     <tbody>
         <c:forEach items="${orders}" var="o">
             <tr>
-                <td> ${o.id} </td>
                 <td> ${o.orderDate}</td>
+                <td> ${o.id} </td>
                 <td> ${o.cart.total}</td>
                 <td> 
                     <form action="LichSuDatHang" method="post">
                         <input type="hidden" name="cartId" value="${o.cart.id}">
-                        <input type="submit" value="Xem chi tiết">
+                        <input type="submit" class="site-btn" value="Xem chi tiết">
                     </form>
                 </td>
             </tr>
         </c:forEach>
     </tbody>
 </table>
+                </div>
+                </div>
+                </div>
+                </div>
+</section>
 
 <!-- Checkout Section End -->
 
