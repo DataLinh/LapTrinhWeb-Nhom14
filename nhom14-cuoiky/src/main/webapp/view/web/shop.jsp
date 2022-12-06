@@ -13,7 +13,7 @@
                         <h4>Shop</h4>
                         <div class="breadcrumb__links">
                             <a href="${pageContext.request.contextPath }/TrangChu">Trang chủ</a>
-                        <span>Shop</span>
+                        <span>Cửa hàng</span>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,6 @@
                                 </div>
                                 <div class="product__item__text">
                                     <h6>${p.getTitle()}</h6>
-                                    <div class="add-cart">
                                         <form action="GioHang" method="post" >                                            
                                             <input type="hidden" name="action" 
                                                    value="add">               
@@ -141,7 +140,7 @@
                                                    value="${p.id}">
                                             <input type="submit" value="+ Thêm vào giỏ hàng">
                                         </form> 
-                                    </div>    
+                                     
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
