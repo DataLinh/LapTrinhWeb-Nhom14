@@ -75,8 +75,8 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="${pageContext.request.contextPath}/DangNhap">Đăng nhập</a>
-                                <a href="${pageContext.request.contextPath}/DangKy">Đăng ký</a>
+                                <a href="#">Đăng nhập</a>
+                                <a href="#">Đăng ký</a>
                             </div>
                         </div>
                     </div>
@@ -100,12 +100,14 @@
                                     <li><a href="${pageContext.request.contextPath}/ThongTinCuaHang">Về chúng tôi</a></li>
                                     <li><a href="${pageContext.request.contextPath}/shop-details">Thông tin cửa hàng</a></li>
 <!--                                    <li><a href="${pageContext.request.contextPath}/CuaHang">Cửa hàng</a></li> -->
-                                    <li><a href="${pageContext.request.contextPath}/DatHang">Đặt hàng</a></li>
+<!--                                    <li><a href="${pageContext.request.contextPath}/DatHang">Đặt hàng</a></li>-->
                                     <li><a href="${pageContext.request.contextPath}/Blog">Blog</a></li>
+                                    <li><a href="${pageContext.request.contextPath}/LienHe">Liên hệ</a></li>
+
                                 </ul>
                             </li>
                             <!--   <li class="active"><a href="./blog.jsp">Blog</a></li>  --> 
-                            <li><a href="${pageContext.request.contextPath}/LienHe">Liên hệ</a></li>
+                            <li><a href="${pageContext.request.contextPath}/LichSuDatHang"> Lịch sử đặt hàng</a></li>
                         </ul>
                     </nav>
                 </div>

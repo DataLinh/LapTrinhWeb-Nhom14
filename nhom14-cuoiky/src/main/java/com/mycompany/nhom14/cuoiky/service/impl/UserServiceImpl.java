@@ -26,20 +26,13 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public void newCart(int cartId) {
-        userDao.newCart(userDao.getIdByCartId(cartId));
+    public void newCart(int userId) {
+        userDao.newCart(userId);
     }
+
     @Override
-    public User Login(String userEmail,String userPass) {
-    	return userDao.Login(userEmail, userPass);
+    public User getById(int id) {
+        return userDao.getById(id);
     }
-    @Override
-    public void Register(String userName, String Email,String userPass) {
-    	userDao.Register(userName, Email, userPass);
-    }
-    @Override
-    public User CheckEmail(String userName)
-    {
-    	return userDao.CheckEmail(userName);
-    }
+
 }

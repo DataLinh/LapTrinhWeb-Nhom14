@@ -6,9 +6,11 @@ package com.mycompany.nhom14.cuoiky.entities;
 
 import com.mycompany.nhom14.cuoiky.dao.ICartDao;
 import com.mycompany.nhom14.cuoiky.dao.ICartItemDao;
+import com.mycompany.nhom14.cuoiky.dao.IOrderDao;
 import com.mycompany.nhom14.cuoiky.dao.IUserDao;
 import com.mycompany.nhom14.cuoiky.dao.impl.CartDaoImpl;
 import com.mycompany.nhom14.cuoiky.dao.impl.CartItemDaoImpl;
+import com.mycompany.nhom14.cuoiky.dao.impl.OrderDaoImpl;
 import com.mycompany.nhom14.cuoiky.dao.impl.UserDaoImpl;
 import com.mycompany.nhom14.cuoiky.service.ICartItemService;
 import com.mycompany.nhom14.cuoiky.service.impl.CartItemServiceImpl;
@@ -31,8 +33,11 @@ public class Test {
             //            Discount d = session.get(Discount.class, 2);
             //            System.out.println(d.getName());
 
-           IUserDao userDao = new UserDaoImpl();
-            System.out.println(userDao.getIdByCartId(6));
+            IOrderDao od = new OrderDaoImpl();
+            List<Order> os = od.getAllByUserId(2);
+            for (Order o : os) {
+                System.out.println(o.getCart().getTotal());
+            }
 
 //
 //            User u = session.get(User.class, 2);

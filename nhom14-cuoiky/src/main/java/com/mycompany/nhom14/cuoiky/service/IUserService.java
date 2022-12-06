@@ -11,8 +11,7 @@ import com.mycompany.nhom14.cuoiky.entities.User;
  * @author Linh
  */
 public interface IUserService {
-    void newCart(int cartId);
-    User Login(String userEmail,String userPass);
-	void Register(String userName, String Email, String userPass);
-	User CheckEmail(String userName);
+    void newCart(int userId);
+    
+    User getById(int id);
 }

@@ -4,9 +4,9 @@
  */
 package com.mycompany.nhom14.cuoiky.dao;
 
-import java.util.List;
-
 import com.mycompany.nhom14.cuoiky.entities.Product;
+
+import java.util.List;
 
 /**
  *
@@ -15,13 +15,16 @@ import com.mycompany.nhom14.cuoiky.entities.Product;
 public interface IProductDao {
     Product get(int id);
 
-	void insert(Product product);
+    List<Product> getAll();
 
-	void update(Product product);
+    List<Product> getListByPage(List<Product> list, int start, int end);
 
-	void delete(String productId) throws Exception;
+    List<Product> search(String txtSearch,int sort);
 
-	Product findById(String productId);
+    List<Product> getListByCategory(List<Product> list,int CategoryID);
 
-	List<Product> findAll();
+    List<Product> getListByPrice(List<Product> list,int price);
+    
+    List<Product> getWithCondition(List<Product> list,int categoryID, int price);
+
 }
