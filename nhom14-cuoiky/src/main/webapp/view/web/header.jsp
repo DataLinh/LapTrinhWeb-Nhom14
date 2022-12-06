@@ -28,9 +28,9 @@
         <link rel="stylesheet" href="${url}/css/style.css" type="text/css">
     </head>
     <!-- Page Preloder -->
-<!--    <div id="preloder">
+    <div id="preloder">
         <div class="loader"></div>
-    </div>-->
+    </div>
 
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
