@@ -4,18 +4,32 @@ import com.mycompany.nhom14.cuoiky.dao.impl.CategoryDaoImpl;
 import com.mycompany.nhom14.cuoiky.dao.impl.ProductDaoImpl;
 import com.mycompany.nhom14.cuoiky.entities.Category;
 import com.mycompany.nhom14.cuoiky.entities.Product;
+import com.mycompany.nhom14.cuoiky.service.impl.ProductService;
 
+import javax.print.DocFlavor;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.List;
 
-@WebServlet(name = "ShopController", value = "/CuaHang")
+@WebServlet(name = "ShopController", value = "/shop")
 public class ShopController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
 
+        String queryString = null;
+        if(request.getQueryString()!=null){
+            queryString= URLDecoder.decode(request.getQueryString(), "UTF-8");
+            if(queryString.contains("page=")){
+                String[] arrOfStr = queryString.split("&");
+                System.out.println(arrOfStr[arrOfStr.length-1]);
+                queryString = queryString.replace("&"+arrOfStr[arrOfStr.length-1],"");
+            }
+        }
         //CurrentPage
         String xpage =request.getParameter("page");
 
@@ -25,7 +39,6 @@ public class ShopController extends HttpServlet {
         {
             txtSearch = request.getParameter("txtSearch");
         }
-
         //Category
         int categoryID = 0;
 
@@ -33,28 +46,21 @@ public class ShopController extends HttpServlet {
         {
             categoryID = Integer.parseInt(request.getParameter("categoryID"));
         }
-
         //Price
         int price = 0;
         if(request.getParameter("price")!=null)
         {
             price = Integer.parseInt(request.getParameter("price"));
         }
-
         //Sort
-        int sort = 0;
+        int sort = 1;
         if(request.getParameter("sort")!=null)
         {
             sort = Integer.parseInt(request.getParameter("sort"));
         }
-
-        // getProductBySearch
-        ProductDaoImpl productDao = new ProductDaoImpl();
-        List<Product> listProduct = productDao.search(txtSearch,sort);
-        System.out.println(listProduct.size());
-
-        listProduct = productDao.getWithCondition(listProduct,categoryID,price);
-        System.out.println(listProduct.size());
+        // getProduct
+        ProductService productService = new ProductService();
+        List<Product> listProduct = productService.getProductWithCondition(txtSearch,sort,categoryID,price);
 
         // getAllCategory
         CategoryDaoImpl categoryDao = new CategoryDaoImpl();
@@ -70,10 +76,9 @@ public class ShopController extends HttpServlet {
         }
         start=(page-1)*numberItem;
         end = Math.min(listProduct.size(),page*numberItem);
-        List<Product> products = productDao.getListByPage(listProduct,start,end);
+        List<Product> products = productService.getListByPage(listProduct,start,end);
 
-
-
+        request.setAttribute("amount",listProduct.size());
         request.setAttribute("price",price);
         request.setAttribute("txtSearch",txtSearch);
         request.setAttribute("categoryID",categoryID);
@@ -82,11 +87,9 @@ public class ShopController extends HttpServlet {
         request.setAttribute("numberPage",numberPage);
         request.setAttribute("categories",categories);
         request.setAttribute("products",products);
-//        request.getRequestDispatcher("view/web/shop.jsp").forward(request,response);
+        request.setAttribute("queryString",queryString);
         request.getRequestDispatcher("view/web/shop.jsp").forward(request,response);
-
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

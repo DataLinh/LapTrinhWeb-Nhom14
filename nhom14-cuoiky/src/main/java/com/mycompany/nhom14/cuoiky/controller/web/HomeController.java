@@ -4,7 +4,11 @@
  */
 package com.mycompany.nhom14.cuoiky.controller.web;
 
+import com.mycompany.nhom14.cuoiky.entities.Product;
+import com.mycompany.nhom14.cuoiky.service.impl.ProductService;
+
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,6 +26,11 @@ public class HomeController  extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        ProductService productService = new ProductService();
+        List<Product> newProducts = productService.getNewProduct();
+
+        request.setAttribute("newProducts",newProducts);
+
         RequestDispatcher rd = request.getRequestDispatcher("/view/web/index.jsp");
         rd.forward(request, response);
     }

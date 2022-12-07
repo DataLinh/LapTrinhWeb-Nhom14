@@ -17,14 +17,8 @@ public interface IProductDao {
 
     List<Product> getAll();
 
-    List<Product> getListByPage(List<Product> list, int start, int end);
+    List<Product> getProductWithCondition(String txtSearch,int sort,int categoryID, int price);
 
-    List<Product> search(String txtSearch,int sort);
-
-    List<Product> getListByCategory(List<Product> list,int CategoryID);
-
-    List<Product> getListByPrice(List<Product> list,int price);
-    
-    List<Product> getWithCondition(List<Product> list,int categoryID, int price);
+    List<Product> getNewProduct();
 
 }
