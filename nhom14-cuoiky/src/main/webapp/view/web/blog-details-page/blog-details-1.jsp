@@ -3,34 +3,11 @@
     Created on : Nov 8, 2022, 10:12:55 PM
     Author     : son
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/header.jsp" %>
+<%@ include file="../header.jsp" %>
 <!DOCTYPE html>
 <html lang="zxx">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Male_Fashion Template">
-        <meta name="keywords" content="Male_Fashion, unica, creative, html">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Project nhóm 14</title>
-
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-              rel="stylesheet">
-
-        <!-- Css Styles -->
-        <link rel="stylesheet" href="/${url}/css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/elegant-icons.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/magnific-popup.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/nice-select.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/owl.carousel.min.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/slicknav.min.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/style.css" type="text/css">
-    </head>
 
 <!-- Blog Details Hero Begin -->
 <section class="blog-hero spad">
@@ -57,7 +34,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-lg-12">
                 <div class="blog__details__pic">
-                    <img src="/${url}/blog/details/blog-titles/blog-title-1.jpg" alt="">
+                    <img src="../img/blog/details/blog-titles/blog-title-1.jpg" alt="">
                 </div>
             </div>
             <div class="col-lg-8">
@@ -102,7 +79,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="blog__details__author">
                                     <div class="blog__details__author__pic">
-                                        <img src="/${url}/blog/details/blog-authors/blog-author-1.jpg" alt="">
+                                        <img src="../img/blog/details/blog-authors/blog-author-1.jpg" alt="">
                                     </div>
                                     <div class="blog__details__author__text">
                                         <h5>Nhóm 14</h5>
@@ -134,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                <%@ include file="/blog-footer.jsp" %> 
+                <%@ include file="../blog-footer.jsp" %> 
                 </div>
             </div>
         </div>
@@ -142,5 +119,5 @@
 </section>
 <!-- Blog Details Section End -->
 
-<%@ include file="/footer.jsp" %>
+<%@ include file="../footer.jsp" %>
 <!-- Blog Details Section End -->

@@ -5,7 +5,7 @@
 --%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/header.jsp" %>
+<%@ include file="../header.jsp" %>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -154,7 +154,7 @@
                             </div>
                         </div>
                     </div>
-                <%@ include file="/blog-footer.jsp" %> 
+                <%@ include file="../blog-footer.jsp" %> 
                 </div>
             </div>
         </div>
@@ -162,4 +162,4 @@
 </section>
 <!-- Blog Details Section End -->
 
-<%@ include file="/footer.jsp" %>
+<%@ include file="../blog-footer.jsp" %>
