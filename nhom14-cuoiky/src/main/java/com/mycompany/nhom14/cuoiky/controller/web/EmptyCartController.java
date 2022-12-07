@@ -4,6 +4,8 @@
  */
 package com.mycompany.nhom14.cuoiky.controller.web;
 
+import com.mycompany.nhom14.cuoiky.service.impl.CategoryService;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +22,8 @@ public class EmptyCartController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        CategoryService categoryService = new CategoryService();
+        request.setAttribute("categories",categoryService.getAll());
         request.getRequestDispatcher("/view/web/empty-cart.jsp").forward(request, response);
     }
 

@@ -58,7 +58,7 @@ public class Product implements Serializable {
     @Column(name = "isDeleted")
     private boolean isDeleted;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "CATEGORY_ID")
     private Category category;
     @ManyToOne(fetch = FetchType.LAZY)

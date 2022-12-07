@@ -17,7 +17,15 @@
         </div>
         <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
             <div class="footer__widget">
-                <h6> </h6>
+                <h6>Thể loại</h6>
+                    <ul>
+                        <c:forEach begin="0" end="${requestScope.items.size()/2}" var="i">
+                            <li><a href="<%=request.getContextPath()%>/shop?categoryID=${requestScope.items[i].id}">${requestScope.items[i].categoryName}</a></li>
+                        </c:forEach>
+<%--                        <c:forEach items="${requestScope.items}" var="o">--%>
+<%--                        <li><a href="#">${o.categoryName}</a></li>--%>
+<%--                        </c:forEach>--%>
+                    </ul>
 <!--                <ul>
                     <li><a href="#">Quàn nam</a></li>
                     <li><a href="#">Áo nam</a></li>
@@ -28,13 +36,12 @@
         </div>
         <div class="col-lg-2 col-md-3 col-sm-6">
             <div class="footer__widget">
-                <h6> </h6>
-<!--                <ul>
-                    <li><a href="#"> Quần nữ </a></li>
-                    <li><a href="#">Áo nữ</a></li>
-                    <li><a href="#">Giày nữ</a></li>
-                    <li><a href="#">Phụ kiện nữ</a></li>
-                </ul>-->
+                <h6 style="color: #111111">Thể loại</h6>
+                    <ul>
+                        <c:forEach begin="${requestScope.items.size()/2+1}" end="${requestScope.items.size()}" var="i">
+                            <li><a href="<%=request.getContextPath()%>/shop?categoryID=${requestScope.items[i].id}">${requestScope.items[i].categoryName}</a></li>
+                        </c:forEach>
+                    </ul>
             </div>
         </div>
         <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">

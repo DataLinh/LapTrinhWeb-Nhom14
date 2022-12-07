@@ -9,6 +9,5 @@ public interface IProductService {
     List<Product> getProductWithCondition(String txtSearch,int sort,int categoryID, int price);
     List<Product> getListByPage(List<Product> list, int start, int end);
     List<Product> getNewProduct();
-
     Product get(int id);
 }

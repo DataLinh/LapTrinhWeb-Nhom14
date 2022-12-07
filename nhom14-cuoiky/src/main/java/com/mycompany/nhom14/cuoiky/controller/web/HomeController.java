@@ -5,6 +5,7 @@
 package com.mycompany.nhom14.cuoiky.controller.web;
 
 import com.mycompany.nhom14.cuoiky.entities.Product;
+import com.mycompany.nhom14.cuoiky.service.impl.CategoryService;
 import com.mycompany.nhom14.cuoiky.service.impl.ProductService;
 
 import java.io.IOException;
@@ -30,6 +31,9 @@ public class HomeController  extends HttpServlet {
         List<Product> newProducts = productService.getNewProduct();
 
         request.setAttribute("newProducts",newProducts);
+
+        CategoryService categoryService = new CategoryService();
+        request.setAttribute("categories",categoryService.getAll());
 
         RequestDispatcher rd = request.getRequestDispatcher("/view/web/index.jsp");
         rd.forward(request, response);

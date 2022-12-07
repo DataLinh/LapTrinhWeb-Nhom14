@@ -4,6 +4,8 @@
  */
 package com.mycompany.nhom14.cuoiky.controller.web;
 
+import com.mycompany.nhom14.cuoiky.service.impl.CategoryService;
+
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,6 +24,8 @@ public class BlogController  extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+        CategoryService categoryService = new CategoryService();
+        request.setAttribute("categories",categoryService.getAll());
         RequestDispatcher rd = request.getRequestDispatcher("/view/web/blog.jsp");
         rd.forward(request, response);
     }

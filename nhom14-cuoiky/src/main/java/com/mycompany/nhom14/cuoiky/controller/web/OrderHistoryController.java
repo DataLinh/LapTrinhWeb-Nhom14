@@ -9,6 +9,7 @@ import com.mycompany.nhom14.cuoiky.service.ICartItemService;
 import com.mycompany.nhom14.cuoiky.service.IOrderService;
 import com.mycompany.nhom14.cuoiky.service.IUserService;
 import com.mycompany.nhom14.cuoiky.service.impl.CartItemServiceImpl;
+import com.mycompany.nhom14.cuoiky.service.impl.CategoryService;
 import com.mycompany.nhom14.cuoiky.service.impl.OrderServiceImpl;
 import com.mycompany.nhom14.cuoiky.service.impl.UserServiceImpl;
 import java.io.IOException;
@@ -35,6 +36,8 @@ public class OrderHistoryController extends HttpServlet {
         HttpSession session = request.getSession();
         int userId = (int) session.getAttribute("userId");
         request.setAttribute("orders", orderService.getAllByUserId(userId));
+        CategoryService categoryService = new CategoryService();
+        request.setAttribute("categories",categoryService.getAll());
         RequestDispatcher rd = request.getRequestDispatcher("/view/web/order-history.jsp");
         rd.forward(request, response);
     }

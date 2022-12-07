@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <c:url value="view/web" var="url"></c:url>
+<c:set var="items" value="${categories}" scope="request" />
 <jsp:include page="header.jsp"></jsp:include>
 
     <!-- Shop Details Section Begin -->
@@ -132,7 +133,7 @@
                             <img src="${url}/img/shop-details/details-payment.png" alt="">
                             <ul>
                                 <li><span>SKU:</span> ${product.id}</li>
-<%--                                <li><span>Danh mục:</span> ${product.getCategory().getCategoryName()}</li>--%>
+                                <li><span>Danh mục:</span> ${product.getCategory().getCategoryName()}</li>
 <%--                                <li><span>Thẻ:</span> Quần áo</li>--%>
                             </ul>
                         </div>

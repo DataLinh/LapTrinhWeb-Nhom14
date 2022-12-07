@@ -7,6 +7,7 @@ package com.mycompany.nhom14.cuoiky.controller.web;
 import com.mycompany.nhom14.cuoiky.entities.Product;
 import com.mycompany.nhom14.cuoiky.entities.User;
 import com.mycompany.nhom14.cuoiky.service.IFavoriteProductService;
+import com.mycompany.nhom14.cuoiky.service.impl.CategoryService;
 import com.mycompany.nhom14.cuoiky.service.impl.FavoriteProductServiceImpl;
 import java.io.IOException;
 import java.util.Collection;
@@ -42,7 +43,10 @@ public class FavoriteProductController extends HttpServlet {
         
         Collection <Product> products = favoriteProductService.LayDanhSachSanPhamYeuThich(user);
         request.setAttribute("products", products);
-        
+
+        CategoryService categoryService = new CategoryService();
+        request.setAttribute("categories",categoryService.getAll());
+
         getServletContext()
                 .getRequestDispatcher("/view/web/favorite-products.jsp")
                 .forward(request, response);

@@ -35,8 +35,10 @@
 </head>
 
 <body>
+<c:set var="items" value="${categories}" scope="request" />
 <!-- Header Section Begin-->
 <jsp:include page="header.jsp"></jsp:include>
+
 <!-- Header Section End -->
 
 <!-- Breadcrumb Section Begin -->

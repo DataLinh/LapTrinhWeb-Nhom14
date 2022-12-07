@@ -8,6 +8,8 @@ import com.mycompany.nhom14.cuoiky.dao.IUserDao;
 import com.mycompany.nhom14.cuoiky.dao.impl.UserDaoImpl;
 import com.mycompany.nhom14.cuoiky.entities.Cart;
 import com.mycompany.nhom14.cuoiky.entities.User;
+import com.mycompany.nhom14.cuoiky.service.impl.CategoryService;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,7 +33,8 @@ public class LoginController extends HttpServlet {
         HttpSession session = req.getSession();
         //Chờ chức năng login
         session.setAttribute("userId", 5);
-
+        CategoryService categoryService = new CategoryService();
+        req.setAttribute("categories",categoryService.getAll());
         req.getRequestDispatcher("/CuaHang").forward(req, resp);
     }
 

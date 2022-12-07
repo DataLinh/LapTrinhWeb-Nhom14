@@ -4,6 +4,7 @@ import com.mycompany.nhom14.cuoiky.dao.impl.CategoryDaoImpl;
 import com.mycompany.nhom14.cuoiky.dao.impl.ProductDaoImpl;
 import com.mycompany.nhom14.cuoiky.entities.Category;
 import com.mycompany.nhom14.cuoiky.entities.Product;
+import com.mycompany.nhom14.cuoiky.service.impl.CategoryService;
 import com.mycompany.nhom14.cuoiky.service.impl.ProductService;
 
 import javax.print.DocFlavor;
@@ -63,8 +64,8 @@ public class ShopController extends HttpServlet {
         List<Product> listProduct = productService.getProductWithCondition(txtSearch,sort,categoryID,price);
 
         // getAllCategory
-        CategoryDaoImpl categoryDao = new CategoryDaoImpl();
-        List<Category> categories = categoryDao.getAll();
+        CategoryService categoryService = new CategoryService();
+        List<Category> categories = categoryService.getAll();
 
         //paging
         int page,numberItem = 9,start,end;

@@ -10,6 +10,7 @@ import com.mycompany.nhom14.cuoiky.entities.User;
 import com.mycompany.nhom14.cuoiky.service.ICartItemService;
 import com.mycompany.nhom14.cuoiky.service.IUserService;
 import com.mycompany.nhom14.cuoiky.service.impl.CartItemServiceImpl;
+import com.mycompany.nhom14.cuoiky.service.impl.CategoryService;
 import com.mycompany.nhom14.cuoiky.service.impl.UserServiceImpl;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -62,6 +63,8 @@ public class CartController extends HttpServlet {
         int cartId = user.getCart().getId();
         request.setAttribute("cartItems", cartItemService.getAllByCartId(cartId));
         request.setAttribute("total", user.getCart().getTotal());
+        CategoryService categoryService = new CategoryService();
+        request.setAttribute("categories",categoryService.getAll());
         RequestDispatcher rd = request.getRequestDispatcher("/view/web/shopping-cart.jsp");
         rd.forward(request, response);
     }

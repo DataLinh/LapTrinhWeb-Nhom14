@@ -12,6 +12,7 @@ import com.mycompany.nhom14.cuoiky.service.ICartItemService;
 import com.mycompany.nhom14.cuoiky.service.IOrderService;
 import com.mycompany.nhom14.cuoiky.service.IUserService;
 import com.mycompany.nhom14.cuoiky.service.impl.CartItemServiceImpl;
+import com.mycompany.nhom14.cuoiky.service.impl.CategoryService;
 import com.mycompany.nhom14.cuoiky.service.impl.OrderServiceImpl;
 import com.mycompany.nhom14.cuoiky.service.impl.UserServiceImpl;
 import java.io.IOException;
@@ -52,6 +53,8 @@ public class OrderController extends HttpServlet {
         request.setAttribute("user", user);
         request.setAttribute("total", user.getCart().getTotal());
         request.setAttribute("cartItems", cartItemService.getAllByCartId(user.getCart().getId()));
+        CategoryService categoryService = new CategoryService();
+        request.setAttribute("categories",categoryService.getAll());
         RequestDispatcher rd = request.getRequestDispatcher("/view/web/checkout.jsp");
         rd.forward(request, response);
     }

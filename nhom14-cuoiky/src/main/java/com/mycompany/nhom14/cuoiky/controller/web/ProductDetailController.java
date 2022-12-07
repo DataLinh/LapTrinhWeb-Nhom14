@@ -1,6 +1,7 @@
 package com.mycompany.nhom14.cuoiky.controller.web;
 
 import com.mycompany.nhom14.cuoiky.entities.Product;
+import com.mycompany.nhom14.cuoiky.service.impl.CategoryService;
 import com.mycompany.nhom14.cuoiky.service.impl.ProductService;
 
 import javax.servlet.*;
@@ -17,12 +18,11 @@ public class ProductDetailController extends HttpServlet {
 
         ProductService productService = new ProductService();
         Product product = productService.get(id);
-
+        CategoryService categoryService = new CategoryService();
+        request.setAttribute("categories",categoryService.getAll());
         request.setAttribute("product",product);
         request.getRequestDispatcher("/view/web/shop-details.jsp").forward(request,response);
-
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
