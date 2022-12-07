@@ -138,7 +138,7 @@
                                                    value="add">               
                                             <input type="hidden" name="productId" 
                                                    value="${p.id}">
-                                            <input type="submit" value="+ Thêm vào giỏ hàng">
+                                            <input type="submit"  class="btn btn-outline-danger" value="+ Thêm vào giỏ hàng">
                                         </form> 
                                      
                                     <div class="rating">

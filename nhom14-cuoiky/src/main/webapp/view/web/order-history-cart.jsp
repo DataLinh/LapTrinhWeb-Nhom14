@@ -13,6 +13,7 @@
                             <a href="${pageContext.request.contextPath }/TrangChu">Trang chủ</a>
                         <a href="${pageContext.request.contextPath }/CuaHang">Cửa hàng</a>
                         <a href="${pageContext.request.contextPath }/LichSuDatHang">Lịch sử đặt hàng</a>
+
                         <span>Chi tiết đơn đã đặt </span>
                     </div>
                 </div>
@@ -36,8 +37,13 @@
                         <ul class="checkout__total__products">
                             <c:forEach items="${cartItems}" var="c">
                                 <li>${c.quantity}  &emsp;&emsp;&emsp; ${c.product.title} &emsp;  <span> &emsp; ${c.product.price*c.quantity}</span></li>
-                            </c:forEach>
-                        </ul>                          
+                                </c:forEach>
+                        </ul>        
+                        <br>                        
+                        <div class="btn btn-outline-info"  style="width:100%" >  
+                        <a href="${pageContext.request.contextPath}/LichSuDatHang"> Lịch sử đặt hàng</a>
+                        </div>
+                        <br>
                         <button type="submit" class="site-btn"> Tiếp tục mua sắm !!</button>
                     </div>
 

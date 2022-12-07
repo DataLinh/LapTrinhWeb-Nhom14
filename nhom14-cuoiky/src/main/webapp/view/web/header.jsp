@@ -87,7 +87,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="${pageContext.request.contextPath}/index.jsp"><img src="${url}/img/logo.png" alt=""></a>
+                        <a href="${pageContext.request.contextPath}/TrangChu"><img src="${url}/img/logo.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -98,7 +98,7 @@
                             <li><a href="#">Xem thêm</a>
                                 <ul class="dropdown">
                                     <li><a href="${pageContext.request.contextPath}/ThongTinCuaHang">Về chúng tôi</a></li>
-                                    <li><a href="${pageContext.request.contextPath}/shop-details">Thông tin cửa hàng</a></li>
+<!--                                    <li><a href="${pageContext.request.contextPath}/ThongTinCuaHang">Thông tin cửa hàng</a></li>-->
 <!--                                    <li><a href="${pageContext.request.contextPath}/CuaHang">Cửa hàng</a></li> -->
 <!--                                    <li><a href="${pageContext.request.contextPath}/DatHang">Đặt hàng</a></li>-->
                                     <li><a href="${pageContext.request.contextPath}/Blog">Blog</a></li>
