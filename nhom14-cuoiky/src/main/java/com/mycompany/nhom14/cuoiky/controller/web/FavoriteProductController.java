@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -27,8 +28,11 @@ public class FavoriteProductController extends HttpServlet {
         IFavoriteProductService favoriteProductService = new FavoriteProductServiceImpl();
         response.setContentType("text/html;charset=UTF-8");
         
+        HttpSession session = request.getSession();
+        int userId = (int) session.getAttribute("userId");
+
         User user = new User();
-        user.setId(1);
+        user.setId(userId);
         
         if ("DeleteFavoriteProduct".equals(request.getParameter("action"))) {
             Product product = createProductFromRequest(request);
@@ -39,6 +43,8 @@ public class FavoriteProductController extends HttpServlet {
             Product product = createProductFromRequest(request);
             favoriteProductService.ThemSanPhamYeuThich(user, product);
         }
+        
+        
         
         Collection <Product> products = favoriteProductService.LayDanhSachSanPhamYeuThich(user);
         request.setAttribute("products", products);

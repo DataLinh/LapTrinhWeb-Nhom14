@@ -35,7 +35,7 @@ public class FavoriteProductDaoImpl implements IFavoriteProductDao{
     @Override
     public void insert(Product product, User user) {
         EntityManager em = EntityManagerClass.getEntityManager();
-        Query query = em.createNativeQuery( "INSERT INTO favorite_product "+ 
+        Query query = em.createNativeQuery( "INSERT INTO favorite_product (product_id, user_id) "+ 
                                             "VALUES (?, ?)");
         query.setParameter(2, user.getId());
         query.setParameter(1, product.getId());

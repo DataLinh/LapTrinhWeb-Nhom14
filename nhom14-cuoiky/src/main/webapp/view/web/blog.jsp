@@ -23,7 +23,7 @@
                     <div class="blog__item__text">
                         <span><img src="${url}/img/icon/calendar.png" alt=""> 21 Tháng 2 Năm 2019</span>
                         <h5>Bạn có phải là một trong hàng ngàn người không biêt điều này</h5>
-                        <a href="blog-details-page/blog-details-1.jsp">Đọc thêm</a>
+                        <a href="view/web/blog-details-page/blog-details-1.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                     <div class="blog__item__text">
                         <span><img src="${url}/img/icon/calendar.png" alt=""> 26 Tháng 10 Năm 2020</span>
                         <h5>Bộ suit nam thanh lịch cho ngày cuối tuần</h5>
-                        <a href="blog-details-page/blog-details-2.jsp">Đọc thêm</a>
+                        <a href="view/web/blog-details-page/blog-details-2.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                     <div class="blog__item__text">
                         <span><img src="${url}/img/icon/calendar.png" alt=""> 12 Tháng 11 Năm 2020</span>
                         <h5>Áo Jacket là gì? Tìm hiểu về áo Jackety</h5>
-                        <a href="blog-details-page/blog-details-3.jsp">Đọc thêm</a>
+                        <a href="view/web/blog-details-page/blog-details-3.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                     <div class="blog__item__text">
                         <span><img src="${url}/img/icon/calendar.png" alt=""> 27 Tháng 12 Năm 2020</span>
                         <h5>Giặt áo da và bảo quản áo da đúng cách</h5>
-                        <a href="blog-details-page/blog-details-4.jsp">Đọc thêm</a>
+                        <a href="view/web/blog-details-page/blog-details-4.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                     <div class="blog__item__text">
                         <span><img src="${url}/img/icon/calendar.png" alt=""> 19 Tháng 4 Năm 2020</span>
                         <h5>Nguồn gốc ra đời của Mũ Beret - Mũ nồi</h5>
-                        <a href="blog-details-page/blog-details-5.jsp">Đọc thêm</a>
+                        <a href="view/web/blog-details-page/blog-details-5.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                     <div class="blog__item__text">
                         <span><img src="${url}/img/icon/calendar.png" alt=""> 8 Tháng 3 Năm 2020</span>
                         <h5>Cách chọn kính râm chất lượng</h5>
-                        <a href="blog-details-page/blog-details-6.jsp">Đọc thêm</a>
+                        <a href="view/web/blog-details-page/blog-details-6.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                     <div class="blog__item__text">
                         <span><img src="${url}/img/icon/calendar.png" alt=""> 16 Tháng 3 Năm 2020</span>
                         <h5>Khái niệm về vải Kaki (khaki) là gì?</h5>
-                        <a href="blog-details-page/blog-details-7.jsp">Đọc thêm</a>
+                        <a href="view/web/blog-details-page/blog-details-7.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                     <div class="blog__item__text">
                         <span><img src="${url}/img/icon/calendar.png" alt=""> 28 Tháng 1 Năm 2020</span>
                         <h5>Khái niệm về sợi Polyester</h5>
-                        <a href="blog-details-page/blog-details-8.jsp">Đọc thêm</a>
+                        <a href="view/web/blog-details-page/blog-details-8.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
@@ -103,7 +103,7 @@
                     <div class="blog__item__text">
                         <span><img src="${url}/img/icon/calendar.png" alt=""> 28 Tháng 1 Năm 2020</span>
                         <h5>Sneaker là gì? Lịch sử giày Sneaker</h5>
-                        <a href="blog-details-page/blog-details-9.jsp">Đọc thêm</a>
+                        <a href="view/web/blog-details-page/blog-details-9.jsp">Đọc thêm</a>
                     </div>
                 </div>
             </div>
