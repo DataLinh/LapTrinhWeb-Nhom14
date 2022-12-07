@@ -38,27 +38,17 @@ public class ProductDaoImpl implements IProductDao {
     public List<Product> getAll() {
         List<Product> products = new ArrayList<>();
         try ( Session session = HibernateUtil.getFactory().openSession()) {
-          String HQL = "Select c From Product c Where c.isDeleted = false ";
-          Query query = session.createQuery(HQL);
-          products =query.getResultList();
+            String HQL = "Select c From Product c Where c.isDeleted = false ";
+            Query query = session.createQuery(HQL);
+            products =query.getResultList();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         return products;
-
-    }
-
-    @Override
-    public List<Product> getListByPage(List<Product> list, int start, int end) {
-        ArrayList<Product> products = new ArrayList<>();
-        for(int i = start;i<end;i++){
-            products.add(list.get(i));
-        }
-        return products;
     }
     @Override
-    public List<Product> search(String txtSearch,int sort) {
+    public List<Product> getProductWithCondition(String txtSearch, int sort, int categoryID, int price) {
         List<Product> products = new ArrayList<>();
         try ( Session session = HibernateUtil.getFactory().openSession()) {
             String HQL = "From Product as c  Where c.isDeleted = false ";
@@ -66,6 +56,20 @@ public class ProductDaoImpl implements IProductDao {
             if(txtSearch !=null)
             {
                 HQL= HQL+"and c.title like :txtSearch ";
+            }
+            if(categoryID != 0){
+                HQL += " and c.category.id =:categoryID";
+            }
+            if(price!=0){
+                if(price==1){
+                    HQL +=" and c.price >=0 and c.price <=100000";
+                }
+                else if(price==2){
+                    HQL +=" and c.price >100000 and c.price <=250000";
+                }
+                else {
+                    HQL +=" and c.price >250000 ";
+                }
             }
             if(sort == 1){
                 HQL= HQL+" order by c.price asc";
@@ -76,9 +80,13 @@ public class ProductDaoImpl implements IProductDao {
             if(sort == -1){
                 HQL= HQL+" order by c.price desc ";
             }
+
             Query query = session.createQuery(HQL);
             if(txtSearch !=null){
                 query.setParameter("txtSearch","%"+txtSearch+"%");
+            }
+            if(categoryID!=0){
+                query.setParameter("categoryID",categoryID);
             }
             products =query.getResultList();
 
@@ -89,54 +97,23 @@ public class ProductDaoImpl implements IProductDao {
     }
 
     @Override
-    public List<Product> getListByCategory(List<Product> list,int CategoryID) {
+    public List<Product> getNewProduct() {
         List<Product> products = new ArrayList<>();
-        if(CategoryID == 0)
-            return list;
-        for (Product product :list){
-            if(product.getCategory().getId() == CategoryID)
-            {
-                products.add(product);
-                System.out.print(product.getId()+":"+product.getCategory().getId());
-            }
-        }
-        return products;
+        try ( Session session = HibernateUtil.getFactory().openSession()) {
+            String HQL = "Select c From Product c Where c.isDeleted = false order by c.id desc";
+            Query query = session.createQuery(HQL);
+            products =query.setMaxResults(4).getResultList();
 
-    }
-    public List<Product> getListByPrice(List<Product> list,int priceID) {
-        List<Product> products = new ArrayList<>();
-        int begin = 0, end=(int)Double.POSITIVE_INFINITY;
-        if(priceID == 1)
-        {
-            end = 100000;
-        }
-        else if(priceID == 2)
-        {
-            begin = 100000;
-            end = 200000;
-        }
-        else if(priceID ==3)
-        {
-            begin = 200000;
-        }
-        for (Product product :list){
-            if(product.getPrice() >= begin && product.getPrice()<=end )
-            {
-                products.add(product);
-            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return products;
     }
 
-    @Override
-    public List<Product> getWithCondition(List<Product> list, int categoryID, int price) {
-        return getListByPrice(getListByCategory(list,categoryID),price);
+    public static void main(String[] args) {
+        ProductDaoImpl productDao = new ProductDaoImpl();
+        List<Product> products = productDao.getAll();
+        products.forEach(p->System.out.println(p.getId()));
     }
-    
-//    public static void main(String[] args) {
-//        ProductDaoImpl productDao = new ProductDaoImpl();
-//        List<Product> products = productDao.getAll();
-//        products.forEach(p->System.out.println(p.getId()));
-//    }
 
 }

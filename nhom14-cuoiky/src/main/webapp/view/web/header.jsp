@@ -94,7 +94,7 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li><a href="${pageContext.request.contextPath}/TrangChu">Trang Chủ</a></li>
-                            <li><a href="${pageContext.request.contextPath}/CuaHang">Sản phẩm</a></li>
+                            <li><a href="${pageContext.request.contextPath}/shop">Sản phẩm</a></li>
                             <li><a href="#">Xem thêm</a>
                                 <ul class="dropdown">
                                     <li><a href="${pageContext.request.contextPath}/ThongTinCuaHang">Về chúng tôi</a></li>
