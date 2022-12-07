@@ -37,6 +37,25 @@ public class ProductService implements IProductService {
     public Product get(int id) {
         return productDao.get(id);
     }
-
+    @Override
+    public void insert(Product product) {
+    	productDao.insert(product);
+    }
+    @Override
+    public void update(Product product) {
+    	productDao.update(product);
+    }
+    @Override
+    public void delete(String productId) throws Exception{
+    	productDao.delete(productId);
+    }
+    @Override
+    public Product findById(String productId) {
+    	return productDao.findById(productId);
+    }
+    @Override
+    public List<Product> findAll(){
+    	return productDao.findAll();
+    }
 
 }

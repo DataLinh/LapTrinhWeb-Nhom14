@@ -20,5 +20,14 @@ public interface IProductDao {
     List<Product> getProductWithCondition(String txtSearch,int sort,int categoryID, int price);
 
     List<Product> getNewProduct();
+    void insert(Product product);
+
+	void update(Product product);
+
+	void delete(String productId) throws Exception;
+
+	Product findById(String productId);
+
+	List<Product> findAll();
 
 }

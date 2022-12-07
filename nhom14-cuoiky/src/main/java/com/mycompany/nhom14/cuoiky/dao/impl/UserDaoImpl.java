@@ -71,5 +71,54 @@ public class UserDaoImpl implements IUserDao {
             }
         }
     }
+    @Override
+	public User Login(String email, String password) {
+		EntityManagerFactory emf = Persistence
+				.createEntityManagerFactory("com.mycompany_cuoiky-nhom14_war_1.0-SNAPSHOTPU");
+		EntityManager em = emf.createEntityManager();
+		try {
+			String jpql = "SELECT o FROM users o WHERE o.email=:email and o.password =:pass";
+			TypedQuery<User> query = em.createQuery(jpql, User.class);
+			query.setParameter("email", "%" + email + "%");
+			query.setParameter("pass", "%" + password + "%");
+			return query.getSingleResult();
+		} catch (Exception e) {
+		}
+		return null;
+	}
+
+	@Override
+	public User CheckEmail(String email) {
+		EntityManagerFactory emf = Persistence
+				.createEntityManagerFactory("com.mycompany_cuoiky-nhom14_war_1.0-SNAPSHOTPU");
+		EntityManager em = emf.createEntityManager();
+		try {
+			String jpql = "SELECT o FROM users o WHERE o.email=:email";
+			TypedQuery<User> query = em.createQuery(jpql, User.class);
+			query.setParameter("email", "%" + email + "%");
+			return query.getSingleResult();
+		} catch (Exception e) {
+		}
+		return null;
+	}
+
+	@Override
+	public void Register(String userName, String userEmail, String userPass) {
+		EntityManagerFactory emf = Persistence
+				.createEntityManagerFactory("com.mycompany_cuoiky-nhom14_war_1.0-SNAPSHOTPU");
+		EntityManager em = emf.createEntityManager();
+		try {
+			em.getTransaction().begin();
+			User entity = new User();
+			entity.setEmail(userEmail);
+			entity.setFullName(userName);
+			entity.setPassword(userPass);
+			entity.setRole(false);
+			em.persist(entity);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+		}
+	}
 
 }

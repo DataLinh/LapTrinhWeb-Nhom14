@@ -34,5 +34,18 @@ public class UserServiceImpl implements IUserService {
     public User getById(int id) {
         return userDao.getById(id);
     }
+    @Override
+    public User Login(String userEmail,String userPass) {
+    	return userDao.Login(userEmail, userPass);
+    }
+    @Override
+    public void Register(String userName, String Email,String userPass) {
+    	userDao.Register(userName, Email, userPass);
+    }
+    @Override
+    public User CheckEmail(String userName)
+    {
+    	return userDao.CheckEmail(userName);
+    }
 
 }

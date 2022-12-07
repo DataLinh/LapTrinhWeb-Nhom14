@@ -76,8 +76,8 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="#">Đăng nhập</a>
-                                <a href="#">Đăng ký</a>
+                                <a href="${pageContext.request.contextPath}/DangNhap">Đăng nhập</a>
+                                <a href="${pageContext.request.contextPath}/DangKy">Đăng ký</a>
                             </div>
                         </div>
                     </div>

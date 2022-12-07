@@ -14,4 +14,7 @@ public interface IUserService {
     void newCart(int userId);
     
     User getById(int id);
+    User Login(String userEmail,String userPass);
+	void Register(String userName, String Email, String userPass);
+	User CheckEmail(String userName);
 }
