@@ -229,7 +229,7 @@
                     <td style="text-align: center"><a href = "SanPhamYeuThich"><img src="view/web/img/shopping-cart/add-to-cart.png" width ="38" height ="38" alt="alt"/></a></td>
                     
                     <td class="cart__close" style="text-align: center">
-                        <button form="${product.id}" type="submit" class ="deleteBtn" style="border: none; background: border-box" onclick="">
+                        <button form="${product.id}" type="submit" class ="deleteBtn" style="border: none; background: border-box">
                             <i class="fa fa-close"></i>
                         </button>
                     </td>

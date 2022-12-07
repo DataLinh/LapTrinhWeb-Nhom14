@@ -17,10 +17,10 @@
     <class>com.mycompany.nhom14.cuoiky.entities.User</class>
     <class>com.mycompany.nhom14.cuoiky.entities.Product</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://remotemysql.com:3306/t2SI0tc6Ml?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
-      <property name="javax.persistence.jdbc.user" value="t2SI0tc6Ml"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="iCjqJMS2NW"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://dpg-ce7vreirrk0b5mto8do0-a.singapore-postgres.render.com:5432/ltwnhom14"/>
+      <property name="javax.persistence.jdbc.user" value="ltwnhom14"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="KjGZZ1qyu1RbLDZpJgekrRNPSYPYX4Bl"/>
     </properties>
   </persistence-unit>
 </persistence>
