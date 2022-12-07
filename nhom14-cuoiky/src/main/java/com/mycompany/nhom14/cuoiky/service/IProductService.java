@@ -10,4 +10,13 @@ public interface IProductService {
     List<Product> getListByPage(List<Product> list, int start, int end);
     List<Product> getNewProduct();
     Product get(int id);
+    void insert(Product product);
+
+	void update(Product product);
+
+	void delete(int productId) throws Exception;
+
+	Product findById(String productId);
+
+	List<Product> findAll();
 }

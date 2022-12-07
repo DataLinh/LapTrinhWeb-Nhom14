@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Linh
  */
-@WebServlet("/DangNhap")
+@WebServlet("/DangNhap2")
 public class LoginController extends HttpServlet {
 
     private static final long serialVersionUID = 1L;

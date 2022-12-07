@@ -1,15 +1,4 @@
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
-encoding//src/main/webapp/view/admin/401.jsp=UTF-8
-encoding//src/main/webapp/view/admin/404.jsp=UTF-8
-encoding//src/main/webapp/view/admin/500.jsp=UTF-8
-encoding//src/main/webapp/view/admin/charts.jsp=UTF-8
-encoding//src/main/webapp/view/admin/index.jsp=UTF-8
-encoding//src/main/webapp/view/admin/layout-sidenav-light.jsp=UTF-8
-encoding//src/main/webapp/view/admin/layout-static.jsp=UTF-8
-encoding//src/main/webapp/view/admin/login.jsp=UTF-8
-encoding//src/main/webapp/view/admin/password.jsp=UTF-8
-encoding//src/main/webapp/view/admin/register.jsp=UTF-8
-encoding//src/main/webapp/view/admin/tables.jsp=UTF-8
 encoding/<project>=UTF-8
