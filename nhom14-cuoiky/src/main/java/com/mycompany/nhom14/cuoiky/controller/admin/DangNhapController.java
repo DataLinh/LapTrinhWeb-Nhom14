@@ -50,16 +50,21 @@ public class DangNhapController extends HttpServlet {
 		String password = request.getParameter("txtpassword");
 		IUserService UserService = new UserServiceImpl();
 		User a = UserService.Login(userName, password);
+		HttpSession session = request.getSession(true);
+        session.setAttribute("account", a);
+		
 			if (a == null) {
 				RequestDispatcher rd = request.getRequestDispatcher("/view/admin/login.jsp");
 				rd.forward(request, response);
 			} else {
 				if (a.isRole()) {
-					RequestDispatcher rd = request.getRequestDispatcher("/view/admin/index.jsp");
-					rd.forward(request, response);
+					//RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/trang-admin");
+					//rd.forward(request, response);
+					String contextPath=request.getContextPath();
+					response.sendRedirect(contextPath + "/trang-admin");
 				} else {
-					RequestDispatcher rd = request.getRequestDispatcher("/view/web/index.jsp");
-					rd.forward(request, response);
+					String contextPath=request.getContextPath();
+					response.sendRedirect(contextPath + "/CuaHang");
 				}
 			}
 		}

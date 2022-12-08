@@ -10,20 +10,31 @@
                         </ol>                                                
                     </div>
                     <div class="container-fluid px-4">
-              <a href="${pageContext.request.contextPath}/UpdateProduct"><button type="button" class="btn btn-success">Cập nhật danh sách sản phẩm</button></a>
+              <a href="${pageContext.request.contextPath}/Reset"><button type="button" class="btn btn-success">Cập nhật danh sách sản phẩm</button></a>
                 </div>
-                	<table class="table">
+                	<table class ="table table-stripe"  border="1">
   						<thead>
    							 <tr>
       							<th scope="col">#</th>
       							<th scope="col">Tên</th>
       							<th scope="col">Giá</th>
       							<th scope="col">Số lượng</th>
-      							<th scope="col">Miêu tả</th>
+      							<th scope="col">Khả dụng</th>
       							<th scope="col">Ngày tạo</th>
       							<th scope="col">Ngày cập nhật</th>
     						</tr>
   						</thead>
+  						<tfoot>
+   							 <tr>
+      							<th scope="col">#</th>
+      							<th scope="col">Tên</th>
+      							<th scope="col">Giá</th>
+      							<th scope="col">Số lượng</th>
+      							<th scope="col">Khả dụng</th>
+      							<th scope="col">Ngày tạo</th>
+      							<th scope="col">Ngày cập nhật</th>
+    						</tr>
+  						</tfoot>
   						<tbody>
   						<c:forEach var="item" items="${product}">
     						<tr>
@@ -31,10 +42,19 @@
       							<td>${item.title }</td>
       							<td>${item.price }</td>
       							<td>${item.quantity }</td>
-      							<td>${item.description }</td>
+      							<td>${item.isDeleted }</td>
       							<td>${item.createdAt }</td>
-      							<td>${item.updateAt }</td>
-      							<th><a href="${pageContext.request.contextPath}/trang-admin/Delete"><div><button type="button" class="btn btn-danger">Xoá</button></div></a></th>
+      							<td>${item.updateAt }</td> 
+      							
+      							<th><form action="Delete" method="post">
+      							<input type="hidden" name="productIdDelete" value="${item.id }" />
+      							<a><div><button href="${pageContext.request.contextPath}/Delete" type="submit" class="btn btn-danger">Xoá</button></div></a></form></th>
+							    
+		
+      							<th><form action="Edit" method="post">
+      							<input type="hidden" name="productId" value="${item.id }" />
+      							<a><div><button href="${pageContext.request.contextPath}/Edit" type="submit" class="btn btn-info">Cập nhật</button></div></a></form></th>
+							    
 							    </tr>
 							    </c:forEach>
 							  </tbody>

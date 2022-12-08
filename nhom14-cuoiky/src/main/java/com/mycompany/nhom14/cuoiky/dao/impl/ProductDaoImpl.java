@@ -117,7 +117,15 @@ public class ProductDaoImpl implements IProductDao {
     	Transaction transaction=null;
     	try ( Session session = HibernateUtil.getFactory().openSession()) {
 			transaction=session.beginTransaction();
-			session.save(product);
+			Product prod=new Product();
+			prod.setTitle(product.getTitle());
+			prod.setPrice(product.getPrice());
+			prod.setQuantity(product.getQuantity());
+			prod.setImage(product.getImage());
+			prod.setDescription(product.getDescription());
+			prod.setCreatedAt(product.getCreatedAt());
+			prod.setUpdateAt(product.getUpdateAt());
+			session.save(prod);
 			transaction.commit();
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -178,7 +186,7 @@ public class ProductDaoImpl implements IProductDao {
 		try (Session session = HibernateUtil.getFactory().openSession()) {
 			String HQL = "Select c From Product c";
 			Query query = session.createQuery(HQL);
-			products = query.setMaxResults(4).getResultList();
+			products = query.getResultList();
 
 		} catch (Exception e) {
 			e.printStackTrace();

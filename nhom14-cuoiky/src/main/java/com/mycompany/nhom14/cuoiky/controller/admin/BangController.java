@@ -14,11 +14,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.mycompany.nhom14.cuoiky.entities.Order;
 import com.mycompany.nhom14.cuoiky.entities.Product;
 import com.mycompany.nhom14.cuoiky.entities.User;
+import com.mycompany.nhom14.cuoiky.service.IOrderService;
 import com.mycompany.nhom14.cuoiky.service.IProductService;
 import com.mycompany.nhom14.cuoiky.service.IUserService;
+import com.mycompany.nhom14.cuoiky.service.impl.OrderServiceImpl;
 import com.mycompany.nhom14.cuoiky.service.impl.ProductServiceImpl;
 import com.mycompany.nhom14.cuoiky.service.impl.UserServiceImpl;
 
@@ -29,20 +33,22 @@ public class BangController  extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
     	findAll(request,response);
-    	request.getRequestDispatcher("/view/admin/table.jsp").forward(request,response);
+    	request.getRequestDispatcher("/view/admin/tables.jsp").forward(request,response);
     }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
     	findAll(request,response);
-    	request.getRequestDispatcher("/view/admin/table.jsp").forward(request,response);
+    	request.getRequestDispatcher("/view/admin/tables.jsp").forward(request,response);
     }
 protected void findAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
     	try {
-    		IProductService prod=new ProductServiceImpl();
-    		List<Product> list=prod.findAll(); 
-    		request.setAttribute("product", list);
+    		IOrderService ord=new OrderServiceImpl();
+    		List<Order> list=ord.findAll(); 
+    		HttpSession session = request.getSession(true);
+            session.setAttribute("order", list);
+    		//request.setAttribute("order", list);
     	}catch(Exception e) {
     		e.printStackTrace();
     		request.setAttribute("error", "Error: "+e.getMessage());

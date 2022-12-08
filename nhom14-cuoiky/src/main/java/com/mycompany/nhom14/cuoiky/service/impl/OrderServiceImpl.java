@@ -14,6 +14,7 @@ import com.mycompany.nhom14.cuoiky.dao.impl.OrderDaoImpl;
 import com.mycompany.nhom14.cuoiky.dao.impl.UserDaoImpl;
 import com.mycompany.nhom14.cuoiky.entities.CartItem;
 import com.mycompany.nhom14.cuoiky.entities.Order;
+import com.mycompany.nhom14.cuoiky.entities.Product;
 import com.mycompany.nhom14.cuoiky.service.IOrderService;
 import java.util.List;
 
@@ -40,6 +41,10 @@ public class OrderServiceImpl implements IOrderService {
         order.setCart(order.getUser().getCart());
         userDao.newCart(order.getUser().getId());
         orderDao.insert(order);
+    }
+    @Override
+    public List<Order> findAll(){
+    	return orderDao.findAll();
     }
 
     @Override

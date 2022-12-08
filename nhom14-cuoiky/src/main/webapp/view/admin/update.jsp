@@ -22,40 +22,40 @@
                			<form action="UpdateProduct" method="post">
                				<div class ="form-group">
                					<lable for=productId>Product ID:</lable>
-               					<input type="text" name="productId" id="productId" class="form-control"/>
+               					<input type="text" name="productId" id="productId" class="form-control" value="${sessionScope.productEdit.id}"/>
                				</div>
                				<div class ="form-group">
                					<lable for=productTitle>Product title:</lable>
-               					<input type="text" name="productTitle" id="productTitle" class="form-control"/>
+               					<input type="text" name="productTitle" id="productTitle" class="form-control" value="${sessionScope.productEdit.title}"/>
                				</div>
                				<div class ="form-group">
                					<lable for=productPrice>Product price:</lable>
-               					<input type="text" name="productPrice" id="productPrice" class="form-control"/>
+               					<input type="text" name="productPrice" id="productPrice" class="form-control" value="${sessionScope.productEdit.price}"/>
                				</div>
                				<div class ="form-group">
                					<lable for=productQuantity>Quantity:</lable>
-               					<input type="text" name="productQuantity" id="productQuantity" class="form-control"/>
+               					<input type="text" name="productQuantity" id="productQuantity" class="form-control" value="${sessionScope.productEdit.quantity}"/>
                				</div>
                				<div class ="form-group">
                					<lable for=productImage>Image:</lable>
-               					<input type="text" name="productImage" id="productImage" class="form-control"/>
+               					<input type="text" name="productImage" id="productImage" class="form-control" value="${sessionScope.productEdit.image}"/>
                				</div>
                				<div class ="form-group">
                					<lable for=productDescription>Description:</lable>
-               					<input type="text" name="productDescription" id="productDescription" class="form-control"/>
+               					<input type="text" name="productDescription" id="productDescription" class="form-control" value="${sessionScope.productEdit.description}"/>
                				</div>
                				<div class ="form-group">
                					<lable for=productCreatedAt>Create at:</lable>
-               					<input type="text" name="productCreatedAt" id="productCreatedAt" class="form-control"/>
+               					<input type="text" name="productCreatedAt" id="productCreatedAt" class="form-control" value="${sessionScope.productEdit.createdAt}"/>
                				</div>
                				<div class ="form-group">
                					<lable for=productUpdatedAt>Updated at:</lable>
-               					<input type="text" name="productUpdatedAt" id="productUpdatedAt" class="form-control"/>
+               					<input type="text" name="productUpdatedAt" id="productUpdatedAt" class="form-control" value="${sessionScope.productEdit.updateAt}"/>
                				</div>
            					<div class="form-group">
               					<button type="submit" class="btn btn-success" formaction="${pageContext.request.contextPath}/UpdateProduct/Update">Update</button>
               					<button type="submit" class="btn btn-primary" formaction="${pageContext.request.contextPath}/UpdateProduct/Create">Create</button>
-              					<button type="submit" class="btn btn-info" formaction="${pageContext.request.contextPath}/UpdateProduct/Reset">Reset</button>
+              					<button type="submit" class="btn btn-info" formaction="${pageContext.request.contextPath}/Reset">Reset</button>
               					<div class="small"><a href="${pageContext.request.contextPath}/trang-admin">Quay lại trang admin</a></div>
                 			</div>
                			</form>

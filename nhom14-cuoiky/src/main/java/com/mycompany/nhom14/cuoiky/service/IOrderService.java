@@ -5,6 +5,8 @@
 package com.mycompany.nhom14.cuoiky.service;
 
 import com.mycompany.nhom14.cuoiky.entities.Order;
+import com.mycompany.nhom14.cuoiky.entities.Product;
+
 import java.util.List;
 
 /**
@@ -14,5 +16,5 @@ import java.util.List;
 public interface IOrderService {
     void thanhToan(Order order);
     List<Order> getAllByUserId(int userId);
-    
+    List<Order> findAll();
 }

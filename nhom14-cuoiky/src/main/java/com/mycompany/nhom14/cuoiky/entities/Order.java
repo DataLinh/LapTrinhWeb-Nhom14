@@ -92,7 +92,7 @@ public class Order implements Serializable {
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "orders")
 //    private Set<OrderLine> orderLines = new HashSet<>();
 
-   @OneToOne(cascade = CascadeType.ALL)
+   @OneToOne(cascade = CascadeType.ALL,fetch=FetchType.LAZY)
    @JoinColumn(name = "CART_ID", referencedColumnName = "id")
    private Cart cart;
     

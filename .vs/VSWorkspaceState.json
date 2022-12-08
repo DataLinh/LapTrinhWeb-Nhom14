@@ -9,9 +9,8 @@
     "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany",
     "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14",
     "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky",
-    "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\entities",
-    "\\nhom14-cuoiky\\src\\main\\webapp",
-    "\\nhom14-cuoiky\\src\\main\\webapp\\view"
+    "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\controller",
+    "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\controller\\admin"
   ],
   "SelectedNode": "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\entities\\Product.java",
   "PreviewInSolutionExplorer": false

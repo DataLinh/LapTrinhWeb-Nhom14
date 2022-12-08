@@ -5,6 +5,7 @@
 package com.mycompany.nhom14.cuoiky.controller.admin;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -23,63 +24,67 @@ import com.mycompany.nhom14.cuoiky.service.impl.ProductServiceImpl;
  * @author Linh
  */
 
-@WebServlet(urlPatterns = {"/trang-admin","/trang-admin/Delete"})
-public class HomeAdminController  extends HttpServlet {
+@WebServlet(urlPatterns = { "/trang-admin", "/Delete" })
+public class HomeAdminController extends HttpServlet {
 
-    /**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
 	@Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-    	
-    	String url=request.getRequestURL().toString();
-		Product product=null;
-		if(url.contains("Delete")) {
-			delete(request,response);
-			product=new Product();
-			request.setAttribute("product", product);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String url = request.getRequestURL().toString();
+		if (url.contains("Delete")) {
+			delete(request, response);
+	
 		}
-		else {
-		findAll(request,response);
-		request.getRequestDispatcher("/view/admin/index.jsp").forward(request,response);
-    }
-   }
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-    	String url=request.getRequestURL().toString();
-		if(url.contains("Delete")) {
-			delete(request,response);
-			request.setAttribute("product", new Product());
+			findAll(request, response);
+			request.getRequestDispatcher("/view/admin/index.jsp").forward(request, response);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String url = request.getRequestURL().toString();
+		if (url.contains("Delete")) {
+			delete(request, response);
 		}
-		else {
-			findAll(request,response);
-			request.getRequestDispatcher("/view/admin/index.jsp").forward(request,response);
-	    }
-    }
-    protected void findAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
-    	try {
-    		IProductService prod=new ProductServiceImpl();
-    		List<Product> list=prod.findAll(); 
-    		request.setAttribute("product", list);
-    	}catch(Exception e) {
-    		e.printStackTrace();
-    		request.setAttribute("error", "Error: "+e.getMessage());
-    	}
-    	}
-protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+			findAll(request, response);
+			request.getRequestDispatcher("/view/admin/index.jsp").forward(request, response);
+	}
+
+
+	protected void findAll(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		try {
-			int productId=Integer.parseInt(request.getParameter("productId"));
-			IProductService prod=new ProductServiceImpl();
-			prod.delete(productId);
-			request.setAttribute("message", "User deleted!!");
-		}catch(Exception e) {
+			IProductService prod = new ProductServiceImpl();
+			List<Product> list = prod.findAll();
+			request.setAttribute("product", list);
+		} catch (Exception e) {
 			e.printStackTrace();
-			request.setAttribute("error", "Error: "+e.getMessage());
+			request.setAttribute("error", "Error: " + e.getMessage());
 		}
+	}
+
+	protected void delete(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		try {
+			Product product = new Product();
+			product.setId(Integer.parseInt(request.getParameter("productIdDelete")));
+			IProductService prod = new ProductServiceImpl();
+			product = prod.get(product.getId());
+			product.setIsDeleted(true);
+			prod.update(product);
+			request.setAttribute("message", "User deleted!!");
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("error", "Error: " + e.getMessage());
 		}
 
+	}
 }

@@ -7,12 +7,15 @@ package com.mycompany.nhom14.cuoiky.dao.impl;
 import com.mycompany.nhom14.cuoiky.dao.IOrderDao;
 import com.mycompany.nhom14.cuoiky.entities.Cart;
 import com.mycompany.nhom14.cuoiky.entities.Order;
+import com.mycompany.nhom14.cuoiky.entities.Product;
 import com.mycompany.nhom14.cuoiky.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Query;
 
@@ -36,6 +39,20 @@ public class OrderDaoImpl implements IOrderDao {
             }
         }
     }
+    @Override
+	public List<Order> findAll() {
+		List<Order> order = new ArrayList<>();
+		try (Session session = HibernateUtil.getFactory().openSession()) {
+			String HQL = "Select c From Order c";
+			Query query = session.createQuery(HQL);
+			order = query.getResultList();
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return order;
+	}
 
     @Override
     public void update(Order order) {

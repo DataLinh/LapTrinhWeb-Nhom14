@@ -6,6 +6,8 @@ package com.mycompany.nhom14.cuoiky.dao;
 
 import com.mycompany.nhom14.cuoiky.entities.CartItem;
 import com.mycompany.nhom14.cuoiky.entities.Order;
+import com.mycompany.nhom14.cuoiky.entities.Product;
+
 import java.util.List;
 
 /**
@@ -17,5 +19,6 @@ public interface IOrderDao {
     void update(Order order);
     void delete(int id);
     List<Order> getAllByUserId(int userId);
-    Order get(int id); 
+    Order get(int id);
+    List<Order> findAll();
 }
