@@ -40,7 +40,7 @@
                                 <tr>
                                     <td class="product__cart__item">
                                         <div class="product__cart__item__pic">
-                                            <img src="${url}/${c.product.image}.webp" alt="" width="90" height="90">
+                                            <img src="${url}/${c.product.image}" alt="" width="90" height="90">
                                         </div>
                                         <div class="product__cart__item__text">
                                             <h6>${c.product.title}</h6>
