@@ -33,25 +33,34 @@ public class CartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        String action = request.getParameter("action");
-//        if (action == null) {
-        doGet_Display(request, response);
-//        }
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("account");
+        if (user == null) {
+            response.sendRedirect(request.getContextPath() + "/DangNhap/Login");
+        } else {
+            doGet_Display(request, response);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
-        if (action == null) {
-            doGet_Display(request, response);
-        } else if (action.equalsIgnoreCase("add")) {
-            doPost_Add(request, response);
-        } else if (action.equalsIgnoreCase("minus")) {
-            doPost_Minus(request, response);
-        } else if (action.equalsIgnoreCase("remove")) {
-            doPost_Remove(request, response);
-        } else if (action.equalsIgnoreCase("removeItem")) {
-            doPost_RemoveItem(request, response);
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("account");
+        if (user == null) {
+            response.sendRedirect(request.getContextPath() + "/DangNhap/Login");
+        } else {
+            String action = request.getParameter("action");
+            if (action == null) {
+                doGet_Display(request, response);
+            } else if (action.equalsIgnoreCase("add")) {
+                doPost_Add(request, response);
+            } else if (action.equalsIgnoreCase("minus")) {
+                doPost_Minus(request, response);
+            } else if (action.equalsIgnoreCase("remove")) {
+                doPost_Remove(request, response);
+            } else if (action.equalsIgnoreCase("removeItem")) {
+                doPost_RemoveItem(request, response);
+            }
         }
     }
 
