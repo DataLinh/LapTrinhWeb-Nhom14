@@ -155,7 +155,7 @@
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
-                                    <h5 data-type="money">${p.getPrice()}</h5>
+                                    <h5 data-type="money" data-type="money">${p.getPrice()}</h5>
                                     <div class="product__color__select">
                                         <label for="pc-40">
                                             <input type="radio" id="pc-40">
@@ -210,6 +210,13 @@
     function submitForm() {
         document.getElementById("myForm").submit();
     }
+</script>
+<script>
+
+    document.querySelectorAll('[data-type="money"]').forEach(item => {
+
+        item.innerHTML = new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'vnd'}).format(item.innerHTML);
+    })
 </script>
 
 <!-- Js Plugins -->
