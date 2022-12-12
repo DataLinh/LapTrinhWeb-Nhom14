@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.mycompany.nhom14.cuoiky.entities.Product;
+import com.mycompany.nhom14.cuoiky.entities.User;
 import com.mycompany.nhom14.cuoiky.service.IProductService;
 import com.mycompany.nhom14.cuoiky.service.impl.ProductServiceImpl;
 
@@ -61,7 +62,13 @@ public class HomeAdminController extends HttpServlet {
 	protected void checklogin(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession(true);
+		User a= (User) session.getAttribute("account");
 		if(session.getAttribute("account") == null)
+		{
+			String contextPath=request.getContextPath();
+			response.sendRedirect(contextPath + "/TrangBiLoi");
+		}
+		if(a.isRole()==false)
 		{
 			String contextPath=request.getContextPath();
 			response.sendRedirect(contextPath + "/TrangBiLoi");
