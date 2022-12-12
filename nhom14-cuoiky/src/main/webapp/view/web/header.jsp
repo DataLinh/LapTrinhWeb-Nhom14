@@ -75,8 +75,14 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
+                                <c:if test="${empty account}">
                                 <a href="${pageContext.request.contextPath}/DangNhap">Đăng nhập</a>
                                 <a href="${pageContext.request.contextPath}/DangKy">Đăng ký</a>
+                                </c:if>
+                                <c:if test="${not empty account}">
+                                	<a href="${pageContext.request.contextPath}/TrangChu">${sessionScope.account.fullName}</a>
+                                	<a href="${pageContext.request.contextPath}/DangXuat">Đăng xuất</a>
+                                </c:if>
                             </div>
                         </div>
                     </div>

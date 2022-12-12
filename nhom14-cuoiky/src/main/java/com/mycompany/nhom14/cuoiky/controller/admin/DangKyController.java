@@ -5,6 +5,7 @@
 package com.mycompany.nhom14.cuoiky.controller.admin;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
@@ -47,12 +48,22 @@ public class DangKyController  extends HttpServlet {
     protected void register(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
+		String fullName = request.getParameter("userName");
+        byte[] temp1 = fullName.getBytes(StandardCharsets.ISO_8859_1);
+        fullName = new String(temp1, StandardCharsets.UTF_8);
+        String phoneNumber = request.getParameter("userPhoneNumber");
+        byte[] temp2 = phoneNumber.getBytes(StandardCharsets.ISO_8859_1);
+        phoneNumber = new String(temp2, StandardCharsets.UTF_8);
+        String address = request.getParameter("userAddress");
+        byte[] temp4 = address.getBytes(StandardCharsets.ISO_8859_1);
+        address = new String(temp4, StandardCharsets.UTF_8);
+        
 		User user= new User();
-		user.setFullName(request.getParameter("userName"));
+		user.setFullName(fullName);
 		user.setEmail(request.getParameter("userEmail"));
-		user.setAddress(request.getParameter("userAddress"));
+		user.setAddress(address);
 		user.setPassword(request.getParameter("userPass"));
-		user.setPhoneNumber(request.getParameter("userPhoneNumber"));
+		user.setPhoneNumber(phoneNumber);
 		long millis=System.currentTimeMillis();   
 		java.sql.Date date=new java.sql.Date(millis); 
 		user.setCreatedAt(date);

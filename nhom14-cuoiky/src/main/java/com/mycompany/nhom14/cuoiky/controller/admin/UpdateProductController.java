@@ -1,7 +1,7 @@
 package com.mycompany.nhom14.cuoiky.controller.admin;
 
 import java.io.IOException;
-
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 
 import javax.servlet.RequestDispatcher;
@@ -69,7 +69,10 @@ public class UpdateProductController extends HttpServlet {
 			product.setPrice(Integer.parseInt(request.getParameter("productPrice")));
 			product.setQuantity(Integer.parseInt(request.getParameter("productQuantity")));
 			product.setImage(request.getParameter("productImage"));
-			product.setDescription(request.getParameter("productDescription"));
+			String productDescription = request.getParameter("productDescription");
+            byte[] temp1 = productDescription.getBytes(StandardCharsets.ISO_8859_1);
+            productDescription = new String(temp1, StandardCharsets.UTF_8);
+			product.setDescription(productDescription);
 			product.setCreatedAt(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("productCreatedAt")));
 			product.setUpdateAt(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("productUpdatedAt")));
 			IProductService prod = new ProductServiceImpl();
@@ -87,11 +90,20 @@ public class UpdateProductController extends HttpServlet {
 		try {
 			Product product = new Product();
 			product.setId(Integer.parseInt(request.getParameter("productId")));
-			product.setTitle(request.getParameter("productTitle"));
+			String productTitle = request.getParameter("productTitle");
+            byte[] temp1 = productTitle.getBytes(StandardCharsets.ISO_8859_1);
+            productTitle = new String(temp1, StandardCharsets.UTF_8);
+			product.setTitle(productTitle);
 			product.setPrice(Integer.parseInt(request.getParameter("productPrice")));
 			product.setQuantity(Integer.parseInt(request.getParameter("productQuantity")));
-			product.setImage(request.getParameter("productImage"));
-			product.setDescription(request.getParameter("productDescription"));
+			String productImage = request.getParameter("productImage");
+            byte[] temp2 = productImage.getBytes(StandardCharsets.ISO_8859_1);
+            productImage = new String(temp2, StandardCharsets.UTF_8);
+			product.setImage(productImage);
+			String productDescription = request.getParameter("productDescription");
+            byte[] temp3 = productDescription.getBytes(StandardCharsets.ISO_8859_1);
+            productDescription = new String(temp3, StandardCharsets.UTF_8);
+			product.setDescription(productDescription);
 			product.setCreatedAt(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("productCreatedAt")));
 			product.setUpdateAt(new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("productUpdatedAt")));
 			IProductService prod = new ProductServiceImpl();
