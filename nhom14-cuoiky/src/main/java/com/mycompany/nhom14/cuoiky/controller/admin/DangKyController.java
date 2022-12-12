@@ -5,12 +5,17 @@
 package com.mycompany.nhom14.cuoiky.controller.admin;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.mycompany.nhom14.cuoiky.entities.User;
 import com.mycompany.nhom14.cuoiky.service.IUserService;
@@ -42,24 +47,39 @@ public class DangKyController  extends HttpServlet {
     protected void register(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		String user = request.getParameter("userName");
-		String email = request.getParameter("userEmail");
-		String pass = request.getParameter("userPass");
+		User user= new User();
+		user.setFullName(request.getParameter("userName"));
+		user.setEmail(request.getParameter("userEmail"));
+		user.setAddress(request.getParameter("userAddress"));
+		user.setPassword(request.getParameter("userPass"));
+		user.setPhoneNumber(request.getParameter("userPhoneNumber"));
+		long millis=System.currentTimeMillis();   
+		java.sql.Date date=new java.sql.Date(millis); 
+		user.setCreatedAt(date);
+		user.setUpdateAt(date);
 		String rePass = request.getParameter("reUserPass");
 		
-		if (!pass.equals(rePass)) {
-			RequestDispatcher rd = request.getRequestDispatcher("/view/admin/register.jsp");
-			rd.forward(request, response);
+		if (!user.getPassword().equals(rePass)) {
+			HttpSession session = request.getSession(true);
+	        session.setAttribute("message1", "Mật khẩu nhập lại không khớp!!");
+			String contextPath=request.getContextPath();
+			response.sendRedirect(contextPath + "/DangKy");
 		} else {
 			IUserService UserService = new UserServiceImpl();
-			User a = UserService.CheckEmail(email);
+			User a =UserService.CheckEmail(user.getEmail());
 			if (a == null) {
-				UserService.Register(user, email, pass);
-				RequestDispatcher rd = request.getRequestDispatcher("/view/admin/login.jsp");
-				rd.forward(request, response);
+				UserService.Register(user);
+				User temp=UserService.CheckEmail(user.getEmail());
+				UserService.newCart(temp.getId());
+				HttpSession session = request.getSession(true);
+		        session.setAttribute("message1", null);
+				String contextPath=request.getContextPath();
+				response.sendRedirect(contextPath + "/DangNhap");
 			} else {
-				RequestDispatcher rd = request.getRequestDispatcher("/view/admin/register.jsp");
-				rd.forward(request, response);
+				HttpSession session = request.getSession(true);
+		        session.setAttribute("message1", "Email này đã tồn tại!!");
+				String contextPath=request.getContextPath();
+				response.sendRedirect(contextPath + "/DangKy");
 			}
 		}
 	}

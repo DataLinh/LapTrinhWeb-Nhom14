@@ -20,7 +20,7 @@ import com.mycompany.nhom14.cuoiky.entities.User;
 import com.mycompany.nhom14.cuoiky.service.IUserService;
 import com.mycompany.nhom14.cuoiky.service.impl.UserServiceImpl;
 
-@WebServlet(urlPatterns = {"/DangNhap","/DangNhap/Login"})
+@WebServlet(urlPatterns = {"/DangNhap","/DangNhap/Login","/DangXuat"})
 public class DangNhapController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -28,6 +28,8 @@ public class DangNhapController extends HttpServlet {
 		String url = request.getRequestURL().toString();
 		if (url.contains("Login")) {
 			login(request, response);
+		}else if (url.contains("DangXuat")) {
+			logout(request, response);
 		}
 		else
 		request.getRequestDispatcher("/view/admin/login.jsp").forward(request, response);
@@ -40,8 +42,11 @@ public class DangNhapController extends HttpServlet {
 		if (url.contains("Login")) {
 			login(request, response);
 		}
+		else if (url.contains("DangXuat")) {
+			logout(request, response);
+		}
 		else
-		request.getRequestDispatcher("/view/admin/login.jsp").forward(request, response);
+			request.getRequestDispatcher("/view/admin/login.jsp").forward(request, response);
 	}
 
 	protected void login(HttpServletRequest request, HttpServletResponse response)
@@ -51,21 +56,29 @@ public class DangNhapController extends HttpServlet {
 		IUserService UserService = new UserServiceImpl();
 		User a = UserService.Login(userName, password);
 		HttpSession session = request.getSession(true);
-        session.setAttribute("account", a);
-		
 			if (a == null) {
-				RequestDispatcher rd = request.getRequestDispatcher("/view/admin/login.jsp");
-				rd.forward(request, response);
+		        session.setAttribute("message2", "Tên đăng nhập hoặc mật khẩu không đúng!!");
+				String contextPath=request.getContextPath();
+				response.sendRedirect(contextPath + "/DangNhap");
 			} else {
 				if (a.isRole()) {
-					//RequestDispatcher rd = request.getServletContext().getRequestDispatcher("/trang-admin");
-					//rd.forward(request, response);
+			        session.setAttribute("account", a);
+			        session.setAttribute("message2", null);
 					String contextPath=request.getContextPath();
 					response.sendRedirect(contextPath + "/trang-admin");
 				} else {
+					session.setAttribute("account", a);
+			        session.setAttribute("message2", null);
 					String contextPath=request.getContextPath();
 					response.sendRedirect(contextPath + "/CuaHang");
 				}
 			}
 		}
-}
+	protected void logout(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		HttpSession session = request.getSession(true);
+		session.setAttribute("account", null);
+		String contextPath=request.getContextPath();
+		response.sendRedirect(contextPath + "/DangNhap");
+	}
+	}

@@ -109,14 +109,18 @@ public class UserDaoImpl implements IUserDao {
 	}
 
 	@Override
-	public void Register(String userName, String userEmail, String userPass) {
+	public void Register(User user) {
 		Transaction transaction = null;
 		try (Session session = HibernateUtil.getFactory().openSession()) {
 			transaction = session.beginTransaction();
 			User entity = new User();
-			entity.setEmail(userEmail);
-			entity.setFullName(userName);
-			entity.setPassword(userPass);
+			entity.setEmail(user.getEmail());
+			entity.setFullName(user.getFullName());
+			entity.setPassword(user.getPassword());
+			entity.setCreatedAt(user.getCreatedAt());
+			entity.setUpdateAt(user.getUpdateAt());
+			entity.setAddress(user.getAddress());
+			entity.setPhoneNumber(user.getPhoneNumber());
 			entity.setRole(false);
 			session.save(entity);
 			transaction.commit();

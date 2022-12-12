@@ -24,7 +24,14 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Tạo tài khoản</h3></div>
                                     <div class="card-body">
                                         <form action="DangKy" method="post" >
-                                            <div class="row mb-3">
+                                            <div class="row">
+                                            	<div class="col">
+                                            	<small id="message1" class="text-danger">
+										          ${sessionScope.message1}
+										        </small>
+                                            	</div>
+                                            </div>
+                                            <div class="row mb-3">                 	
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputUserName" type="text" name="userName" placeholder="Create a user name"   />
                                                 <label for="inputUserName">Họ và tên</label>
@@ -32,6 +39,14 @@
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" type="email" name="userEmail" placeholder="name@example.com" />
                                                 <label for="inputEmail">Địa chỉ Email</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="inputAddress" type="text" name="userAddress" placeholder="Create a user address" />
+                                                <label for="inputAddress">Địa chỉ</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="inputPhoneNumber" type="text" name="userPhoneNumber" placeholder="Create a user phone number" />
+                                                <label for="inputPhoneNumber">Số điện thoại</label>
                                             </div>
                                             </div>
                                             <div class="row mb-3">

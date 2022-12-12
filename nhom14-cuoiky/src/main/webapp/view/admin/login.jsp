@@ -24,6 +24,13 @@
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Đăng nhập</h3></div>
                                     <div class="card-body">
                                         <form action="DangNhap" method="post">
+                                        <div class="row">
+                                            	<div class="col">
+                                            	<c:if test="${not empty sessionScope.message2}">
+                   									<div class="alert alert-success"> ${sessionScope.message2}</div>
+                   								</c:if>
+                                            	</div>
+                                            </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" type="email" name="txtusername" placeholder="name@example.com" />
                                                 <label for="inputEmail">Địa chỉ Email</label>

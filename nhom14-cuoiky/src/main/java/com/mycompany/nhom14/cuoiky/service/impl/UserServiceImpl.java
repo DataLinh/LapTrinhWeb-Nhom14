@@ -39,8 +39,8 @@ public class UserServiceImpl implements IUserService {
     	return userDao.Login(userEmail, userPass);
     }
     @Override
-    public void Register(String userName, String Email,String userPass) {
-    	userDao.Register(userName, Email, userPass);
+    public void Register(User user) {
+    	userDao.Register(user);
     }
     @Override
     public User CheckEmail(String userName)

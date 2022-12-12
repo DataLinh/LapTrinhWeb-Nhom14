@@ -15,6 +15,6 @@ public interface IUserService {
     
     User getById(int id);
     User Login(String userEmail,String userPass);
-	void Register(String userName, String Email, String userPass);
+	void Register(User user);
 	User CheckEmail(String userName);
 }

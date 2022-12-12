@@ -18,7 +18,7 @@ public interface IUserDao {
 
     void newCart(int userid);
     
-    void Register(String userName, String userEmail, String userPass);
+    void Register(User user);
 
 	User Login(String email, String password);
 

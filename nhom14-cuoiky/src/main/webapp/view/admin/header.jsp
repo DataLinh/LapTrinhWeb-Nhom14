@@ -38,7 +38,7 @@
                         <li><a class="dropdown-item" href="#!">Cài đặt</a></li>
                         <li><a class="dropdown-item" href="${pageContext.request.contextPath}/TrangChu">Trang chủ</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/DangNhap">Đăng xuất</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/DangXuat">Đăng xuất</a></li>
                     </ul>
                 </li>
             </ul>
@@ -79,18 +79,12 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="${url}/401.jsp">401 Page</a>
-                                            <a class="nav-link" href="${url}/404.jsp">404 Page</a>
-                                            <a class="nav-link" href="${url}/500.jsp">500 Page</a>
+                                            <a class="nav-link" href="${pageContext.request.contextPath}/TrangBiLoi">ERROR</a>
                                         </nav>
                                     </div>
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">Trực quan</div>
-                            <a class="nav-link" href="${url}/charts.jsp">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Biểu đồ
-                            </a>
                             <a class="nav-link" href="${pageContext.request.contextPath}/admin/bang">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Bảng
@@ -99,7 +93,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Đăng nhập với tư cách:</div>
-                        Admin
+                        ${sessionScope.account.fullName}
                     </div>
                 </nav>
             </div>

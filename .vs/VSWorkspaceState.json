@@ -9,9 +9,9 @@
     "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany",
     "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14",
     "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky",
-    "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\dao",
-    "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\dao\\impl"
+    "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\controller",
+    "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\controller\\admin"
   ],
-  "SelectedNode": "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\dao\\impl\\ProductDaoImpl.java",
+  "SelectedNode": "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\controller\\admin\\DangNhapController.java",
   "PreviewInSolutionExplorer": false
 }
