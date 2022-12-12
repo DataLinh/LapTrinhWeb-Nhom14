@@ -42,7 +42,7 @@
             <tr>
                 <td> ${o.orderDate}</td>
                 <td> ${o.id} </td>
-                <td> ${o.cart.total}</td>
+                <td> ${o.totalMoney}</td>
                 <td> 
                     <form action="LichSuDatHang" method="post">
                         <input type="hidden" name="cartId" value="${o.cart.id}">

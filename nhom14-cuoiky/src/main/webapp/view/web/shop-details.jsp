@@ -117,12 +117,14 @@
                         <%--                            </div>--%>
                         <%--                        </div>--%>
                         <div class="product__details__cart__option">
-                            <div class="quantity">
-                                <div class="pro-qty">
-                                    <input type="text" value="1">
-                                </div>
-                            </div>
-                            <a href="#" class="primary-btn">Thêm vào giỏ hàng</a>
+
+                            <form action="GioHang" method="post" >                                            
+                                            <input type="hidden" name="action" 
+                                                   value="add">               
+                                            <input type="hidden" name="productId" 
+                                                   value="${product.id}">
+                                            <input type="submit"  class="btn btn-outline-danger" value="+ Thêm vào giỏ hàng">
+                                        </form> 
                         </div>
                                                 <div class="product__details__btns__option">
                                                     <a href="#"><i class="fa fa-heart"></i> Thêm vào danh mục yêu thích</a>

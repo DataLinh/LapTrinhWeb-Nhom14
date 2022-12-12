@@ -204,7 +204,7 @@
                    <td class="product__cart__item">
                         
                         <div class="product__cart__item__pic">
-                            <img src="${url}/${product.image}.webp" style="width: 108px; height: 108px">
+                            <img src="${url}/${product.image}" style="width: 108px; height: 108px">
                         </div>
                         <div class="product__cart__item__text">
 

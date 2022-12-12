@@ -33,17 +33,28 @@ public class OrderHistoryController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        int userId = (int) session.getAttribute("userId");
-        request.setAttribute("orders", orderService.getAllByUserId(userId));
-        RequestDispatcher rd = request.getRequestDispatcher("/view/web/order-history.jsp");
-        rd.forward(request, response);
+        User user = (User) session.getAttribute("account");
+        if (user == null) {
+            response.sendRedirect(request.getContextPath() + "/DangNhap/Login");
+        } else {
+            int userId = (int) session.getAttribute("userId");
+            request.setAttribute("orders", orderService.getAllByUserId(userId));
+            RequestDispatcher rd = request.getRequestDispatcher("/view/web/order-history.jsp");
+            rd.forward(request, response);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int cartId = Integer.parseInt(request.getParameter("cartId"));
-        request.setAttribute("cartItems", cartItemService.getAllByCartId(cartId));
-        RequestDispatcher rd = request.getRequestDispatcher("/view/web/order-history-cart.jsp");
-        rd.forward(request, response);
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("account");
+        if (user == null) {
+            response.sendRedirect(request.getContextPath() + "/DangNhap/Login");
+        } else {
+            int cartId = Integer.parseInt(request.getParameter("cartId"));
+            request.setAttribute("cartItems", cartItemService.getAllByCartId(cartId));
+            RequestDispatcher rd = request.getRequestDispatcher("/view/web/order-history-cart.jsp");
+            rd.forward(request, response);
+        }
     }
 }
