@@ -2,7 +2,7 @@
 #### Đề tài: Phát triển website bán hàng thời trang 
 #### Link:   https://laptrinhweb-nhom14.herokuapp.com/
 #### Thành viên:  
-| Thành viên  |  MSSV |
+| Họ và tên  |  MSSV |
 | :---         |     :---:  |
 |Nguyễn Đức Linh	|20133007|
 |Lê Minh Trí|	20133100|
