@@ -63,7 +63,7 @@
                             một bộ trang phục phù hợp.</p>
                     </div>
                     <div>
-                        <<img src="/${url}/blog/details/blog-details/blog-detail-2.jpg" alt=""/>
+                        <<img src="/../${url}/blog/details/blog-details/blog-detail-2.jpg" alt=""/>
                     </div>
                     <br>
                     <div class="blog__details__text">
@@ -82,7 +82,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="blog__details__author">
                                     <div class="blog__details__author__pic">
-                                        <img src="/${url}/blog/details/blog-authors/blog-author-2.jpg" alt="">
+                                        <img src="/../${url}/img/blog/details/blog-authors/blog-author-2.jpg" alt="">
                                     </div>
                                     <div class="blog__details__author__text">
                                         <h5>Nhóm 14</h5>
@@ -122,4 +122,4 @@
 </section>
 <!-- Blog Details Section End -->
 
-<%@ include file="../blog-footer.jsp" %>
+<%@ include file="../footer.jsp" %>

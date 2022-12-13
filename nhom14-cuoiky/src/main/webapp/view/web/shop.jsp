@@ -124,13 +124,12 @@
                                         <img src="${url}/${p.getImage()}">
                                     </a>
                                     <ul class="product__hover">
-                                        <li> <a>
-                                                <iframe name="votar" style="display:none;"></iframe>
-                                                <form action="SanPhamYeuThich" method="post" target="votar">
+                                        <li><form id="FavoriteProduct${p.id}" action="SanPhamYeuThich" method="post" target="votar">
                                                     <input type="hidden" id="action" name="action" value="AddFavoriteProduct">
                                                     <input type="hidden" id="idProduct" name="idProduct" value="${p.id}">
-                                                    <input type="image" class="heart" src="${url}/img/icon/heart.png" alt="submit" style="background: #ffffff;padding: 10px;display: inline-block;">
-                                                </form>
+                                                </form> 
+                                            <a href="#" onclick="document.getElementById('FavoriteProduct${p.id}').submit();">
+                                                <img src="${url}/img/icon/heart.png" alt="">
                                                 <span>Yêu thích</span>
                                             </a> </li>
                                         <li><a href="#"><img src="${url}/img/icon/compare.png" alt=""> <span>So sánh</span></a>

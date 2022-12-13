@@ -23,44 +23,72 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(urlPatterns = {"/SanPhamYeuThich"})
 public class FavoriteProductController extends HttpServlet {
+    final private IFavoriteProductService favoriteProductService = new FavoriteProductServiceImpl();
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        IFavoriteProductService favoriteProductService = new FavoriteProductServiceImpl();
         response.setContentType("text/html;charset=UTF-8");
-        
-        HttpSession session = request.getSession();
-        int userId = (int) session.getAttribute("userId");
 
-        User user = new User();
-        user.setId(userId);
+        if (userNotLogin(request, response)) {
+            response.sendRedirect(request.getContextPath() + "/DangNhap/Login");
+            return;
+        }
         
         if ("DeleteFavoriteProduct".equals(request.getParameter("action"))) {
-            Product product = createProductFromRequest(request);
-            favoriteProductService.XoaSanPhamYeuThich(user, product);
+        DeleteFavoriteProduct(request, response);
+        }
+        
+        if ("AddFavoriteProduct".equals(request.getParameter("action"))) {
+            AddFavoriteProduct(request, response);
         }
 
-        if ("AddFavoriteProduct".equals(request.getParameter("action"))) {
-            Product product = createProductFromRequest(request);
-            favoriteProductService.ThemSanPhamYeuThich(user, product);
-        }
-        
-        
-        
-        Collection <Product> products = favoriteProductService.LayDanhSachSanPhamYeuThich(user);
+        Collection <Product> products = getFavoriteProducts(request, response);
         request.setAttribute("products", products);
-        
+
         getServletContext()
                 .getRequestDispatcher("/view/web/favorite-products.jsp")
                 .forward(request, response);
+        
+    }
+    
+    private boolean userNotLogin(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("account");
+        return user == null;
     }
 
-    public Product createProductFromRequest(HttpServletRequest request) {
+    private void DeleteFavoriteProduct(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("account");
+        Product product = createProductFromRequest(request);
+        
+        favoriteProductService.XoaSanPhamYeuThich(user, product);
+    }
+    
+    private void AddFavoriteProduct(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("account");
+        Product product = createProductFromRequest(request);
+        
+        favoriteProductService.ThemSanPhamYeuThich(user, product);
+    }
+    
+    private Collection <Product> getFavoriteProducts(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("account");
+        Product product = createProductFromRequest(request);
+        return favoriteProductService.LayDanhSachSanPhamYeuThich(user);
+    }
+    
+    private Product createProductFromRequest(HttpServletRequest request) {
+        
         String idProduct = request.getParameter("idProduct");
+        if (idProduct == null) return null;
         Product product = new Product();
         product.setId(Integer.parseInt(idProduct));
         return product;  
     }
     
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
