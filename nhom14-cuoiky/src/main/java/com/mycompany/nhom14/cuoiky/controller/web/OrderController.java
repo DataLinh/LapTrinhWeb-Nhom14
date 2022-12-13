@@ -40,15 +40,9 @@ public class OrderController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("account");
-        if (user == null) {
-            response.sendRedirect(request.getContextPath() + "/DangNhap/Login");
-        } else {
-            String action = request.getParameter("action");
-            if (action == null) {
-                doGet_Display(request, response);
-            }
+        String action = request.getParameter("action");
+        if (action == null) {
+            doGet_Display(request, response);
         }
     }
 
@@ -56,6 +50,9 @@ public class OrderController extends HttpServlet {
         HttpSession session = request.getSession();
         int userId = (int) session.getAttribute("userId");
         User user = userService.getById(userId);
+        if (!user.getEmail().contains("@")){
+            user.setEmail("");
+        }
         request.setAttribute("user", user);
         request.setAttribute("total", user.getCart().getTotal());
         request.setAttribute("cartItems", cartItemService.getAllByCartId(user.getCart().getId()));
@@ -65,17 +62,11 @@ public class OrderController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("account");
-        if (user == null) {
-            response.sendRedirect(request.getContextPath() + "/DangNhap/Login");
-        } else {
-            String action = request.getParameter("action");
-            if (action == null) {
-                doGet_Display(request, response);
-            } else if (action.equalsIgnoreCase("order")) {
-                doPost_Order(request, response);
-            }
+        String action = request.getParameter("action");
+        if (action == null) {
+            doGet_Display(request, response);
+        } else if (action.equalsIgnoreCase("order")) {
+            doPost_Order(request, response);
         }
     }
 
