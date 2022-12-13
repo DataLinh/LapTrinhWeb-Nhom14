@@ -127,8 +127,14 @@
                                         </form> 
                         </div>
                                                 <div class="product__details__btns__option">
-                                                    <a href="#"><i class="fa fa-heart"></i> Thêm vào danh mục yêu thích</a>
-                        <%--                            <a href="#"><i class="fa fa-exchange"></i> Thêm để so sánh</a>--%>
+                                                    
+<!--                                                <iframe name="votar" style="display:none;"></iframe>-->
+                                                <form id="form1" action="SanPhamYeuThich" method="post" target="votar">
+                                                    <input type="hidden" id="action" name="action" value="AddFavoriteProduct">
+                                                    <input type="hidden" id="idProduct" name="idProduct" value="${product.id}">
+                                                </form>
+                                                    
+                                                <a href="#" onclick="document.getElementById('form1').submit();"><i class="fa fa-heart"></i> Thêm vào danh mục yêu thích</a>
                                                 </div>
                         <div class="product__details__last__option">
                             <h5><span>Thanh toán trực tuyến an toàn</span></h5>
@@ -407,4 +413,4 @@
 </section>
 <!-- Related Section End -->
 
-<%@ include file="footer.jsp" %>
+<%@ include file="footer.jsp" %> 

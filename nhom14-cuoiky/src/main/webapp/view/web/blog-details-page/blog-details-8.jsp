@@ -8,30 +8,6 @@
 <%@ include file="../header.jsp" %>
 <!DOCTYPE html>
 <html lang="zxx">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="description" content="Male_Fashion Template">
-        <meta name="keywords" content="Male_Fashion, unica, creative, html">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Project nhóm 14</title>
-
-        <!-- Google Font -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-              rel="stylesheet">
-
-        <!-- Css Styles -->
-        <link rel="stylesheet" href="/${url}/css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/font-awesome.min.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/elegant-icons.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/magnific-popup.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/nice-select.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/owl.carousel.min.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/slicknav.min.css" type="text/css">
-        <link rel="stylesheet" href="/${url}/css/style.css" type="text/css">
-    </head>
-
 <!-- Blog Details Hero Begin -->
 <section class="blog-hero spad">
     <div class="container">
@@ -57,7 +33,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-lg-12">
                 <div class="blog__details__pic">
-                    <img src="/${url}/blog/details/blog-titles/blog-title-8.jpg" alt="">
+                    <img src="/../${url}/img/blog/details/blog-titles/blog-title-8.jpg" alt="">
                 </div>
             </div>
             <div class="col-lg-8">
@@ -93,7 +69,7 @@
                             PCDT dẻo hơn và đàn hồi hơn. PCDT phù hợp để làm rèm cửa và lớp bọc đồ nội 
                             thất, còn PET có thể được sử dụng độc lập hoặc phối trộn với các loại vải 
                             khác để làm cho quần áo khỏi nhăn chống bụi bẩn và không co dãn.</p>
-                        <img src="/${url}/blog/details/blog-details/blog-detail-8.jpg" alt="alt"/>
+                        <img src="/../${url}/img/blog/details/blog-details/blog-detail-8.jpg" alt="alt"/>
                     </div>
                     <p>
                     <br>
@@ -122,7 +98,7 @@
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="blog__details__author">
                                     <div class="blog__details__author__pic">
-                                        <img src="/${url}/blog/details/blog-authors/blog-author-2.jpg" alt="">
+                                        <img src="/../${url}/img/blog/details/blog-authors/blog-author-2.jpg" alt="">
                                     </div>
                                     <div class="blog__details__author__text">
                                         <h5>Nhóm 14</h5>
@@ -162,4 +138,4 @@
 </section>
 <!-- Blog Details Section End -->
 
-<%@ include file="../blog-footer.jsp" %>
+<%@ include file="../footer.jsp" %>

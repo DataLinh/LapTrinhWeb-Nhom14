@@ -209,7 +209,7 @@
                         <div class="product__cart__item__text">
 
                             <h6>${product.title}</h6>
-                            <h5>${product.price} $</h5>
+                            <h5>${product.price} đ</h5>
                             <div class="rating">
                                 <i class="fa fa-star" style = "color:#f7941d"></i>
                                 <i class="fa fa-star" style = "color:#f7941d"></i>
@@ -221,15 +221,23 @@
                     </td>
                     <td>
 <!--                        <iframe name="votar" style="display:none;"></iframe>-->
-                        <form id="${product.id}" action="SanPhamYeuThich" method="post" target="votar">
+                        <form id="FavoriteProduct${product.id}" action="SanPhamYeuThich" method="post" target="votar">
                             <input type="hidden" id="action" name="action" value="DeleteFavoriteProduct">
                             <input type="hidden" id="idProduct" name="idProduct" value="${product.id}">
                         </form>
                     </td>
-                    <td style="text-align: center"><a href = "SanPhamYeuThich"><img src="view/web/img/shopping-cart/add-to-cart.png" width ="38" height ="38" alt="alt"/></a></td>
+                    <td style="text-align: center">
+                        <form id="Cart${product.id}" action="GioHang" method="post">
+                            <input type="hidden" id="action" name="action" value="add">
+                            <input type="hidden" id="productId" name="productId" value="${product.id}">
+                        </form>
+                        <a href="#" onclick="document.getElementById('Cart${product.id}').submit();">
+                            <img src="view/web/img/shopping-cart/add-to-cart.png" width ="38" height ="38" alt="alt"/>
+                        </a>
+                    </td>
                     
                     <td class="cart__close" style="text-align: center">
-                        <button form="${product.id}" type="submit" class ="deleteBtn" style="border: none; background: border-box">
+                        <button form="FavoriteProduct${product.id}" type="submit" class ="deleteBtn" style="border: none; background: border-box">
                             <i class="fa fa-close"></i>
                         </button>
                     </td>

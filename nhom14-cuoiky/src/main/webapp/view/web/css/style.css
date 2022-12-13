@@ -1807,6 +1807,11 @@ ol {
 	margin-right: 20px;
 }
 
+
+.product__details__btns__option a:hover {
+    color: #e53637;
+}
+
 .product__details__btns__option a:last-child {
 	margin-right: 0;
 }
