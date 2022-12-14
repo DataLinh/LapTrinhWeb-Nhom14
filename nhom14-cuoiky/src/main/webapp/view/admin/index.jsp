@@ -4,9 +4,9 @@
 <jsp:include page="header.jsp"></jsp:include>
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Trang chủ</h1>
+                        <h1 class="mt-4">Sản phẩm</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Trang chủ</li>
+                            <li class="breadcrumb-item active">Hãy chỉnh sửa danh sách sản phẩm của bạn</li>
                         </ol>                                                
                     </div>
                     <div class="container-fluid px-4">

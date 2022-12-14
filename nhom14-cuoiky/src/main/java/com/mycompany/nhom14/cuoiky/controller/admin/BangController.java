@@ -53,6 +53,7 @@ protected void findAll(HttpServletRequest request, HttpServletResponse response)
 			}
     		HttpSession session = request.getSession(true);
             session.setAttribute("order", list);
+            session.setAttribute("titlePage",request.getParameter("status"));
     		//request.setAttribute("order", list);
     	}catch(Exception e) {
     		e.printStackTrace();

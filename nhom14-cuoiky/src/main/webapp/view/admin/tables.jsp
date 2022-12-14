@@ -5,16 +5,16 @@
 <jsp:include page="header.jsp"></jsp:include>
 <main>
 	<div class="container-fluid px-4">
-		<h1 class="mt-4">Bảng</h1>
+		<h1 class="mt-4">Đơn hàng</h1>
 		<ol class="breadcrumb mb-4">
-			<li class="breadcrumb-item"><a href="${url}/index.jsp">Sản
+			<li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/TrangAdmin">Sản
 					phẩm</a></li>
-			<li class="breadcrumb-item active">Bảng</li>
+			<li class="breadcrumb-item active">Đơn hàng</li>
 		</ol>
 		<div class="card mb-4"></div>
 		<div class="card mb-4">
 			<div class="card-header">
-				<i class="fas fa-table me-1"></i> Bảng đơn hàng
+				<i class="fas fa-table me-1"></i>${sessionScope.titlePage != 0?(sessionScope.titlePage!=1 ?"Đơn hàng đã giao":"Đơn hàng đang giao"):"Đơn hàng chưa xác nhận"}
 			</div>
 				<table class ="table table-stripe"  border="1">
 					<thead>

@@ -64,7 +64,7 @@ public class DangNhapController extends HttpServlet {
                 session.setAttribute("account", a);
                 session.setAttribute("userId", a.getId());
                 String contextPath = request.getContextPath();
-                response.sendRedirect(contextPath + "/trang-admin");
+                response.sendRedirect(contextPath + "/TrangAdmin");
             } else {
                 session.setAttribute("account", a);
                 session.setAttribute("userId", a.getId());

@@ -49,7 +49,7 @@
               					<button type="submit" class="btn btn-success" formaction="${pageContext.request.contextPath}/UpdateProduct/Update">Update</button>
               					<button type="submit" class="btn btn-primary" formaction="${pageContext.request.contextPath}/UpdateProduct/Create">Create</button>
               					<button type="submit" class="btn btn-info" formaction="${pageContext.request.contextPath}/Reset">Reset</button>
-              					<div class="small"><a href="${pageContext.request.contextPath}/trang-admin">Quay lại trang admin</a></div>
+              					<div class="small"><a href="${pageContext.request.contextPath}/TrangAdmin">Quay lại trang admin</a></div>
                 			</div>
                			</form>
                		</div>

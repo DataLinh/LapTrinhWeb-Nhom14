@@ -26,7 +26,7 @@ import com.mycompany.nhom14.cuoiky.service.impl.ProductServiceImpl;
  * @author Linh
  */
 
-@WebServlet(urlPatterns = { "/trang-admin", "/Delete" })
+@WebServlet(urlPatterns = { "/TrangAdmin", "/Delete" })
 public class HomeAdminController extends HttpServlet {
 
 	/**

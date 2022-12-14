@@ -57,17 +57,19 @@ public class AuthorizationFilter implements Filter {
             }
         } else if( url.contains("Delete")
                 || url.contains("UpdateProduct") || url.contains("Create") || url.contains("Update") || url.contains("Reset")
-                || url.contains("Edit")|| url.contains("/admin/bang")) {
+                || url.contains("Edit")|| url.contains("/admin/bang") || url.contains("TrangAdmin")) {
             HttpSession session = req.getSession();
             if (session.getAttribute("account") != null) {
             	User a=(User)session.getAttribute("account");
             	if(!a.isRole()) {
-            		resp.sendRedirect("TrangChu");
+            		String contextPath = req.getContextPath();
+                    resp.sendRedirect(contextPath + "/TrangChu");
             	}else {
             		chain.doFilter(request, response);
             	}
         }else {
-        	 chain.doFilter(request, response);
+        	String contextPath = req.getContextPath();
+            resp.sendRedirect(contextPath + "/DangNhap");
         }
         }else {
             chain.doFilter(request, response);
