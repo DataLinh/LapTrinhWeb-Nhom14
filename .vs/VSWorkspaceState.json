@@ -9,9 +9,8 @@
     "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany",
     "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14",
     "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky",
-    "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\controller",
-    "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\controller\\admin"
+    "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\filter"
   ],
-  "SelectedNode": "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\controller\\admin\\DangNhapController.java",
+  "SelectedNode": "\\nhom14-cuoiky\\src\\main\\java\\com\\mycompany\\nhom14\\cuoiky\\controller\\admin\\OTPController.java",
   "PreviewInSolutionExplorer": false
 }
