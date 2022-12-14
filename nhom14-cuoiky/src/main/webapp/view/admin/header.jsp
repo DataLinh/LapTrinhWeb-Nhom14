@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <c:url value="/view/admin" var="url"></c:url>
+<c:url value="/view/web" var="urlw"></c:url>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,6 +17,14 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="${url}/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="${urlw}/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/elegant-icons.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/style.css" type="text/css">
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">

@@ -17,4 +17,6 @@ public interface IOrderService {
     void thanhToan(Order order);
     List<Order> getAllByUserId(int userId);
     List<Order> findAll();
+    Order get(int id);
+    void update(Order order);
 }

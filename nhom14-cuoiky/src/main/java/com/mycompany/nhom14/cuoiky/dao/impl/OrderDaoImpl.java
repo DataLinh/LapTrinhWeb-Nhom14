@@ -43,7 +43,7 @@ public class OrderDaoImpl implements IOrderDao {
 	public List<Order> findAll() {
 		List<Order> order = new ArrayList<>();
 		try (Session session = HibernateUtil.getFactory().openSession()) {
-			String HQL = "Select c From Order c";
+			String HQL = "Select c From Order c order by c.id";
 			Query query = session.createQuery(HQL);
 			order = query.getResultList();
 			
