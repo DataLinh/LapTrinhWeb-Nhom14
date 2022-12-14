@@ -28,17 +28,17 @@
 							<th scope="col">Trạng thái</th>
 						</tr>
 					</thead>
-					<tfoot>
-						<tr>
-							<th scope="col">Mã đơn hàng</th>
-							<th scope="col">Tên</th>
-							<th scope="col">Email</th>
-							<th scope="col">Ngày mua</th>
-							<th scope="col">Tổng tiền</th>
-							<th scope="col">Địa chỉ</th>
-							<th scope="col">Trạng thái</th>
-						</tr>
-					</tfoot>
+<%--					<tfoot>--%>
+<%--						<tr>--%>
+<%--							<th scope="col">Mã đơn hàng</th>--%>
+<%--							<th scope="col">Tên</th>--%>
+<%--							<th scope="col">Email</th>--%>
+<%--							<th scope="col">Ngày mua</th>--%>
+<%--							<th scope="col">Tổng tiền</th>--%>
+<%--							<th scope="col">Địa chỉ</th>--%>
+<%--							<th scope="col">Trạng thái</th>--%>
+<%--						</tr>--%>
+<%--					</tfoot>--%>
 					<tbody>
 						<c:forEach var="item" items="${sessionScope.order}">
     						<tr>
@@ -48,7 +48,7 @@
       							<td>${item.orderDate}</td>
       							<td>${item.totalMoney}</td>
       							<td>${item.address}</td>
-      							<td>${item.status != 0?(item.status!=1?"Đã giao hàng":"Đang giao hàng"):"Chưa xác nhận"}</td>
+      							<td>${item.status != 0?(item.status!=1 ?"Đã giao hàng":"Đang giao hàng"):"Chưa xác nhận"}</td>
 							</tr>
 							    </c:forEach>
 					</tbody>

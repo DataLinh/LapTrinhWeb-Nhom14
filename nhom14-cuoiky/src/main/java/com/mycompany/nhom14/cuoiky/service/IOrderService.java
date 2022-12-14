@@ -19,4 +19,5 @@ public interface IOrderService {
     List<Order> findAll();
     Order get(int id);
     void update(Order order);
+    List<Order> getAllByStatus(int status);
 }

@@ -58,6 +58,11 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
+    public List<Order> getAllByStatus(int status) {
+        return orderDao.getAllByStatus(status);
+    }
+
+    @Override
     public List<Order> getAllByUserId(int userId) {
         return orderDao.getAllByUserId(userId);
     }

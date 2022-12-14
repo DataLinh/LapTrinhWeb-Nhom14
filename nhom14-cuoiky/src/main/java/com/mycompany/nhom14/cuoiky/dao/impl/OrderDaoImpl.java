@@ -55,6 +55,20 @@ public class OrderDaoImpl implements IOrderDao {
 	}
 
     @Override
+    public List<Order> getAllByStatus(int status) {
+        List<Order> order = new ArrayList<>();
+        try (Session session = HibernateUtil.getFactory().openSession()) {
+            String HQL = "Select c From Order c where c.status =:status order by c.id ";
+            Query query = session.createQuery(HQL);
+            query.setParameter("status",status);
+            order = query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return order;
+    }
+
+    @Override
     public void update(Order order) {
         Transaction transaction = null;
         try ( Session session = HibernateUtil.getFactory().openSession()) {

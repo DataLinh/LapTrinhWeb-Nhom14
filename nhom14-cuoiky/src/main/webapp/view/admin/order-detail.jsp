@@ -9,12 +9,17 @@
                     <div class="breadcrumb__text">
                         <h4>Chi tiết đơn hàng</h4>
                         <div class="breadcrumb__links">
-                            <div>Mã đơn hàng: ${order.id}</div>
-                            <div>Tên khách hàng: ${order.fullName}</div>
-                            <div>Địa chỉ: ${order.address}</div>
-                            <div>Số điện thoại: ${order.phoneNumber}</div>
-                            <div>Ngày đặt hàng: ${order.orderDate}</div>
-                            <div>Ghi chú: ${order.note}</div>
+                            <div class="row">
+                                <div class="col-lg-6" >Mã đơn hàng: ${order.id}</div>
+                                <div class="col-lg-6">Tên khách hàng: ${order.fullName}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">Địa chỉ: ${order.address}</div>
+                                <div class="col-lg-6">Số điện thoại: ${order.phoneNumber}</div>
+                                <div class="col-lg-6">Ngày đặt hàng: ${order.orderDate}</div>
+                                <div class="col-lg-6">Ghi chú: ${order.note}</div>
+                            </div>
+
 <%--                            <a href="#">Trang chủ</a>--%>
 <%--                            <a href="${pageContext.request.contextPath }/CuaHang">Cửa hàng</a>--%>
 <%--                            <span>Chi tiết đơn hàng</span>--%>
@@ -25,7 +30,7 @@
         </div>
     </section>
 <!-- Shopping Cart Section Begin -->
-<section class="shopping-cart spad">
+<section class="shopping-cart">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
