@@ -38,7 +38,7 @@ public class AuthorizationFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
-        HttpServletResponse rep = (HttpServletResponse) response;
+        HttpServletResponse resp = (HttpServletResponse) response;
         String url = req.getRequestURI();
         if (url.contains("GioHang") || url.contains("DatHang")
                 || url.contains("TrangCamOn") || url.contains("SanPhamYeuThich")) {
@@ -62,7 +62,7 @@ public class AuthorizationFilter implements Filter {
             if (session.getAttribute("account") != null) {
             	User a=(User)session.getAttribute("account");
             	if(!a.isRole()) {
-            		rep.sendRedirect("TrangChu");
+            		resp.sendRedirect("TrangChu");
             	}else {
             		chain.doFilter(request, response);
             	}
