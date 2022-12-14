@@ -44,8 +44,13 @@ public class BangController  extends HttpServlet {
 protected void findAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	
     	try {
-    		IOrderService ord=new OrderServiceImpl();
-    		List<Order> list=ord.findAll(); 
+			IOrderService ord=new OrderServiceImpl();
+			List<Order> list=ord.findAll();
+			if(request.getParameter("status")!=null)
+			{
+				list = ord.getAllByStatus(Integer.parseInt(request.getParameter("status")));
+
+			}
     		HttpSession session = request.getSession(true);
             session.setAttribute("order", list);
     		//request.setAttribute("order", list);

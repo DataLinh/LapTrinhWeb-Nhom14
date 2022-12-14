@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="product__cart__item__text">
                                             <h6>${c.product.title}</h6>
-                                            <h5>${c.product.price}</h5>
+                                            <h5 data-type="money">${c.product.price}</h5>
                                         </div>
                                     </td>
                                     <td style="text-align: center; vertical-align: middle;">
@@ -72,7 +72,7 @@
                                     </td>
 
 
-                                    <td class="cart__price"> ${c.quantity * c.product.price} đ</td>
+                                    <td class="cart__price" data-type="money"> ${c.quantity * c.product.price} </td>
                                     <td>
                                         <form action="GioHang" method="post">                                            
                                             <input type="hidden" name="action" 
@@ -110,9 +110,9 @@
                 <div class="cart__total">
                     <h6>Tổng tiền giỏ hàng</h6>
                     <ul>
-                        <li>Tiền hàng <span>${total} đ</span></li>
+                        <li>Tiền hàng <span data-type="money">${total} </span></li>
                         <li>Tiền ship <span>0đ</span></li>
-                        <li>Tổng <span>${total} đ</span></li>
+                        <li>Tổng <span data-type="money">${total} </span></li>
                     </ul>
                     <a href="${pageContext.request.contextPath }/DatHang" class="primary-btn">Đặt hàng ngay</a>
                 </div>
@@ -121,3 +121,10 @@
 </section>
 <!-- Shopping Cart Section End -->
 <%@ include file="footer.jsp" %>
+<script>
+
+    document.querySelectorAll('[data-type="money"]').forEach(item => {
+
+        item.innerHTML = new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'vnd'}).format(item.innerHTML);
+    })
+</script>

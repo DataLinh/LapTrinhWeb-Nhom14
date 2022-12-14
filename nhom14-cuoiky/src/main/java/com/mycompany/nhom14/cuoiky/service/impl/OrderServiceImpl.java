@@ -48,7 +48,27 @@ public class OrderServiceImpl implements IOrderService {
     }
 
     @Override
+    public Order get(int id) {
+        return orderDao.get(id);
+    }
+
+    @Override
+    public void update(Order order) {
+        orderDao.update(order);
+    }
+
+    @Override
+    public List<Order> getAllByStatus(int status) {
+        return orderDao.getAllByStatus(status);
+    }
+
+    @Override
     public List<Order> getAllByUserId(int userId) {
         return orderDao.getAllByUserId(userId);
+    }
+
+    public static void main(String[] args) {
+        OrderServiceImpl orderService = new OrderServiceImpl();
+        System.out.println(orderService.get(4).getCart().getId());
     }
 }

@@ -36,7 +36,8 @@
                             </div>
 
                             <div class="checkout__input">
-                                <p>Số điện thoại<span></span></p>
+                                <p>Số điện thoại<span>*</span>       &emsp;  ${phoneCheck} </p>
+                                
                                 <input type="text" name="phoneNumber" value="${user.phoneNumber}">
 
                             </div> 

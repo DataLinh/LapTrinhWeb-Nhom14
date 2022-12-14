@@ -72,6 +72,7 @@
                 <div class="col-lg-8">
                     <div class="product__details__text">
                         <h4>${product.getTitle()}</h4>
+                        <h4 data-type="money">${product.price}</h4>
                         <div class="rating">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -413,4 +414,11 @@
 </section>
 <!-- Related Section End -->
 
-<%@ include file="footer.jsp" %> 
+<%@ include file="footer.jsp" %>
+<script>
+
+    document.querySelectorAll('[data-type="money"]').forEach(item => {
+
+        item.innerHTML = new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'vnd'}).format(item.innerHTML);
+    })
+</script>

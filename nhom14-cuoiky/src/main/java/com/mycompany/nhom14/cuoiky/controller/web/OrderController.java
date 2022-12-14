@@ -50,7 +50,7 @@ public class OrderController extends HttpServlet {
         HttpSession session = request.getSession();
         int userId = (int) session.getAttribute("userId");
         User user = userService.getById(userId);
-        if (!user.getEmail().contains("@")){
+        if (!user.getEmail().contains("@")) {
             user.setEmail("");
         }
         request.setAttribute("user", user);
@@ -80,39 +80,47 @@ public class OrderController extends HttpServlet {
             byte[] temp1 = fullName.getBytes(StandardCharsets.ISO_8859_1);
             fullName = new String(temp1, StandardCharsets.UTF_8);
 
-            String phoneNumber = request.getParameter("phoneNumber");
-            byte[] temp2 = phoneNumber.getBytes(StandardCharsets.ISO_8859_1);
-            phoneNumber = new String(temp2, StandardCharsets.UTF_8);
+            String reg = "(84|0)+([0-9]{9})";
 
-            String note = request.getParameter("note");
-            byte[] temp3 = note.getBytes(StandardCharsets.ISO_8859_1);
-            note = new String(temp3, StandardCharsets.UTF_8);
+            String phoneNumber = request.getParameter("phoneNumber");;
 
-            String address = request.getParameter("address");
-            byte[] temp4 = address.getBytes(StandardCharsets.ISO_8859_1);
-            address = new String(temp4, StandardCharsets.UTF_8);
+            // Kiem tra dinh dang
+            boolean kt = phoneNumber.matches(reg);
+            if (kt == false) {
+                request.setAttribute("phoneCheck", "Vui lòng nhập chính xác số điện thoại đặt hàng");
+                doGet_Display(request, response);
+            } else {
 
-            String email = request.getParameter("email");
-            System.err.println(fullName);
-            System.err.println(phoneNumber);
-            System.err.println(email);
-            System.err.println(note);
-            System.err.println(address);
-            Date date = new Date(System.currentTimeMillis());
-            Order order = new Order();
-            order.setAddress(address);
-            order.setFullName(fullName);
-            order.setDeleted(false);
-            order.setUser(user);
-            order.setEmail(email);
-            order.setPhoneNumber(phoneNumber);
-            order.setNote(note);
-            order.setTotalMoney(user.getCart().getTotal());
-            order.setOrderDate(date);
-            order.setStatus(0);
+                String note = request.getParameter("note");
+                byte[] temp3 = note.getBytes(StandardCharsets.ISO_8859_1);
+                note = new String(temp3, StandardCharsets.UTF_8);
 
-            orderService.thanhToan(order);
-            response.sendRedirect("TrangCamOn");
+                String address = request.getParameter("address");
+                byte[] temp4 = address.getBytes(StandardCharsets.ISO_8859_1);
+                address = new String(temp4, StandardCharsets.UTF_8);
+
+                String email = request.getParameter("email");
+                System.err.println(fullName);
+                System.err.println(phoneNumber);
+                System.err.println(email);
+                System.err.println(note);
+                System.err.println(address);
+                Date date = new Date(System.currentTimeMillis());
+                Order order = new Order();
+                order.setAddress(address);
+                order.setFullName(fullName);
+                order.setDeleted(false);
+                order.setUser(user);
+                order.setEmail(email);
+                order.setPhoneNumber(phoneNumber);
+                order.setNote(note);
+                order.setTotalMoney(user.getCart().getTotal());
+                order.setOrderDate(date);
+                order.setStatus(0);
+
+                orderService.thanhToan(order);
+                response.sendRedirect("TrangCamOn");
+            }
         } else {
             response.sendRedirect("GioHangTrong");
         }

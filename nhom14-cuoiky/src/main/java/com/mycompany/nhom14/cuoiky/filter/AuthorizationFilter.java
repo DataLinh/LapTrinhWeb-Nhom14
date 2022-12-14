@@ -46,14 +46,14 @@ public class AuthorizationFilter implements Filter {
             if (session.getAttribute("account") != null) {
                 chain.doFilter(request, response);
             } else {
-                User user = new User();
-                user.setEmail(session.getId());
-                userService.Register(user);
-                User temp = userService.CheckEmail(user.getEmail());
-                userService.newCart(temp.getId());
-                session.setAttribute("account", temp);
-                session.setAttribute("userId", temp.getId());
-                chain.doFilter(request, response);
+//                User user = new User();
+//                user.setEmail(session.getId());
+//                userService.Register(user);
+//                User temp = userService.CheckEmail(user.getEmail());
+//                userService.newCart(temp.getId());
+//                session.setAttribute("account", temp);
+//                session.setAttribute("userId", temp.getId());
+                resp.sendRedirect(req.getContextPath() + "/DangNhap");
             }
         } else if( url.contains("Delete")
                 || url.contains("UpdateProduct") || url.contains("Create") || url.contains("Update") || url.contains("Reset")

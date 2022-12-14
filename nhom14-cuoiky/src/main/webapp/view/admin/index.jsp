@@ -44,17 +44,13 @@
       							<td>${item.quantity }</td>
       							<td>${item.isDeleted }</td>
       							<td>${item.createdAt }</td>
-      							<td>${item.updateAt }</td> 
-      							
+      							<td>${item.updateAt }</td>
       							<th><form action="Delete" method="post">
       							<input type="hidden" name="productIdDelete" value="${item.id }" />
       							<a><div><button href="${pageContext.request.contextPath}/Delete" type="submit" class="btn btn-danger">Xoá</button></div></a></form></th>
-							    
-		
       							<th><form action="Edit" method="post">
       							<input type="hidden" name="productId" value="${item.id }" />
       							<a><div><button href="${pageContext.request.contextPath}/Edit" type="submit" class="btn btn-info">Cập nhật</button></div></a></form></th>
-							    
 							    </tr>
 							    </c:forEach>
 							  </tbody>

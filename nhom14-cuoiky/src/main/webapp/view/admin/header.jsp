@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <c:url value="/view/admin" var="url"></c:url>
+<c:url value="/view/web" var="urlw"></c:url>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,6 +17,14 @@
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="${url}/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="${urlw}/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/elegant-icons.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/magnific-popup.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="${urlw}/css/style.css" type="text/css">
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -53,42 +62,57 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Sản phẩm
                             </a>
-                            <div class="sb-sidenav-menu-heading">Giao diện</div>
+                            <div class="sb-sidenav-menu-heading">Đơn hàng</div>
                             
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Trang
+                                Danh sách đơn hàng
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                        Các trang khác
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    <a class="nav-link collapsed" href="${pageContext.request.contextPath}/admin/bang"  >
+                                        Tất cả đơn hàng
+<%--                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>--%>
                                     </a>
-                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="${pageContext.request.contextPath}/DangNhap">Đăng nhập</a>
-                                            <a class="nav-link" href="${pageContext.request.contextPath}/DangKy">Đăng ký</a>
-                                            <a class="nav-link" href="${url}/password.jsp">Quên mật khẩu</a>
-                                        </nav>
-                                    </div>
-                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                        Error
-                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+<%--                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">--%>
+<%--                                        <nav class="sb-sidenav-menu-nested nav">--%>
+<%--                                            <a class="nav-link" href="${pageContext.request.contextPath}/DangNhap">Đăng nhập</a>--%>
+<%--                                            <a class="nav-link" href="${pageContext.request.contextPath}/DangKy">Đăng ký</a>--%>
+<%--                                            <a class="nav-link" href="${url}/password.jsp">Quên mật khẩu</a>--%>
+<%--                                        </nav>--%>
+<%--                                    </div>--%>
+                                    <a class="nav-link collapsed" href="${pageContext.request.contextPath}/admin/bang?status=0" >
+                                        Đơn hàng mới
+<%--                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>--%>
                                     </a>
-                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                        <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="${pageContext.request.contextPath}/TrangBiLoi">ERROR</a>
-                                        </nav>
-                                    </div>
+                                    <a class="nav-link collapsed" href="${pageContext.request.contextPath}/admin/bang?status=1" >
+                                       Đơn hàng đang giao
+                                        <%--                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>--%>
+                                    </a>
+                                    <a class="nav-link collapsed" href="${pageContext.request.contextPath}/admin/bang?status=2" >
+                                        Đơn hàng đã giao
+                                        <%--                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>--%>
+                                    </a>
+
+<%--                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">--%>
+<%--                                        <nav class="sb-sidenav-menu-nested nav">--%>
+<%--                                            <a class="nav-link" href="${pageContext.request.contextPath}/TrangBiLoi">ERROR</a>--%>
+<%--                                        </nav>--%>
+<%--                                    </div>--%>
                                 </nav>
                             </div>
-                            <div class="sb-sidenav-menu-heading">Trực quan</div>
-                            <a class="nav-link" href="${pageContext.request.contextPath}/admin/bang">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Bảng
-                            </a>
+<%--                            <div class="sb-sidenav-menu-heading">Trực quan</div>--%>
+<%--                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">--%>
+<%--                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>--%>
+<%--                                Trang--%>
+<%--                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>--%>
+<%--                            </a>--%>
+
+<%--                            <a class="nav-link" href="${pageContext.request.contextPath}/admin/bang">--%>
+<%--                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>--%>
+<%--                                Bảng--%>
+<%--                            </a>--%>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
