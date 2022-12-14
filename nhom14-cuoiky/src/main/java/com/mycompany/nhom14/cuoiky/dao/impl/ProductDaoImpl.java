@@ -124,7 +124,6 @@ public class ProductDaoImpl implements IProductDao {
 			prod.setImage(product.getImage());
 			prod.setDescription(product.getDescription());
 			prod.setCreatedAt(product.getCreatedAt());
-			prod.setUpdateAt(product.getUpdateAt());
 			session.save(prod);
 			transaction.commit();
 		}catch(Exception e) {

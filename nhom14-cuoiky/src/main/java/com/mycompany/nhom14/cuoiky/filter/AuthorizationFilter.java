@@ -5,6 +5,7 @@
 package com.mycompany.nhom14.cuoiky.filter;
 
 import com.mycompany.nhom14.cuoiky.entities.User;
+
 import com.mycompany.nhom14.cuoiky.service.IUserService;
 import com.mycompany.nhom14.cuoiky.service.impl.UserServiceImpl;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -36,6 +38,7 @@ public class AuthorizationFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
+        HttpServletResponse rep = (HttpServletResponse) response;
         String url = req.getRequestURI();
         if (url.contains("GioHang") || url.contains("DatHang")
                 || url.contains("TrangCamOn") || url.contains("SanPhamYeuThich")) {
@@ -52,7 +55,21 @@ public class AuthorizationFilter implements Filter {
                 session.setAttribute("userId", temp.getId());
                 chain.doFilter(request, response);
             }
-        } else {
+        } else if( url.contains("Delete")
+                || url.contains("UpdateProduct") || url.contains("Create") || url.contains("Update") || url.contains("Reset")
+                || url.contains("Edit")|| url.contains("/admin/bang")) {
+            HttpSession session = req.getSession();
+            if (session.getAttribute("account") != null) {
+            	User a=(User)session.getAttribute("account");
+            	if(!a.isRole()) {
+            		rep.sendRedirect("TrangChu");
+            	}else {
+            		chain.doFilter(request, response);
+            	}
+        }else {
+        	 chain.doFilter(request, response);
+        }
+        }else {
             chain.doFilter(request, response);
         }
     }

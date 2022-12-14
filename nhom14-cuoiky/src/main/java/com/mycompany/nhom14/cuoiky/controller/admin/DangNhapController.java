@@ -57,19 +57,16 @@ public class DangNhapController extends HttpServlet {
         User a = UserService.Login(userName, password);
         HttpSession session = request.getSession(true);
         if (a == null) {
-            session.setAttribute("message2", "Tên đăng nhập hoặc mật khẩu không đúng!!");
-            String contextPath = request.getContextPath();
-            response.sendRedirect(contextPath + "/DangNhap");
+            request.setAttribute("message2", "Tên đăng nhập hoặc mật khẩu không đúng!!");
+            request.getRequestDispatcher("/DangNhap").forward(request, response);
         } else {
             if (a.isRole()) {
                 session.setAttribute("account", a);
                 session.setAttribute("userId", a.getId());
-                session.setAttribute("message2", null);
                 String contextPath = request.getContextPath();
                 response.sendRedirect(contextPath + "/trang-admin");
             } else {
                 session.setAttribute("account", a);
-                session.setAttribute("message2", null);
                 session.setAttribute("userId", a.getId());
                 String contextPath = request.getContextPath();
                 response.sendRedirect(contextPath + "/CuaHang");
@@ -82,6 +79,6 @@ public class DangNhapController extends HttpServlet {
         HttpSession session = request.getSession(true);
         session.setAttribute("account", null);
         String contextPath = request.getContextPath();
-        response.sendRedirect(contextPath + "/DangNhap");
+        response.sendRedirect(contextPath + "/TrangChu");
     }
 }

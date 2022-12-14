@@ -26,9 +26,7 @@
                                         <form action="DangKy" method="post" >
                                             <div class="row">
                                             	<div class="col">
-                                            	<small id="message1" class="text-danger">
-										          ${sessionScope.message1}
-										        </small>
+                                            	<p class="text-danger">${message1}</p>
                                             	</div>
                                             </div>
                                             <div class="row mb-3">                 	

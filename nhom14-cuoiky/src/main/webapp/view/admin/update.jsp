@@ -19,7 +19,7 @@
                    	</div>
                <div class="row">
                		<div class="col">
-               			<form action="UpdateProduct" method="post">
+               			<form action="UpdateProduct" method="post" enctype="multipart/form-data">
                				<div class ="form-group">
                					<lable for=productId>Product ID:</lable>
                					<input type="text" name="productId" id="productId" class="form-control" value="${sessionScope.productEdit.id}"/>
@@ -38,20 +38,13 @@
                				</div>
                				<div class ="form-group">
                					<lable for=productImage>Image:</lable>
-               					<input type="text" name="productImage" id="productImage" class="form-control" value="${sessionScope.productEdit.image}"/>
+               					<input type="file" name="productImage" id="productImage" class="form-control"/>
                				</div>
                				<div class ="form-group">
                					<lable for=productDescription>Description:</lable>
                					<input type="text" name="productDescription" id="productDescription" class="form-control" value="${sessionScope.productEdit.description}"/>
                				</div>
-               				<div class ="form-group">
-               					<lable for=productCreatedAt>Create at:</lable>
-               					<input type="text" name="productCreatedAt" id="productCreatedAt" class="form-control" value="${sessionScope.productEdit.createdAt}"/>
-               				</div>
-               				<div class ="form-group">
-               					<lable for=productUpdatedAt>Updated at:</lable>
-               					<input type="text" name="productUpdatedAt" id="productUpdatedAt" class="form-control" value="${sessionScope.productEdit.updateAt}"/>
-               				</div>
+               		
            					<div class="form-group">
               					<button type="submit" class="btn btn-success" formaction="${pageContext.request.contextPath}/UpdateProduct/Update">Update</button>
               					<button type="submit" class="btn btn-primary" formaction="${pageContext.request.contextPath}/UpdateProduct/Create">Create</button>

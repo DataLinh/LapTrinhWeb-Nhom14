@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Trang đăng nhập</title>
+        <title>Trang đăng ký</title>
         <link href="${url}/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -19,36 +19,28 @@
                 <main>
                     <div class="container">
                         <div class="row justify-content-center">
-                            <div class="col-lg-5">
+                            <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Đăng nhập</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Xác thực</h3></div>
                                     <div class="card-body">
-                                        <form action="DangNhap" method="post">
-                                        <div class="row">
-                                            	<div class="col">
-                                            	<p class="text-danger">${message2}</p>
+                                        <form action="DangKyOTP" method="post" >
+                                        <div class="col">
+                                            	<p class="text-danger">${message3}</p>
                                             	</div>
-                                            </div>
+                                            <div class="row mb-3">                 	
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputEmail" type="email" name="txtusername" placeholder="name@example.com" />
-                                                <label for="inputEmail">Địa chỉ Email</label>
-                                            </div>
-                                            <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" type="password" name="txtpassword" placeholder="Password" />
-                                                <label for="inputPassword">Mật khẩu</label>
-                                            </div>
-                                            <div class="form-check mb-3">
-                                                <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-                                                <label class="form-check-label" for="inputRememberPassword">Ghi nhớ mật khẩu</label>
-                                            </div>
-                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="password.jsp">Quên mật khẩu?</a>
-                                                <button type="submit" class="btn btn-primary" formaction="${pageContext.request.contextPath}/DangNhap/Login">Đăng nhập</button>
+                                                <input class="form-control" id="inputOTP" type="text" name="OTP" placeholder="Create a OTP"   />
+                                                <label for="inputUserName">Mã xác thực</label>
+                                            </div>                                           
+                                         </div>
+                                         
+                                            <div class="mt-4 mb-0">
+                                                <div class="d-grid"><button type="submit" class="btn btn-primary" formaction="${pageContext.request.contextPath}/DangKyOTP">Xác thực</button></div>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="${pageContext.request.contextPath}/DangKy">Cần 1 tài khoản? Đăng ký?</a></div>
+                                        <div class="small"><a href="${pageContext.request.contextPath}/DangKy">Quay lại trang đăng ký?</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -60,11 +52,11 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Bản quyền &copy; BoostramAdmin</div>
+                            <div class="text-muted">Bản quyền &copy; BoostrapAdmin</div>
                             <div>
                                 <a href="#">Chính sách</a>
                                 &middot;
-                                <a href="#">Điều khoản &amp; Điều kiện</a>
+                                <a href="#">Điều khoản  &amp; Điều kiện</a>
                             </div>
                         </div>
                     </div>
