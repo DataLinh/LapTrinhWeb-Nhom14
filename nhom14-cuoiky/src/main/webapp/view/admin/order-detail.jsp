@@ -17,7 +17,7 @@
                                 <div class="col-lg-6">Địa chỉ: ${order.address}</div>
                                 <div class="col-lg-6">Số điện thoại: ${order.phoneNumber}</div>
                                 <div class="col-lg-6">Ngày đặt hàng: ${order.orderDate}</div>
-                                <div class="col-lg-6">Ghi chú: ${order.note}</div>
+                                <div class="col-lg-6">Ghi chú: ${order.note ==""?"Không":order.note}</div>
                             </div>
 
 <%--                            <a href="#">Trang chủ</a>--%>
@@ -53,7 +53,7 @@
                                         </div>
                                         <div class="product__cart__item__text">
                                             <h6>${c.product.title}</h6>
-                                            <h5>${c.product.price}</h5>
+                                            <h5 data-type="money">${c.product.price}</h5>
                                         </div>
                                     </td>
                                     <td style="text-align: center; vertical-align: middle;">
@@ -79,7 +79,7 @@
 <%--                                            </form>--%>
                                         </div>
                                     </td>
-                                    <td class="cart__price"> ${c.quantity * c.product.price} đ</td>
+                                    <td class="cart__price" data-type="money"> ${c.quantity * c.product.price}</td>
                                     <td>
 <%--                                        <form action="GioHang" method="post">                                            --%>
 <%--                                            <input type="hidden" name="action" --%>
@@ -117,9 +117,9 @@
                 <div class="cart__total">
                     <h6>Tổng tiền đơn hàng</h6>
                     <ul>
-                        <li>Tiền hàng <span>${order.totalMoney} đ</span></li>
+                        <li>Tiền hàng <span data-type="money">${order.totalMoney} </span></li>
                         <li>Tiền ship <span>0đ</span></li>
-                        <li>Tổng <span>${order.totalMoney} đ</span></li>
+                        <li>Tổng <span data-type="money">${order.totalMoney} </span></li>
                     </ul>
                     <div class="continue__btn update__btn ">
                         <form action="${pageContext.request.contextPath}/admin/updateOrder" method="post">
@@ -148,4 +148,11 @@
         document.getElementById("changeStatus").value = "Giao thành công"
         document.getElementById("changeStatus").style.background='red ';
     }
+</script>
+<script>
+
+    document.querySelectorAll('[data-type="money"]').forEach(item => {
+
+        item.innerHTML = new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'vnd'}).format(item.innerHTML);
+    })
 </script>

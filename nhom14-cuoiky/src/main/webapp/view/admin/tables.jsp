@@ -46,7 +46,7 @@
       							<td>${item.fullName }</td>
       							<td>${item.email}</td>
       							<td>${item.orderDate}</td>
-      							<td>${item.totalMoney}</td>
+      							<td data-type="money">${item.totalMoney}</td>
       							<td>${item.address}</td>
       							<td>${item.status != 0?(item.status!=1 ?"Đã giao hàng":"Đang giao hàng"):"Chưa xác nhận"}</td>
 							</tr>
@@ -56,4 +56,11 @@
 		</div>
 	</div>
 </main>
+<script>
+
+	document.querySelectorAll('[data-type="money"]').forEach(item => {
+
+		item.innerHTML = new Intl.NumberFormat('vi-VN', {style: 'currency', currency: 'vnd'}).format(item.innerHTML);
+	})
+</script>
 <%@ include file="footer.jsp"%>
