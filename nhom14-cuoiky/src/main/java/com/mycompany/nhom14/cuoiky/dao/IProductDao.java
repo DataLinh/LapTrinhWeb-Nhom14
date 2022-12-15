@@ -30,4 +30,5 @@ public interface IProductDao {
 
 	List<Product> findAll();
 
+    List<Product> getRelatedProduct(Product p);
 }

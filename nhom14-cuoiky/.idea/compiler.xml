@@ -14,7 +14,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cuoiky-nhom14" options="-endorseddirs C:\Users\lelon\Downloads\LapTrinhWeb-Nhom14-ba9cdf2239092d81509e34c024b1776073cddf88\nhom14-cuoiky\target/endorsed" />
-      <module name="nhom14-cuoiky" options="-endorseddirs E:\HCMUTE\Nam3-HK1\LTWeb\moi8\nhom14-cuoiky\target/endorsed" />
+      <module name="nhom14-cuoiky" options="-endorseddirs E:\HCMUTE\Nam3-HK1\LTWeb\moi10\nhom14-cuoiky\target/endorsed" />
     </option>
   </component>
 </project>

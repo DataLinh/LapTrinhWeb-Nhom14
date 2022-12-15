@@ -58,5 +58,11 @@ public class ProductServiceImpl implements IProductService {
     	return productDao.findAll();
     }
 
+    @Override
+    public List<Product> getRelatedProduct(Product p) {
+        return productDao.getRelatedProduct(p);
+    }
+
+
 
 }

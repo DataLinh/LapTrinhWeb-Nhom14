@@ -193,6 +193,21 @@ public class ProductDaoImpl implements IProductDao {
 		return products;
 	}
 
+	public List<Product> getRelatedProduct(Product p) {
+		List<Product> products = new ArrayList<>();
+		try (Session session = HibernateUtil.getFactory().openSession()) {
+			String HQL = "Select c From Product c where c.category.id =:categoryID and c.isDeleted = false and c.id !=:pID order by c.id desc ";
+			Query query = session.createQuery(HQL);
+			query.setParameter("categoryID",p.getCategory().getId());
+			query.setParameter("pID",p.getId());
+			products = query.setMaxResults(3).getResultList();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return products;
+	}
+
 	/*
 	 * public static void main(String[] args) { ProductDaoImpl productDao = new
 	 * ProductDaoImpl(); List<Product> products = productDao.getAll();
